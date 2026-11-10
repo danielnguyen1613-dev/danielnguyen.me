@@ -30,10 +30,7 @@ export function SectionViewport({
     <div
       data-section-viewport
       data-section={sectionId}
-      className={cn(
-        "absolute inset-0 overflow-hidden bg-surface text-surface-foreground",
-        className,
-      )}
+      className={cn("absolute inset-0 overflow-hidden", className)}
     >
       <div className={contentShellClassName}>
         <div

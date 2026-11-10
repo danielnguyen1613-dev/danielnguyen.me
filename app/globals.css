@@ -64,7 +64,7 @@
   --background: #f6e4d8;
   --foreground: #1a1a1a;
 
-  /* Surface — matches scrollbar track for a seamless panel edge */
+  /* Surface — main content panel */
   --surface: #403c3a;
   --surface-foreground: #f7f4f1;
 
@@ -73,11 +73,11 @@
   --primary-dark: #d45735;
   --primary-foreground: #ffffff;
 
-  /* Card — clean white profile / floating chrome */
+  /* Card — profile / floating chrome */
   --card: #ffffff;
   --card-foreground: #1a1a1a;
 
-  /* Popover */
+  /* Popover — available for future overlays */
   --popover: #ffffff;
   --popover-foreground: #1a1a1a;
 
@@ -89,7 +89,7 @@
   --muted: #f1ddd1;
   --muted-foreground: #7a706a;
 
-  /* Accent */
+  /* Accent — available for future emphasis surfaces */
   --accent: #e96a45;
   --accent-foreground: #ffffff;
 
@@ -104,14 +104,14 @@
   /* Radius */
   --radius: 1rem;
 
-  /* Charts */
+  /* Charts — available for future data UI */
   --chart-1: #e96a45;
   --chart-2: #d45735;
   --chart-3: #7a706a;
   --chart-4: #222222;
   --chart-5: #f6e4d8;
 
-  /* Sidebar */
+  /* Sidebar — available for future app chrome */
   --sidebar: #ffffff;
   --sidebar-foreground: #1a1a1a;
   --sidebar-primary: #e96a45;
@@ -121,7 +121,7 @@
   --sidebar-border: color-mix(in srgb, #1a1a1a 10%, transparent);
   --sidebar-ring: #e96a45;
 
-  /* Panel scrollbar — thin muted terracotta, transparent track */
+  /* Panel scrollbar */
   --scrollbar-size: 3px;
   --scrollbar-track: transparent;
   --scrollbar-thumb: color-mix(in srgb, var(--primary) 58%, #8a6a5c);
@@ -157,7 +157,6 @@
   }
 }
 
-/* Custom scrollbar — center content panel only */
 @layer utilities {
   .panel-scroll {
     height: auto;

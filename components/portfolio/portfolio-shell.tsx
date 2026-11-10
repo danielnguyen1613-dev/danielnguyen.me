@@ -100,9 +100,9 @@ export function PortfolioShell({
         <div className="relative min-h-[70vh] min-w-0 flex-1 lg:h-full lg:min-h-0">
           <div
             data-shell="panels"
-            className="flex h-full min-h-[70vh] overflow-hidden rounded-xl bg-card shadow-lg lg:min-h-0"
+            className="flex h-full min-h-[70vh] overflow-hidden rounded-xl shadow-lg lg:min-h-0"
           >
-            <div className="hidden h-full w-[min(32%,380px)] min-w-[240px] shrink-0 overflow-hidden rounded-l-xl bg-card lg:block">
+            <div className="hidden h-full w-[min(32%,380px)] min-w-[240px] shrink-0 overflow-hidden rounded-l-xl lg:block">
               <ProfileSidebar connected className="h-full w-full" />
             </div>
 
