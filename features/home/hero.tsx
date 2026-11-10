@@ -9,7 +9,8 @@ export async function Hero() {
     <section
       className="relative min-h-screen overflow-hidden"
       style={{
-        background: "linear-gradient(to bottom, #D94F2B 0%, #F06A3B 100%)",
+        background:
+          "linear-gradient(165deg, #f8ebe3 0%, #f4d9cb 52%, #efcbb8 100%)",
       }}
     >
       <HeroBackground />

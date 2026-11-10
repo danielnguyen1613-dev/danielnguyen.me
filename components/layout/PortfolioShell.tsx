@@ -67,7 +67,8 @@ export function PortfolioShell({
         aria-hidden
         className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
         style={{
-          background: "linear-gradient(to bottom, #D94F2B 0%, #F06A3B 100%)",
+          background:
+            "linear-gradient(165deg, #f8ebe3 0%, #f4d9cb 52%, #efcbb8 100%)",
         }}
       >
         <HeroBackground />
@@ -83,7 +84,7 @@ export function PortfolioShell({
             data-shell="panels"
             className="flex h-full min-h-[70vh] overflow-hidden rounded-xl bg-card shadow-lg lg:min-h-0"
           >
-            {/* Connected: profile card (#444) | main surface (#222), radius clips with bg */}
+            {/* Connected: profile card (white) | main surface (charcoal), radius clips with bg */}
             <div className="hidden h-full w-[min(32%,380px)] min-w-[240px] shrink-0 overflow-hidden rounded-l-xl bg-card lg:block">
               <ProfileSidebar connected className="h-full w-full" />
             </div>
@@ -92,7 +93,7 @@ export function PortfolioShell({
               data-shell="main"
               className="min-h-0 min-w-0 flex-1 overflow-hidden rounded-xl lg:rounded-l-none lg:rounded-r-xl"
             >
-              <div className="h-full overflow-y-auto overscroll-contain rounded-xl bg-surface p-5 sm:p-6 md:p-8 lg:rounded-r-xl">
+              <div className="h-full overflow-y-auto overscroll-contain rounded-xl bg-surface p-5 text-surface-foreground sm:p-6 md:p-8 lg:rounded-r-xl">
                 {children}
               </div>
             </main>

@@ -3,6 +3,7 @@ export const siteConfig = {
   shortName: "NV",
   role: "Senior Frontend Developer",
   url: "https://danielnguyen.me",
+  avatarUrl: "/images/avatar.jpg",
   cvUrl: "/cv.pdf",
   socials: {
     github: "https://github.com",

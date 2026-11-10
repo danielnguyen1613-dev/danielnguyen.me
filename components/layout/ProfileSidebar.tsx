@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import type { SVGProps } from "react";
 import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site";
@@ -71,11 +72,15 @@ export function ProfileSidebar({
           className,
         )}
       >
-        <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-background font-heading text-sm font-semibold text-foreground ring-2 ring-border">
-          {siteConfig.shortName}
-        </div>
+        <Image
+          src={siteConfig.avatarUrl}
+          alt={siteConfig.name}
+          width={48}
+          height={48}
+          className="size-12 shrink-0 rounded-full object-cover ring-2 ring-border"
+        />
         <div className="min-w-0 flex-1">
-          <p className="truncate font-heading text-base font-semibold text-foreground">
+          <p className="truncate font-heading text-base font-semibold text-card-foreground">
             {siteConfig.name}
           </p>
           <p className="truncate text-sm text-muted-foreground">
@@ -86,7 +91,7 @@ export function ProfileSidebar({
           href={siteConfig.cvUrl}
           className={cn(
             buttonVariants({ variant: "outline", size: "sm" }),
-            "hidden shrink-0 rounded-full sm:inline-flex",
+            "hidden shrink-0 rounded-full border-border bg-transparent text-card-foreground hover:bg-primary/10 sm:inline-flex",
           )}
         >
           {t("downloadCv")}
@@ -110,20 +115,25 @@ export function ProfileSidebar({
         <div className="relative">
           <div
             aria-hidden
-            className="absolute -inset-4 rounded-full opacity-40"
+            className="absolute -inset-4 rounded-full opacity-25"
             style={{
               backgroundImage:
-                "radial-gradient(circle, var(--muted-foreground) 1px, transparent 1px)",
+                "radial-gradient(circle, color-mix(in srgb, var(--primary) 55%, var(--muted-foreground)) 1px, transparent 1px)",
               backgroundSize: "10px 10px",
             }}
           />
-          <div className="relative flex size-28 items-center justify-center rounded-full bg-background font-heading text-2xl font-semibold text-foreground ring-4 ring-border xl:size-32">
-            {siteConfig.shortName}
-          </div>
+          <Image
+            src={siteConfig.avatarUrl}
+            alt={siteConfig.name}
+            width={128}
+            height={128}
+            priority
+            className="relative size-28 rounded-full object-cover ring-4 ring-border xl:size-32"
+          />
         </div>
 
         <div className="space-y-1.5">
-          <h1 className="font-heading text-2xl font-bold tracking-tight text-foreground">
+          <h1 className="font-heading text-2xl font-bold tracking-tight text-card-foreground">
             {siteConfig.name}
           </h1>
           <p className="text-sm text-muted-foreground">{t("role")}</p>
@@ -149,7 +159,7 @@ export function ProfileSidebar({
           href={siteConfig.cvUrl}
           className={cn(
             buttonVariants({ variant: "outline", size: "lg" }),
-            "h-11 rounded-full border-border px-6 text-foreground hover:border-primary/50 hover:bg-primary/10 hover:text-foreground",
+            "h-11 rounded-full border-border bg-transparent px-6 text-card-foreground hover:border-primary/50 hover:bg-primary/10 hover:text-card-foreground",
           )}
         >
           {t("downloadCv")}

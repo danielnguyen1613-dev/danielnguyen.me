@@ -8,6 +8,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-surface: var(--surface);
+  --color-surface-foreground: var(--surface-foreground);
   --color-primary-dark: var(--primary-dark);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
@@ -59,65 +60,66 @@
 :root {
   /* Design tokens — Portfolio System */
 
-  /* Base */
-  --background: #222222;
-  --foreground: #f8fafc;
+  /* Base — soft warm cream / peach page shell */
+  --background: #f6e4d8;
+  --foreground: #1a1a1a;
 
-  /* Surface */
-  --surface: #222222;
+  /* Surface — soft warm charcoal main panel */
+  --surface: #5c5652;
+  --surface-foreground: #f7f4f1;
 
-  /* Primary */
-  --primary: #ff5c34;
-  --primary-dark: #e64725;
-  --primary-foreground: #f8fafc;
+  /* Primary — muted coral-orange accent */
+  --primary: #e96a45;
+  --primary-dark: #d45735;
+  --primary-foreground: #ffffff;
 
-  /* Card */
-  --card: #444444;
-  --card-foreground: #f8fafc;
+  /* Card — clean white profile / floating chrome */
+  --card: #ffffff;
+  --card-foreground: #1a1a1a;
 
   /* Popover */
-  --popover: #444444;
-  --popover-foreground: #f8fafc;
+  --popover: #ffffff;
+  --popover-foreground: #1a1a1a;
 
   /* Secondary */
-  --secondary: #444444;
-  --secondary-foreground: #f8fafc;
+  --secondary: #f3e0d4;
+  --secondary-foreground: #1a1a1a;
 
   /* Muted */
-  --muted: #444444;
-  --muted-foreground: #94a3b8;
+  --muted: #f1ddd1;
+  --muted-foreground: #7a706a;
 
   /* Accent */
-  --accent: #e64725;
-  --accent-foreground: #f8fafc;
+  --accent: #e96a45;
+  --accent-foreground: #ffffff;
 
   /* Feedback */
-  --destructive: #ef4444;
+  --destructive: #dc5242;
 
   /* Controls */
-  --border: color-mix(in srgb, #f8fafc 12%, transparent);
-  --input: color-mix(in srgb, #f8fafc 15%, transparent);
-  --ring: #ff5c34;
+  --border: color-mix(in srgb, #1a1a1a 10%, transparent);
+  --input: color-mix(in srgb, #1a1a1a 12%, transparent);
+  --ring: #e96a45;
 
   /* Radius */
   --radius: 1rem;
 
   /* Charts */
-  --chart-1: #ff5c34;
-  --chart-2: #e64725;
-  --chart-3: #94a3b8;
+  --chart-1: #e96a45;
+  --chart-2: #d45735;
+  --chart-3: #7a706a;
   --chart-4: #222222;
-  --chart-5: #f8fafc;
+  --chart-5: #f6e4d8;
 
   /* Sidebar */
-  --sidebar: #444444;
-  --sidebar-foreground: #f8fafc;
-  --sidebar-primary: #ff5c34;
-  --sidebar-primary-foreground: #f8fafc;
-  --sidebar-accent: #222222;
-  --sidebar-accent-foreground: #f8fafc;
-  --sidebar-border: color-mix(in srgb, #f8fafc 12%, transparent);
-  --sidebar-ring: #ff5c34;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1a1a1a;
+  --sidebar-primary: #e96a45;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f3e0d4;
+  --sidebar-accent-foreground: #1a1a1a;
+  --sidebar-border: color-mix(in srgb, #1a1a1a 10%, transparent);
+  --sidebar-ring: #e96a45;
 }
 
 @layer base {
