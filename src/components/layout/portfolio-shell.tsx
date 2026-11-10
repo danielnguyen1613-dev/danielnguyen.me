@@ -1,6 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useState, type ReactNode } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
 import { SectionControls } from "@/components/layout/section-controls";
 import { SectionNavigation } from "@/components/layout/section-navigation";
 import { SectionViewport } from "@/components/layout/section-viewport";
@@ -39,6 +45,8 @@ export function PortfolioShell({
   // Hash is applied after mount in the effect below.
   const [activeSection, setActiveSection] =
     useState<SectionId>(initialSection);
+  const activeSectionRef = useRef(activeSection);
+  activeSectionRef.current = activeSection;
   const activeIndex = getSectionIndex(activeSection);
 
   const handleSelect = useCallback((id: SectionId) => {
@@ -47,19 +55,15 @@ export function PortfolioShell({
   }, []);
 
   const handlePrevious = useCallback(() => {
-    setActiveSection((current) => {
-      const next = getAdjacentSection(current, -1);
-      writeSectionHash(next);
-      return next;
-    });
+    const next = getAdjacentSection(activeSectionRef.current, -1);
+    setActiveSection(next);
+    writeSectionHash(next);
   }, []);
 
   const handleNext = useCallback(() => {
-    setActiveSection((current) => {
-      const next = getAdjacentSection(current, 1);
-      writeSectionHash(next);
-      return next;
-    });
+    const next = getAdjacentSection(activeSectionRef.current, 1);
+    setActiveSection(next);
+    writeSectionHash(next);
   }, []);
 
   useEffect(() => {
