@@ -1,9 +1,10 @@
-import { Hero } from "@/features/home/hero";
+import { PortfolioShell } from "@/components/layout/PortfolioShell";
 
 export default function HomePage() {
   return (
-    <main className="flex flex-1 flex-col">
-      <Hero />
-    </main>
+    <PortfolioShell>
+      {/* Section content (Home, About, Projects, …) will mount here later */}
+      <div className="min-h-[50vh] lg:min-h-full" />
+    </PortfolioShell>
   );
 }

@@ -42,12 +42,12 @@ Defined in `app/globals.css` from the portfolio system design:
 
 | Token | Value |
 | --- | --- |
-| Primary | `#1CB981` |
-| Primary Dark | `#059669` |
-| Background | `#0B1F1A` |
-| Surface | `#132E27` |
+| Primary | `#FF5C34` |
+| Primary Dark / Accent | `#E64725` |
+| Background / Surface | `#222222` |
+| Card / Secondary | `#444444` |
 | Text | `#F8FAFC` |
-| Muted | `#94A3B8` |
+| Muted text | `#94A3B8` |
 
 ## Animation rules
 

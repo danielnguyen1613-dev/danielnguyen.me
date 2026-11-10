@@ -33,8 +33,8 @@ export function useGsap(
     const reducedMotion = prefersReducedMotion();
     const defaults = getMotionDefaults();
 
-    const ctx = gsap.context(() => {
-      callback(ctx, { reducedMotion, defaults });
+    const ctx = gsap.context((self) => {
+      callback(self, { reducedMotion, defaults });
     }, scope);
 
     return () => ctx.revert();

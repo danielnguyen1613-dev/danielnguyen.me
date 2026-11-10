@@ -4,12 +4,23 @@
     "description": "Senior Frontend Developer based in Ho Chi Minh City. Building modern web experiences with React, Next.js, and TypeScript."
   },
   "Nav": {
+    "ariaLabel": "Section navigation",
     "home": "Home",
     "about": "About",
+    "experience": "Experience",
     "skills": "Skills",
     "projects": "Projects",
     "blog": "Blog",
     "contact": "Contact"
+  },
+  "Profile": {
+    "role": "Senior Frontend Developer",
+    "downloadCv": "Download CV",
+    "copyright": "© 2026 All rights reserved."
+  },
+  "Controls": {
+    "previous": "Previous section",
+    "next": "Next section"
   },
   "Home": {
     "headline": "Frontend Developer & Content Creator",

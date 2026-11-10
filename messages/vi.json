@@ -4,12 +4,23 @@
     "description": "Senior Frontend Developer tại TP. Hồ Chí Minh. Xây dựng trải nghiệm web hiện đại với React, Next.js và TypeScript."
   },
   "Nav": {
+    "ariaLabel": "Điều hướng các phần",
     "home": "Trang chủ",
     "about": "Giới thiệu",
+    "experience": "Kinh nghiệm",
     "skills": "Kỹ năng",
     "projects": "Dự án",
     "blog": "Blog",
     "contact": "Liên hệ"
+  },
+  "Profile": {
+    "role": "Senior Frontend Developer",
+    "downloadCv": "Tải CV",
+    "copyright": "© 2026 Bảo lưu mọi quyền."
+  },
+  "Controls": {
+    "previous": "Phần trước",
+    "next": "Phần tiếp theo"
   },
   "Home": {
     "headline": "Frontend Developer & Content Creator",
