@@ -122,31 +122,41 @@
   --sidebar-ring: #e96a45;
 
   /* Scrollbar */
-  --scrollbar-size: 5px;
+  --scrollbar-size: 8px;
+  --scrollbar-edge-inset: 10px;
+  --scrollbar-end-gap: 16px;
   --scrollbar-track: transparent;
   --scrollbar-thumb: color-mix(in srgb, var(--primary) 45%, #8a6a5c);
   --scrollbar-thumb-hover: color-mix(in srgb, var(--primary) 72%, #f0b39a);
 }
 
-/* Global scrollbar — outside @layer.
-   Keep scrollbar-color/width Firefox-only. In Chromium those
-   properties disable ::-webkit-scrollbar (including pixel width). */
+/* Global scrollbar — outside @layer so it isn't overridden.
+   scrollbar-width/color stay Firefox-only: in Chromium those
+   properties disable ::-webkit-scrollbar (including pixel width).
+   Edge inset: gutter is size + inset; transparent outer border keeps
+   the thumb off the far right/bottom edge.
+   End gaps: track margins inset ~16px from track start/end. */
 ::-webkit-scrollbar {
-  width: var(--scrollbar-size);
-  height: var(--scrollbar-size);
+  width: calc(var(--scrollbar-size) + var(--scrollbar-edge-inset));
+  height: calc(var(--scrollbar-size) + var(--scrollbar-edge-inset));
 }
 
 ::-webkit-scrollbar-track {
   background: var(--scrollbar-track);
+  margin-top: var(--scrollbar-end-gap);
+  margin-bottom: var(--scrollbar-end-gap);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--scrollbar-thumb);
+  background-color: var(--scrollbar-thumb);
+  background-clip: padding-box;
   border-radius: 9999px;
+  border-right: var(--scrollbar-edge-inset) solid transparent;
+  border-bottom: var(--scrollbar-edge-inset) solid transparent;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--scrollbar-thumb-hover);
+  background-color: var(--scrollbar-thumb-hover);
 }
 
 ::-webkit-scrollbar-button {

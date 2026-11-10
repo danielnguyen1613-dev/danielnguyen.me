@@ -5,10 +5,10 @@ import type { SectionId } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 
 const contentShellClassName =
-  "flex h-full min-h-0 flex-col py-5 pl-5 pr-1.5 sm:py-6 sm:pl-8 md:pl-8";
+  "flex h-full min-h-0 flex-col pl-10 pr-2.5 md:pl-12";
 
 const contentFrameClassName =
-  "min-h-0 max-h-full flex-1 overflow-x-hidden overflow-y-auto overscroll-y-contain pb-6 pr-6";
+  "min-h-0 max-h-full flex-1 overflow-x-hidden overflow-y-auto overscroll-y-contain pb-6 pr-8";
 
 type SectionViewportProps = {
   sectionId: SectionId;
