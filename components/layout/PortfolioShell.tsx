@@ -73,25 +73,25 @@ export function PortfolioShell({
         <HeroBackground />
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-dvh w-full max-w-[1600px] flex-col gap-3 px-4 py-4 pb-24 md:gap-4 md:px-8 md:py-6 lg:h-dvh lg:flex-row lg:gap-5 lg:px-16 lg:py-8 lg:pb-8 xl:gap-6 xl:px-32 xl:py-12">
+      <div className="relative z-10 mx-auto flex min-h-dvh w-full max-w-[1600px] flex-col gap-3 px-4 py-4 pb-24 md:gap-4 md:px-8 md:py-6 lg:h-dvh lg:flex-row lg:gap-5 lg:px-16 lg:py-8 lg:pb-8 xl:gap-4 xl:px-32 xl:py-12">
         <div className="lg:hidden">
           <ProfileSidebar compact />
         </div>
 
         <div
           data-shell="panels"
-          className="flex min-h-[70vh] min-w-0 flex-1 overflow-hidden rounded-3xl bg-card shadow-lg lg:h-full lg:min-h-0"
+          className="flex min-h-[70vh] min-w-0 flex-1 overflow-hidden rounded-xl bg-card shadow-lg lg:h-full lg:min-h-0"
         >
           {/* Connected: profile card (#444) | main surface (#222), radius clips with bg */}
-          <div className="hidden h-full w-[min(30%,360px)] min-w-[240px] shrink-0 overflow-hidden rounded-l-3xl bg-card lg:block">
+          <div className="hidden h-full w-[min(30%,360px)] min-w-[240px] shrink-0 overflow-hidden rounded-l-xl bg-card lg:block">
             <ProfileSidebar connected className="h-full w-full" />
           </div>
 
           <main
             data-shell="main"
-            className="min-h-0 min-w-0 flex-1 overflow-hidden rounded-3xl lg:rounded-l-none lg:rounded-r-3xl"
+            className="min-h-0 min-w-0 flex-1 overflow-hidden rounded-xl lg:rounded-l-none lg:rounded-r-xl"
           >
-            <div className="h-full overflow-y-auto overscroll-contain rounded-3xl bg-surface p-5 sm:p-6 md:p-8">
+            <div className="h-full overflow-y-auto overscroll-contain rounded-xl bg-surface p-5 sm:p-6 md:p-8 lg:rounded-r-xl">
               {children}
             </div>
           </main>

@@ -102,7 +102,7 @@ export function ProfileSidebar({
         "flex h-full flex-col bg-card p-6 xl:p-8",
         connected
           ? "rounded-none border-0 shadow-none"
-          : "rounded-3xl border border-border shadow-sm",
+          : "rounded-xl border border-border shadow-sm",
         className,
       )}
     >
