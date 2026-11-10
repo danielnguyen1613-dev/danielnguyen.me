@@ -121,11 +121,49 @@
   --sidebar-border: color-mix(in srgb, #1a1a1a 10%, transparent);
   --sidebar-ring: #e96a45;
 
-  /* Panel scrollbar */
-  --scrollbar-size: 3px;
+  /* Scrollbar */
+  --scrollbar-size: 5px;
   --scrollbar-track: transparent;
-  --scrollbar-thumb: color-mix(in srgb, var(--primary) 58%, #8a6a5c);
-  --scrollbar-thumb-hover: color-mix(in srgb, var(--primary) 82%, #f0b39a);
+  --scrollbar-thumb: color-mix(in srgb, var(--primary) 45%, #8a6a5c);
+  --scrollbar-thumb-hover: color-mix(in srgb, var(--primary) 72%, #f0b39a);
+}
+
+/* Global scrollbar — outside @layer.
+   Keep scrollbar-color/width Firefox-only. In Chromium those
+   properties disable ::-webkit-scrollbar (including pixel width). */
+::-webkit-scrollbar {
+  width: var(--scrollbar-size);
+  height: var(--scrollbar-size);
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+@supports (-moz-appearance: none) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+  }
 }
 
 @layer base {
@@ -154,47 +192,5 @@
     html:focus-within {
       scroll-behavior: auto;
     }
-  }
-}
-
-@layer utilities {
-  .panel-scroll {
-    height: auto;
-    max-height: 100%;
-    min-height: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
-    overscroll-behavior-y: contain;
-    scrollbar-width: thin;
-    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
-  }
-
-  .panel-scroll::-webkit-scrollbar {
-    width: var(--scrollbar-size);
-    height: var(--scrollbar-size);
-  }
-
-  .panel-scroll::-webkit-scrollbar-track {
-    background: var(--scrollbar-track);
-    border-radius: 999px;
-  }
-
-  .panel-scroll::-webkit-scrollbar-thumb {
-    background: var(--scrollbar-thumb);
-    border-radius: 999px;
-  }
-
-  .panel-scroll::-webkit-scrollbar-thumb:hover {
-    background: var(--scrollbar-thumb-hover);
-  }
-
-  .panel-scroll::-webkit-scrollbar-button {
-    display: none;
-    width: 0;
-    height: 0;
-  }
-
-  .panel-scroll::-webkit-scrollbar-corner {
-    background: transparent;
   }
 }
