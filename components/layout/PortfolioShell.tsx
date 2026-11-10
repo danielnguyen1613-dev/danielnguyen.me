@@ -1,27 +1,101 @@
 "use client";
 
-import { useRef, type ReactNode } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { ProfileSidebar } from "@/components/layout/ProfileSidebar";
 import { SectionControls } from "@/components/layout/SectionControls";
 import { SectionNavigation } from "@/components/layout/SectionNavigation";
+import { SectionContent } from "@/features/sections/section-content";
 import { HeroBackground } from "@/features/home/hero-background";
 import { useGsap } from "@/hooks/use-gsap";
 import { gsap } from "@/lib/gsap";
-import type { SectionId } from "@/lib/navigation";
+import {
+  getAdjacentSection,
+  getHashForSection,
+  getSectionIdFromHash,
+  getSectionIndex,
+  sectionNavItems,
+  type SectionId,
+} from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 
 type PortfolioShellProps = {
-  children: ReactNode;
-  activeSection?: SectionId;
+  initialSection?: SectionId;
   className?: string;
 };
 
+function readSectionFromLocation(fallback: SectionId): SectionId {
+  if (typeof window === "undefined") return fallback;
+  return getSectionIdFromHash(window.location.hash);
+}
+
+function writeSectionHash(id: SectionId) {
+  const nextHash = getHashForSection(id);
+  if (window.location.hash === nextHash) return;
+  window.history.pushState(null, "", nextHash);
+}
+
 export function PortfolioShell({
-  children,
-  activeSection = "home",
+  initialSection = "home",
   className,
 }: PortfolioShellProps) {
   const scopeRef = useRef<HTMLDivElement>(null);
+  const [activeSection, setActiveSection] = useState<SectionId>(() =>
+    readSectionFromLocation(initialSection),
+  );
+  const activeIndex = getSectionIndex(activeSection);
+
+  const goToSection = useCallback((id: SectionId, syncHash = true) => {
+    setActiveSection(id);
+    if (syncHash) writeSectionHash(id);
+  }, []);
+
+  const handleSelect = useCallback(
+    (id: SectionId) => {
+      goToSection(id);
+    },
+    [goToSection],
+  );
+
+  const handlePrevious = useCallback(() => {
+    setActiveSection((current) => {
+      const next = getAdjacentSection(current, -1);
+      writeSectionHash(next);
+      return next;
+    });
+  }, []);
+
+  const handleNext = useCallback(() => {
+    setActiveSection((current) => {
+      const next = getAdjacentSection(current, 1);
+      writeSectionHash(next);
+      return next;
+    });
+  }, []);
+
+  // Keep the selected section in sync with the URL hash (refresh / back / forward).
+  useEffect(() => {
+    const syncFromHash = () => {
+      const fromHash = getSectionIdFromHash(window.location.hash);
+      setActiveSection((current) =>
+        current === fromHash ? current : fromHash,
+      );
+    };
+
+    // Ensure first paint hash exists (e.g. bare `/` → `#home`).
+    if (!window.location.hash) {
+      window.history.replaceState(null, "", getHashForSection(activeSection));
+    } else {
+      syncFromHash();
+    }
+
+    window.addEventListener("hashchange", syncFromHash);
+    window.addEventListener("popstate", syncFromHash);
+    return () => {
+      window.removeEventListener("hashchange", syncFromHash);
+      window.removeEventListener("popstate", syncFromHash);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- mount-only hash bootstrap
+  }, []);
 
   useGsap(
     scopeRef,
@@ -30,7 +104,7 @@ export function PortfolioShell({
       if (!root) return;
 
       const mobileProfile = root.querySelectorAll<HTMLElement>(
-        ".lg\\:hidden [data-shell=\"profile\"]",
+        '.lg\\:hidden [data-shell="profile"]',
       );
       const panels = root.querySelectorAll<HTMLElement>('[data-shell="panels"]');
       const nav = root.querySelectorAll<HTMLElement>('[data-shell="nav"]');
@@ -91,10 +165,13 @@ export function PortfolioShell({
 
             <main
               data-shell="main"
-              className="min-h-0 min-w-0 flex-1 overflow-hidden rounded-xl lg:rounded-l-none lg:rounded-r-xl"
+              className="flex min-h-0 min-w-0 flex-1 flex-col rounded-xl lg:rounded-l-none lg:rounded-r-xl"
             >
-              <div className="h-full overflow-y-auto overscroll-contain rounded-xl bg-surface p-5 text-surface-foreground sm:p-6 md:p-8 lg:rounded-r-xl">
-                {children}
+              <div className="relative h-full min-h-0 flex-1 rounded-xl bg-surface text-surface-foreground lg:rounded-r-xl">
+                <SectionContent
+                  activeSection={activeSection}
+                  onNavigate={handleSelect}
+                />
               </div>
             </main>
           </div>
@@ -102,8 +179,16 @@ export function PortfolioShell({
           {/* Anchored just outside the main panel — no layout space */}
           <div className="pointer-events-none absolute inset-y-0 left-full ml-3 hidden lg:flex">
             <div className="pointer-events-auto flex h-full flex-col items-center justify-between">
-              <SectionNavigation activeId={activeSection} />
-              <SectionControls />
+              <SectionNavigation
+                activeId={activeSection}
+                onSelect={handleSelect}
+              />
+              <SectionControls
+                onPrevious={handlePrevious}
+                onNext={handleNext}
+                canPrevious={activeIndex > 0}
+                canNext={activeIndex < sectionNavItems.length - 1}
+              />
             </div>
           </div>
         </div>
@@ -114,6 +199,7 @@ export function PortfolioShell({
           activeId={activeSection}
           orientation="horizontal"
           className="mx-auto max-w-lg"
+          onSelect={handleSelect}
         />
       </div>
     </div>

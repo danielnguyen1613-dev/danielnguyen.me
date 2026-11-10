@@ -11,28 +11,64 @@ import {
 export type SectionId =
   | "home"
   | "about"
+  | "education"
   | "experience"
-  | "projects"
   | "blog"
   | "contact";
 
 export type NavItem = {
   id: SectionId;
-  href: string;
   labelKey: SectionId;
   icon: LucideIcon;
 };
 
 export const sectionNavItems: NavItem[] = [
-  { id: "home", href: "#home", labelKey: "home", icon: Home },
-  { id: "about", href: "#about", labelKey: "about", icon: User },
-  {
-    id: "experience",
-    href: "#experience",
-    labelKey: "experience",
-    icon: GraduationCap,
-  },
-  { id: "projects", href: "#projects", labelKey: "projects", icon: Briefcase },
-  { id: "blog", href: "#blog", labelKey: "blog", icon: BookOpen },
-  { id: "contact", href: "#contact", labelKey: "contact", icon: Mail },
+  { id: "home", labelKey: "home", icon: Home },
+  { id: "about", labelKey: "about", icon: User },
+  { id: "education", labelKey: "education", icon: GraduationCap },
+  { id: "experience", labelKey: "experience", icon: Briefcase },
+  { id: "blog", labelKey: "blog", icon: BookOpen },
+  { id: "contact", labelKey: "contact", icon: Mail },
 ];
+
+/** URL hashes — BreezyCV-style (`#about-me`, …). */
+export const sectionHashById: Record<SectionId, string> = {
+  home: "home",
+  about: "about-me",
+  education: "education",
+  experience: "experience",
+  blog: "blog",
+  contact: "contact",
+};
+
+const sectionIdByHash = Object.fromEntries(
+  Object.entries(sectionHashById).map(([id, hash]) => [hash, id]),
+) as Record<string, SectionId>;
+
+export function getHashForSection(id: SectionId) {
+  return `#${sectionHashById[id]}`;
+}
+
+export function getSectionIdFromHash(hash: string): SectionId {
+  const raw = hash.replace(/^#/, "").trim().toLowerCase();
+  if (!raw) return "home";
+  // Accept both `#about-me` and `#about`.
+  if (raw === "about") return "about";
+  return sectionIdByHash[raw] ?? "home";
+}
+
+export function getSectionIndex(id: SectionId) {
+  return sectionNavItems.findIndex((item) => item.id === id);
+}
+
+export function getAdjacentSection(
+  id: SectionId,
+  direction: -1 | 1,
+): SectionId {
+  const index = getSectionIndex(id);
+  const nextIndex = Math.min(
+    sectionNavItems.length - 1,
+    Math.max(0, index + direction),
+  );
+  return sectionNavItems[nextIndex]?.id ?? id;
+}

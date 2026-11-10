@@ -8,12 +8,16 @@ type SectionControlsProps = {
   className?: string;
   onPrevious?: () => void;
   onNext?: () => void;
+  canPrevious?: boolean;
+  canNext?: boolean;
 };
 
 export function SectionControls({
   className,
   onPrevious,
   onNext,
+  canPrevious = true,
+  canNext = true,
 }: SectionControlsProps) {
   const t = useTranslations("Controls");
 
@@ -29,7 +33,8 @@ export function SectionControls({
         type="button"
         aria-label={t("previous")}
         onClick={onPrevious}
-        className="inline-flex size-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
+        disabled={!canPrevious}
+        className="inline-flex size-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-40"
       >
         <ChevronUp className="size-10 -rotate-90" strokeWidth={1} />
       </button>
@@ -37,7 +42,8 @@ export function SectionControls({
         type="button"
         aria-label={t("next")}
         onClick={onNext}
-        className="inline-flex size-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
+        disabled={!canNext}
+        className="inline-flex size-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-40"
       >
         <ChevronDown className="size-10 -rotate-90" strokeWidth={1} />
       </button>

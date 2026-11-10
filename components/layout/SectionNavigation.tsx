@@ -8,12 +8,14 @@ type SectionNavigationProps = {
   activeId?: SectionId;
   orientation?: "vertical" | "horizontal";
   className?: string;
+  onSelect?: (id: SectionId) => void;
 };
 
 export function SectionNavigation({
   activeId = "home",
   orientation = "vertical",
   className,
+  onSelect,
 }: SectionNavigationProps) {
   const t = useTranslations("Nav");
   const isVertical = orientation === "vertical";
@@ -30,24 +32,25 @@ export function SectionNavigation({
         className,
       )}
     >
-      {sectionNavItems.map(({ id, href, labelKey, icon: Icon }) => {
+      {sectionNavItems.map(({ id, labelKey, icon: Icon }) => {
         const isActive = id === activeId;
 
         return (
-          <a
+          <button
             key={id}
-            href={href}
+            type="button"
             aria-label={t(labelKey)}
             aria-current={isActive ? "page" : undefined}
+            onClick={() => onSelect?.(id)}
             className={cn(
-              "inline-flex size-8 items-center justify-center rounded-full transition-colors",
+              "inline-flex size-8 items-center justify-center rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
               isActive
                 ? "bg-primary/15 text-primary"
                 : "text-muted-foreground hover:bg-muted hover:text-foreground",
             )}
           >
             <Icon className="size-5" strokeWidth={isActive ? 2 : 1.5} />
-          </a>
+          </button>
         );
       })}
     </nav>

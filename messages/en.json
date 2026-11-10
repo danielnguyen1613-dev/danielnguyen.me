@@ -7,9 +7,8 @@
     "ariaLabel": "Section navigation",
     "home": "Home",
     "about": "About",
+    "education": "Education",
     "experience": "Experience",
-    "skills": "Skills",
-    "projects": "Projects",
     "blog": "Blog",
     "contact": "Contact"
   },
@@ -26,7 +25,7 @@
     "headline": "Frontend Developer & Content Creator",
     "bio": "I build polished, performant web products and share what I learn along the way.",
     "watchYoutube": "Watch My YouTube",
-    "viewProjects": "View Projects",
+    "viewProjects": "View Experience",
     "downloadCv": "Download CV",
     "role": "Senior Frontend Developer",
     "location": "Ho Chi Minh City",
@@ -36,5 +35,133 @@
       "creator": "Content Creator",
       "plants": "Plant Lover"
     }
+  },
+  "About": {
+    "eyebrow": "About",
+    "title": "A bit about me",
+    "intro": "I am a Senior Frontend Developer focused on craft, clarity, and products that feel intentional.",
+    "profileTitle": "Profile",
+    "profileBody": "Based in Ho Chi Minh City, I design and build modern web interfaces with React, Next.js, and TypeScript. I care about performance, accessibility, and thoughtful motion.",
+    "summaryTitle": "Experience summary",
+    "highlights": [
+      "6+ years shipping production frontend systems",
+      "Strong focus on design systems and reusable UI",
+      "Comfortable collaborating across product, design, and backend",
+      "Regularly share learnings through content and mentoring"
+    ],
+    "skillsTitle": "Skills",
+    "skills": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "GSAP",
+      "Node.js",
+      "FastAPI",
+      "Design Systems",
+      "Performance",
+      "Accessibility"
+    ]
+  },
+  "Education": {
+    "eyebrow": "Education",
+    "title": "Education & certifications",
+    "intro": "Formal study and continuous learning that shape how I build software.",
+    "schoolsTitle": "Education",
+    "schools": [
+      {
+        "school": "University of Information Technology",
+        "degree": "B.Sc. in Software Engineering",
+        "period": "2014 — 2018",
+        "detail": "Focused on web engineering, algorithms, and human-computer interaction."
+      }
+    ],
+    "certificatesTitle": "Certifications",
+    "certificates": [
+      {
+        "name": "Meta Front-End Developer",
+        "issuer": "Coursera",
+        "year": "2023"
+      },
+      {
+        "name": "AWS Cloud Practitioner",
+        "issuer": "Amazon Web Services",
+        "year": "2022"
+      }
+    ]
+  },
+  "Experience": {
+    "eyebrow": "Experience",
+    "title": "Work & projects",
+    "intro": "Selected roles and product work across startups and product teams.",
+    "jobsTitle": "Work experience",
+    "jobs": [
+      {
+        "company": "Product Studio",
+        "role": "Senior Frontend Developer",
+        "period": "2022 — Present",
+        "summary": "Lead UI architecture for multi-tenant web apps, improve performance budgets, and mentor frontend engineers."
+      },
+      {
+        "company": "Digital Agency",
+        "role": "Frontend Developer",
+        "period": "2019 — 2022",
+        "summary": "Delivered marketing sites and dashboards with React and Next.js for regional clients."
+      }
+    ],
+    "projectsTitle": "Projects",
+    "projects": [
+      {
+        "name": "Portfolio Design System",
+        "stack": "Next.js · Tailwind · GSAP",
+        "summary": "A reusable component system and motion language for personal and client portfolios."
+      },
+      {
+        "name": "Creator Analytics Dashboard",
+        "stack": "React · TypeScript · Charts",
+        "summary": "Interactive analytics UI helping creators understand growth and content performance."
+      }
+    ]
+  },
+  "Blog": {
+    "eyebrow": "Blog",
+    "title": "Notes & articles",
+    "intro": "Writing about frontend craft, product thinking, and lessons from shipping.",
+    "posts": [
+      {
+        "title": "Designing calm interfaces with motion",
+        "date": "Mar 2026",
+        "tag": "UI",
+        "excerpt": "How subtle transitions can guide attention without competing with content."
+      },
+      {
+        "title": "Building resilient Next.js portfolios",
+        "date": "Jan 2026",
+        "tag": "Engineering",
+        "excerpt": "Patterns for section-based layouts, i18n, and maintainable design tokens."
+      },
+      {
+        "title": "From components to systems",
+        "date": "Nov 2025",
+        "tag": "Design Systems",
+        "excerpt": "Turning one-off UI into a coherent language teams can scale."
+      }
+    ]
+  },
+  "Contact": {
+    "eyebrow": "Contact",
+    "title": "Let's work together",
+    "intro": "Open to collaborations, speaking, and thoughtful product opportunities.",
+    "emailLabel": "Email",
+    "locationLabel": "Location",
+    "location": "Ho Chi Minh City, Vietnam",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailFieldLabel": "Email",
+    "emailPlaceholder": "you@example.com",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell me a little about your project...",
+    "submit": "Send message",
+    "success": "Thanks — I'll get back to you soon."
   }
 }

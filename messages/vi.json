@@ -7,9 +7,8 @@
     "ariaLabel": "Điều hướng các phần",
     "home": "Trang chủ",
     "about": "Giới thiệu",
+    "education": "Học vấn",
     "experience": "Kinh nghiệm",
-    "skills": "Kỹ năng",
-    "projects": "Dự án",
     "blog": "Blog",
     "contact": "Liên hệ"
   },
@@ -26,7 +25,7 @@
     "headline": "Frontend Developer & Content Creator",
     "bio": "Tôi xây dựng sản phẩm web chỉn chu, hiệu năng cao và chia sẻ những gì học được trên hành trình đó.",
     "watchYoutube": "Xem YouTube của tôi",
-    "viewProjects": "Xem dự án",
+    "viewProjects": "Xem kinh nghiệm",
     "downloadCv": "Tải CV",
     "role": "Senior Frontend Developer",
     "location": "TP. Hồ Chí Minh",
@@ -36,5 +35,133 @@
       "creator": "Content Creator",
       "plants": "Yêu cây cảnh"
     }
+  },
+  "About": {
+    "eyebrow": "Giới thiệu",
+    "title": "Vài nét về tôi",
+    "intro": "Tôi là Senior Frontend Developer chú trọng vào sự tinh tế, rõ ràng và những sản phẩm mang cảm giác chủ đích.",
+    "profileTitle": "Hồ sơ",
+    "profileBody": "Làm việc tại TP. Hồ Chí Minh, tôi thiết kế và xây dựng giao diện web hiện đại với React, Next.js và TypeScript. Tôi quan tâm đến hiệu năng, khả năng tiếp cận và chuyển động tinh tế.",
+    "summaryTitle": "Tóm tắt kinh nghiệm",
+    "highlights": [
+      "Hơn 6 năm triển khai hệ thống frontend production",
+      "Tập trung vào design system và UI tái sử dụng",
+      "Hợp tác tốt với product, design và backend",
+      "Thường xuyên chia sẻ kiến thức qua nội dung và mentoring"
+    ],
+    "skillsTitle": "Kỹ năng",
+    "skills": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "GSAP",
+      "Node.js",
+      "FastAPI",
+      "Design Systems",
+      "Performance",
+      "Accessibility"
+    ]
+  },
+  "Education": {
+    "eyebrow": "Học vấn",
+    "title": "Học vấn & chứng chỉ",
+    "intro": "Nền tảng học thuật và việc học liên tục định hình cách tôi xây dựng phần mềm.",
+    "schoolsTitle": "Học vấn",
+    "schools": [
+      {
+        "school": "Đại học Công nghệ Thông tin",
+        "degree": "Cử nhân Kỹ thuật Phần mềm",
+        "period": "2014 — 2018",
+        "detail": "Tập trung vào kỹ thuật web, thuật toán và tương tác người-máy."
+      }
+    ],
+    "certificatesTitle": "Chứng chỉ",
+    "certificates": [
+      {
+        "name": "Meta Front-End Developer",
+        "issuer": "Coursera",
+        "year": "2023"
+      },
+      {
+        "name": "AWS Cloud Practitioner",
+        "issuer": "Amazon Web Services",
+        "year": "2022"
+      }
+    ]
+  },
+  "Experience": {
+    "eyebrow": "Kinh nghiệm",
+    "title": "Công việc & dự án",
+    "intro": "Một số vai trò và sản phẩm đã làm việc cùng startup cũng như team sản phẩm.",
+    "jobsTitle": "Kinh nghiệm làm việc",
+    "jobs": [
+      {
+        "company": "Product Studio",
+        "role": "Senior Frontend Developer",
+        "period": "2022 — Hiện tại",
+        "summary": "Dẫn dắt kiến trúc UI cho ứng dụng multi-tenant, cải thiện ngân sách hiệu năng và mentoring kỹ sư frontend."
+      },
+      {
+        "company": "Digital Agency",
+        "role": "Frontend Developer",
+        "period": "2019 — 2022",
+        "summary": "Triển khai website marketing và dashboard với React, Next.js cho các khách hàng khu vực."
+      }
+    ],
+    "projectsTitle": "Dự án",
+    "projects": [
+      {
+        "name": "Portfolio Design System",
+        "stack": "Next.js · Tailwind · GSAP",
+        "summary": "Hệ thống component và ngôn ngữ chuyển động tái sử dụng cho portfolio cá nhân và khách hàng."
+      },
+      {
+        "name": "Creator Analytics Dashboard",
+        "stack": "React · TypeScript · Charts",
+        "summary": "Giao diện phân tích giúp creator hiểu tăng trưởng và hiệu quả nội dung."
+      }
+    ]
+  },
+  "Blog": {
+    "eyebrow": "Blog",
+    "title": "Ghi chú & bài viết",
+    "intro": "Viết về frontend, tư duy sản phẩm và những bài học khi ship.",
+    "posts": [
+      {
+        "title": "Thiết kế giao diện bình tĩnh bằng chuyển động",
+        "date": "Th3 2026",
+        "tag": "UI",
+        "excerpt": "Cách dùng transition tinh tế để dẫn dắt chú ý mà không át nội dung."
+      },
+      {
+        "title": "Xây portfolio Next.js bền vững",
+        "date": "Th1 2026",
+        "tag": "Engineering",
+        "excerpt": "Các pattern cho layout theo section, i18n và design token dễ bảo trì."
+      },
+      {
+        "title": "Từ component đến hệ thống",
+        "date": "Th11 2025",
+        "tag": "Design Systems",
+        "excerpt": "Biến UI rời rạc thành ngôn ngữ nhất quán để team mở rộng."
+      }
+    ]
+  },
+  "Contact": {
+    "eyebrow": "Liên hệ",
+    "title": "Cùng hợp tác",
+    "intro": "Mở với các cơ hội hợp tác, speaking và sản phẩm có chiều sâu.",
+    "emailLabel": "Email",
+    "locationLabel": "Địa điểm",
+    "location": "TP. Hồ Chí Minh, Việt Nam",
+    "nameLabel": "Họ tên",
+    "namePlaceholder": "Tên của bạn",
+    "emailFieldLabel": "Email",
+    "emailPlaceholder": "ban@example.com",
+    "messageLabel": "Tin nhắn",
+    "messagePlaceholder": "Chia sẻ đôi chút về dự án của bạn...",
+    "submit": "Gửi tin nhắn",
+    "success": "Cảm ơn — mình sẽ phản hồi sớm."
   }
 }
