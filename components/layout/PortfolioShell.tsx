@@ -1,11 +1,11 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { HeroBackground } from "@/components/layout/HeroBackground";
 import { ProfileSidebar } from "@/components/layout/ProfileSidebar";
 import { SectionControls } from "@/components/layout/SectionControls";
 import { SectionNavigation } from "@/components/layout/SectionNavigation";
 import { SectionContent } from "@/features/sections/section-content";
-import { HeroBackground } from "@/features/home/hero-background";
 import { useGsap } from "@/hooks/use-gsap";
 import { gsap } from "@/lib/gsap";
 import {
@@ -13,26 +13,18 @@ import {
   getHashForSection,
   getSectionIdFromHash,
   getSectionIndex,
+  readSectionFromLocation,
   sectionNavItems,
+  writeSectionHash,
   type SectionId,
 } from "@/lib/navigation";
+import { pageBackgroundGradient } from "@/lib/theme";
 import { cn } from "@/lib/utils";
 
 type PortfolioShellProps = {
   initialSection?: SectionId;
   className?: string;
 };
-
-function readSectionFromLocation(fallback: SectionId): SectionId {
-  if (typeof window === "undefined") return fallback;
-  return getSectionIdFromHash(window.location.hash);
-}
-
-function writeSectionHash(id: SectionId) {
-  const nextHash = getHashForSection(id);
-  if (window.location.hash === nextHash) return;
-  window.history.pushState(null, "", nextHash);
-}
 
 export function PortfolioShell({
   initialSection = "home",
@@ -44,17 +36,10 @@ export function PortfolioShell({
   );
   const activeIndex = getSectionIndex(activeSection);
 
-  const goToSection = useCallback((id: SectionId, syncHash = true) => {
+  const handleSelect = useCallback((id: SectionId) => {
     setActiveSection(id);
-    if (syncHash) writeSectionHash(id);
+    writeSectionHash(id);
   }, []);
-
-  const handleSelect = useCallback(
-    (id: SectionId) => {
-      goToSection(id);
-    },
-    [goToSection],
-  );
 
   const handlePrevious = useCallback(() => {
     setActiveSection((current) => {
@@ -140,10 +125,7 @@ export function PortfolioShell({
       <div
         aria-hidden
         className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
-        style={{
-          background:
-            "linear-gradient(165deg, #f8ebe3 0%, #f4d9cb 52%, #efcbb8 100%)",
-        }}
+        style={{ background: pageBackgroundGradient }}
       >
         <HeroBackground />
       </div>

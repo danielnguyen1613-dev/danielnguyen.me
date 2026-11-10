@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { SectionHeader } from "@/features/sections/section-header";
 import { siteConfig } from "@/lib/site";
 
 export function AboutSection() {
@@ -10,17 +11,7 @@ export function AboutSection() {
 
   return (
     <section className="flex flex-col gap-10 py-2">
-      <header className="space-y-3">
-        <p className="text-sm font-medium tracking-wide text-primary">
-          {t("eyebrow")}
-        </p>
-        <h2 className="font-heading text-3xl font-bold tracking-tight text-surface-foreground sm:text-4xl">
-          {t("title")}
-        </h2>
-        <p className="max-w-2xl text-base leading-relaxed text-surface-foreground/65">
-          {t("intro")}
-        </p>
-      </header>
+      <SectionHeader eyebrow={t("eyebrow")} title={t("title")} intro={t("intro")} />
 
       <div className="grid gap-8 md:grid-cols-2">
         <div className="space-y-3">

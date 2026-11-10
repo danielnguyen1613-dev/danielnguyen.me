@@ -3,7 +3,16 @@
 import { useState, type FormEvent } from "react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
+import { SectionHeader } from "@/features/sections/section-header";
 import { siteConfig } from "@/lib/site";
+
+const fieldClassName =
+  "h-11 w-full rounded-lg border border-white/12 bg-transparent px-3 text-sm text-surface-foreground outline-none transition-colors placeholder:text-surface-foreground/35 focus:border-primary/50";
+
+const textareaClassName =
+  "w-full resize-y rounded-lg border border-white/12 bg-transparent px-3 py-2.5 text-sm text-surface-foreground outline-none transition-colors placeholder:text-surface-foreground/35 focus:border-primary/50";
+
+const labelClassName = "text-sm text-surface-foreground/70";
 
 export function ContactSection() {
   const t = useTranslations("Contact");
@@ -16,17 +25,7 @@ export function ContactSection() {
 
   return (
     <section className="flex flex-col gap-10 py-2">
-      <header className="space-y-3">
-        <p className="text-sm font-medium tracking-wide text-primary">
-          {t("eyebrow")}
-        </p>
-        <h2 className="font-heading text-3xl font-bold tracking-tight text-surface-foreground sm:text-4xl">
-          {t("title")}
-        </h2>
-        <p className="max-w-2xl text-base leading-relaxed text-surface-foreground/65">
-          {t("intro")}
-        </p>
-      </header>
+      <SectionHeader eyebrow={t("eyebrow")} title={t("title")} intro={t("intro")} />
 
       <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
         <div className="space-y-4 text-sm">
@@ -73,10 +72,7 @@ export function ContactSection() {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-1.5">
-            <label
-              htmlFor="contact-name"
-              className="text-sm text-surface-foreground/70"
-            >
+            <label htmlFor="contact-name" className={labelClassName}>
               {t("nameLabel")}
             </label>
             <input
@@ -84,15 +80,12 @@ export function ContactSection() {
               name="name"
               required
               autoComplete="name"
-              className="h-11 w-full rounded-lg border border-white/12 bg-transparent px-3 text-sm text-surface-foreground outline-none transition-colors placeholder:text-surface-foreground/35 focus:border-primary/50"
+              className={fieldClassName}
               placeholder={t("namePlaceholder")}
             />
           </div>
           <div className="space-y-1.5">
-            <label
-              htmlFor="contact-email"
-              className="text-sm text-surface-foreground/70"
-            >
+            <label htmlFor="contact-email" className={labelClassName}>
               {t("emailFieldLabel")}
             </label>
             <input
@@ -101,15 +94,12 @@ export function ContactSection() {
               type="email"
               required
               autoComplete="email"
-              className="h-11 w-full rounded-lg border border-white/12 bg-transparent px-3 text-sm text-surface-foreground outline-none transition-colors placeholder:text-surface-foreground/35 focus:border-primary/50"
+              className={fieldClassName}
               placeholder={t("emailPlaceholder")}
             />
           </div>
           <div className="space-y-1.5">
-            <label
-              htmlFor="contact-message"
-              className="text-sm text-surface-foreground/70"
-            >
+            <label htmlFor="contact-message" className={labelClassName}>
               {t("messageLabel")}
             </label>
             <textarea
@@ -117,7 +107,7 @@ export function ContactSection() {
               name="message"
               required
               rows={5}
-              className="w-full resize-y rounded-lg border border-white/12 bg-transparent px-3 py-2.5 text-sm text-surface-foreground outline-none transition-colors placeholder:text-surface-foreground/35 focus:border-primary/50"
+              className={textareaClassName}
               placeholder={t("messagePlaceholder")}
             />
           </div>

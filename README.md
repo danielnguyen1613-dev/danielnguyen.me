@@ -9,7 +9,7 @@ Personal portfolio for Nguyen Hoang Viet — Frontend Developer & Content Creato
 - TypeScript
 - Tailwind CSS v4
 - shadcn/ui
-- GSAP + ScrollTrigger
+- GSAP
 - Lucide React
 - next-intl (`en` / `vi`)
 
@@ -27,27 +27,26 @@ Open [http://localhost:3000](http://localhost:3000).
 ```
 app/            # App Router pages & global styles
 components/     # Shared UI (shadcn in ui/, layout shells in layout/)
-features/       # Domain sections (home, about, projects, blog, …)
-content/        # MDX / JSON content (blog, projects)
+features/       # Domain sections (home, about, experience, blog, …)
 hooks/          # React hooks (useGsap, …)
 i18n/           # next-intl request config
-lib/            # Utilities, GSAP helpers, site config
+lib/            # Utilities, GSAP helpers, site config, navigation
 messages/       # Translation dictionaries (en, vi)
 public/         # Static assets
 ```
 
 ## Design tokens
 
-Defined in `app/globals.css` from the portfolio system design:
+Defined in `app/globals.css`:
 
 | Token | Value |
 | --- | --- |
-| Primary | `#FF5C34` |
-| Primary Dark / Accent | `#E64725` |
-| Background / Surface | `#222222` |
-| Card / Secondary | `#444444` |
-| Text | `#F8FAFC` |
-| Muted text | `#94A3B8` |
+| Primary | `#E96A45` |
+| Primary Dark | `#D45735` |
+| Background | `#F6E4D8` |
+| Surface | `#403C3A` |
+| Card | `#FFFFFF` |
+| Foreground | `#1A1A1A` |
 
 ## Animation rules
 

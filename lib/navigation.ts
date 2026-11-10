@@ -57,6 +57,18 @@ export function getSectionIdFromHash(hash: string): SectionId {
   return sectionIdByHash[raw] ?? "home";
 }
 
+export function readSectionFromLocation(fallback: SectionId = "home"): SectionId {
+  if (typeof window === "undefined") return fallback;
+  return getSectionIdFromHash(window.location.hash);
+}
+
+export function writeSectionHash(id: SectionId) {
+  if (typeof window === "undefined") return;
+  const nextHash = getHashForSection(id);
+  if (window.location.hash === nextHash) return;
+  window.history.pushState(null, "", nextHash);
+}
+
 export function getSectionIndex(id: SectionId) {
   return sectionNavItems.findIndex((item) => item.id === id);
 }

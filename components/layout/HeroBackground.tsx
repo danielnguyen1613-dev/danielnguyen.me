@@ -15,7 +15,7 @@ type HeroBackgroundProps = {
 };
 
 export function HeroBackground({
-  src = "/images/main_bg.png?v=de8e60",
+  src = "/images/main_bg.png",
   className,
 }: HeroBackgroundProps) {
   const scopeRef = useRef<HTMLDivElement>(null);

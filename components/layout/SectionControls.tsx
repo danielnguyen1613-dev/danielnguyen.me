@@ -4,6 +4,9 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 
+const controlButtonClassName =
+  "inline-flex size-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-40";
+
 type SectionControlsProps = {
   className?: string;
   onPrevious?: () => void;
@@ -34,7 +37,7 @@ export function SectionControls({
         aria-label={t("previous")}
         onClick={onPrevious}
         disabled={!canPrevious}
-        className="inline-flex size-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-40"
+        className={controlButtonClassName}
       >
         <ChevronUp className="size-10 -rotate-90" strokeWidth={1} />
       </button>
@@ -43,7 +46,7 @@ export function SectionControls({
         aria-label={t("next")}
         onClick={onNext}
         disabled={!canNext}
-        className="inline-flex size-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-40"
+        className={controlButtonClassName}
       >
         <ChevronDown className="size-10 -rotate-90" strokeWidth={1} />
       </button>

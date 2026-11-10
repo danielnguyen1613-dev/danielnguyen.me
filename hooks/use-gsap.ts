@@ -5,7 +5,6 @@ import {
   gsap,
   getMotionDefaults,
   prefersReducedMotion,
-  registerGsapPlugins,
 } from "@/lib/gsap";
 
 type GsapContextCallback = (
@@ -27,8 +26,6 @@ export function useGsap(
 ) {
   useLayoutEffect(() => {
     if (!scope.current) return;
-
-    registerGsapPlugins();
 
     const reducedMotion = prefersReducedMotion();
     const defaults = getMotionDefaults();

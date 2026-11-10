@@ -6,13 +6,11 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { gsap, prefersReducedMotion, registerGsapPlugins } from "@/lib/gsap";
+import { gsap, prefersReducedMotion } from "@/lib/gsap";
 import { getSectionIndex, type SectionId } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 
-/** ~620ms — within the 500–700ms premium page-transition range. */
 const DURATION = 0.62;
-/** Smooth ease-in-out, no bounce. */
 const EASE = "power2.inOut";
 const SLIDE_PERCENT = 100;
 const SCALE_SUBTLE = 0.985;
@@ -54,10 +52,8 @@ export function SectionViewport({
 
   useLayoutEffect(() => {
     reduceMotionRef.current = prefersReducedMotion();
-    registerGsapPlugins();
   }, []);
 
-  // After a transition commits, reveal the persistent layer (already holding new content).
   useLayoutEffect(() => {
     if (incomingId !== null) return;
 
@@ -74,11 +70,9 @@ export function SectionViewport({
     });
   }, [currentId, incomingId]);
 
-  // Request a panel transition whenever the active section changes.
   useLayoutEffect(() => {
     if (sectionId === currentId) return;
 
-    // Keep the latest target while a transition is in flight.
     if (animatingRef.current || incomingId !== null) {
       return;
     }
@@ -95,7 +89,6 @@ export function SectionViewport({
     setIncomingId(sectionId);
   }, [sectionId, currentId, incomingId]);
 
-  // Run the dual-panel slide once the incoming layer is mounted.
   useLayoutEffect(() => {
     if (!incomingId) return;
 
@@ -116,7 +109,6 @@ export function SectionViewport({
       autoAlpha: 1,
       zIndex: 1,
     });
-    // Hide before first paint contribution from this layer is visible.
     gsap.set(nextEl, {
       xPercent: xIn,
       scale: SCALE_SUBTLE,
@@ -124,7 +116,6 @@ export function SectionViewport({
       zIndex: 2,
     });
 
-    // Always enter the next section from the top.
     resetScroll(nextEl);
 
     const tl = gsap.timeline({
@@ -134,8 +125,6 @@ export function SectionViewport({
         indexRef.current = getSectionIndex(finishedId);
         animatingRef.current = false;
 
-        // Keep the incoming page visible on top. Hide the outgoing shell so the
-        // content swap into the persistent layer cannot flash the previous section.
         gsap.set(nextEl, {
           xPercent: 0,
           scale: 1,
@@ -183,7 +172,6 @@ export function SectionViewport({
       data-section-viewport
       className={cn("relative h-full min-h-0 overflow-hidden", className)}
     >
-      {/* Outer shell: transition transforms only */}
       <div
         ref={currentLayerRef}
         data-section={currentId}
