@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { SectionHeader } from "@/features/sections/section-header";
+import { SectionHeader } from "@/components/sections/section-header";
 
 type EducationItem = {
   school: string;

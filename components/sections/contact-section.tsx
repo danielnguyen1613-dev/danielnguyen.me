@@ -3,7 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
-import { SectionHeader } from "@/features/sections/section-header";
+import { SectionHeader } from "@/components/sections/section-header";
 import { siteConfig } from "@/lib/site";
 
 const fieldClassName =

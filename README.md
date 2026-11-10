@@ -26,11 +26,10 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ```
 app/            # App Router pages & global styles
-components/     # Shared UI (shadcn in ui/, layout shells in layout/)
-features/       # Domain sections (home, about, experience, blog, …)
+components/     # UI (ui/), portfolio shell, sections
 hooks/          # React hooks (useGsap, …)
 i18n/           # next-intl request config
-lib/            # Utilities, GSAP helpers, site config, navigation
+lib/            # Shared utilities, GSAP helpers, site config
 messages/       # Translation dictionaries (en, vi)
 public/         # Static assets
 ```

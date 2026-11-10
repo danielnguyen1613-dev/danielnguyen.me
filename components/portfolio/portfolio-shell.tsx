@@ -1,13 +1,11 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { HeroBackground } from "@/components/layout/HeroBackground";
-import { ProfileSidebar } from "@/components/layout/ProfileSidebar";
-import { SectionControls } from "@/components/layout/SectionControls";
-import { SectionNavigation } from "@/components/layout/SectionNavigation";
-import { SectionContent } from "@/features/sections/section-content";
-import { useGsap } from "@/hooks/use-gsap";
-import { gsap } from "@/lib/gsap";
+import { HeroBackground } from "@/components/portfolio/hero-background";
+import { ProfileSidebar } from "@/components/portfolio/profile-sidebar";
+import { SectionControls } from "@/components/portfolio/section-controls";
+import { SectionNavigation } from "@/components/portfolio/section-navigation";
+import { SectionContent } from "@/components/sections/section-content";
 import {
   getAdjacentSection,
   getHashForSection,
@@ -17,9 +15,13 @@ import {
   sectionNavItems,
   writeSectionHash,
   type SectionId,
-} from "@/lib/navigation";
-import { pageBackgroundGradient } from "@/lib/theme";
+} from "@/components/sections/navigation";
+import { useGsap } from "@/hooks/use-gsap";
+import { gsap } from "@/lib/gsap";
 import { cn } from "@/lib/utils";
+
+const pageBackgroundGradient =
+  "linear-gradient(165deg, #f8ebe3 0%, #f4d9cb 52%, #efcbb8 100%)";
 
 type PortfolioShellProps = {
   initialSection?: SectionId;

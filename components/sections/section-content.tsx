@@ -1,14 +1,14 @@
 "use client";
 
 import type { ReactNode } from "react";
-import type { SectionId } from "@/lib/navigation";
-import { AboutSection } from "@/features/sections/about-section";
-import { BlogSection } from "@/features/sections/blog-section";
-import { ContactSection } from "@/features/sections/contact-section";
-import { EducationSection } from "@/features/sections/education-section";
-import { ExperienceSection } from "@/features/sections/experience-section";
-import { HomeSection } from "@/features/sections/home-section";
-import { SectionViewport } from "@/features/sections/section-viewport";
+import type { SectionId } from "@/components/sections/navigation";
+import { AboutSection } from "@/components/sections/about-section";
+import { BlogSection } from "@/components/sections/blog-section";
+import { ContactSection } from "@/components/sections/contact-section";
+import { EducationSection } from "@/components/sections/education-section";
+import { ExperienceSection } from "@/components/sections/experience-section";
+import { HomeSection } from "@/components/sections/home-section";
+import { SectionViewport } from "@/components/sections/section-viewport";
 
 type SectionContentProps = {
   activeSection: SectionId;

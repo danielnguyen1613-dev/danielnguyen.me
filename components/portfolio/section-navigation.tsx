@@ -1,7 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { sectionNavItems, type SectionId } from "@/lib/navigation";
+import { sectionNavItems, type SectionId } from "@/components/sections/navigation";
 import { cn } from "@/lib/utils";
 
 type SectionNavigationProps = {

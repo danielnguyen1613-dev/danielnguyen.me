@@ -7,7 +7,7 @@ import {
   type ReactNode,
 } from "react";
 import { gsap, prefersReducedMotion } from "@/lib/gsap";
-import { getSectionIndex, type SectionId } from "@/lib/navigation";
+import { getSectionIndex, type SectionId } from "@/components/sections/navigation";
 import { cn } from "@/lib/utils";
 
 const DURATION = 0.62;
