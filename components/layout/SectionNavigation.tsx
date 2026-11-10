@@ -34,22 +34,44 @@ export function SectionNavigation({
     >
       {sectionNavItems.map(({ id, labelKey, icon: Icon }) => {
         const isActive = id === activeId;
+        const label = t(labelKey);
 
         return (
           <button
             key={id}
             type="button"
-            aria-label={t(labelKey)}
+            aria-label={label}
             aria-current={isActive ? "page" : undefined}
             onClick={() => onSelect?.(id)}
             className={cn(
-              "inline-flex size-8 items-center justify-center rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
+              "group relative inline-flex size-8 items-center justify-center rounded-full transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
               isActive
                 ? "bg-primary/15 text-primary"
                 : "text-muted-foreground hover:bg-muted hover:text-foreground",
             )}
           >
             <Icon className="size-5" strokeWidth={isActive ? 2 : 1.5} />
+
+            <span
+              aria-hidden
+              className={cn(
+                "pointer-events-none absolute z-20 whitespace-nowrap rounded-sm bg-primary px-2.5 py-1 text-xs font-medium text-primary-foreground opacity-0 shadow-sm transition-opacity duration-150",
+                "group-hover:opacity-100 group-focus-visible:opacity-100",
+                isVertical
+                  ? "right-full top-1/2 mr-3 -translate-y-1/2"
+                  : "bottom-full left-1/2 mb-2.5 -translate-x-1/2",
+              )}
+            >
+              {label}
+              <span
+                className={cn(
+                  "absolute border-[5px] border-transparent",
+                  isVertical
+                    ? "left-full top-1/2 -translate-y-1/2 border-l-primary"
+                    : "left-1/2 top-full -translate-x-1/2 border-t-primary",
+                )}
+              />
+            </span>
           </button>
         );
       })}
