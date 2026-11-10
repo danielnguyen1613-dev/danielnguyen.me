@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { HeroBackground } from "@/components/portfolio/hero-background";
 import { ProfileSidebar } from "@/components/portfolio/profile-sidebar";
 import { SectionControls } from "@/components/portfolio/section-controls";
@@ -9,15 +9,12 @@ import { SectionContent } from "@/components/sections/section-content";
 import {
   getAdjacentSection,
   getHashForSection,
-  getSectionIdFromHash,
   getSectionIndex,
   readSectionFromLocation,
   sectionNavItems,
   writeSectionHash,
   type SectionId,
 } from "@/components/sections/navigation";
-import { useGsap } from "@/hooks/use-gsap";
-import { gsap } from "@/lib/gsap";
 import { cn } from "@/lib/utils";
 
 const pageBackgroundGradient =
@@ -32,10 +29,10 @@ export function PortfolioShell({
   initialSection = "home",
   className,
 }: PortfolioShellProps) {
-  const scopeRef = useRef<HTMLDivElement>(null);
-  const [activeSection, setActiveSection] = useState<SectionId>(() =>
-    readSectionFromLocation(initialSection),
-  );
+  // Always start from the same value on server and client to avoid hydration mismatch.
+  // Hash is applied after mount in the effect below.
+  const [activeSection, setActiveSection] =
+    useState<SectionId>(initialSection);
   const activeIndex = getSectionIndex(activeSection);
 
   const handleSelect = useCallback((id: SectionId) => {
@@ -59,18 +56,20 @@ export function PortfolioShell({
     });
   }, []);
 
-  // Keep the selected section in sync with the URL hash (refresh / back / forward).
   useEffect(() => {
     const syncFromHash = () => {
-      const fromHash = getSectionIdFromHash(window.location.hash);
+      const fromHash = readSectionFromLocation(initialSection);
       setActiveSection((current) =>
         current === fromHash ? current : fromHash,
       );
     };
 
-    // Ensure first paint hash exists (e.g. bare `/` → `#home`).
     if (!window.location.hash) {
-      window.history.replaceState(null, "", getHashForSection(activeSection));
+      window.history.replaceState(
+        null,
+        "",
+        getHashForSection(initialSection),
+      );
     } else {
       syncFromHash();
     }
@@ -81,49 +80,10 @@ export function PortfolioShell({
       window.removeEventListener("hashchange", syncFromHash);
       window.removeEventListener("popstate", syncFromHash);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- mount-only hash bootstrap
-  }, []);
-
-  useGsap(
-    scopeRef,
-    (_ctx, { reducedMotion }) => {
-      const root = scopeRef.current;
-      if (!root) return;
-
-      const mobileProfile = root.querySelectorAll<HTMLElement>(
-        '.lg\\:hidden [data-shell="profile"]',
-      );
-      const panels = root.querySelectorAll<HTMLElement>('[data-shell="panels"]');
-      const nav = root.querySelectorAll<HTMLElement>('[data-shell="nav"]');
-      const controls = root.querySelectorAll<HTMLElement>(
-        '[data-shell="controls"]',
-      );
-
-      if (reducedMotion) {
-        gsap.set([...mobileProfile, ...panels, ...nav, ...controls], {
-          autoAlpha: 1,
-          y: 0,
-        });
-        return;
-      }
-
-      gsap.set(mobileProfile, { autoAlpha: 0, y: 24 });
-      gsap.set(panels, { autoAlpha: 0, y: 28 });
-      gsap.set(nav, { autoAlpha: 0, y: 20 });
-      gsap.set(controls, { autoAlpha: 0, y: 16 });
-
-      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-
-      tl.to(mobileProfile, { autoAlpha: 1, y: 0, duration: 0.55 })
-        .to(panels, { autoAlpha: 1, y: 0, duration: 0.65 }, "-=0.35")
-        .to(nav, { autoAlpha: 1, y: 0, duration: 0.5 }, "-=0.35")
-        .to(controls, { autoAlpha: 1, y: 0, duration: 0.45 }, "-=0.28");
-    },
-    [],
-  );
+  }, [initialSection]);
 
   return (
-    <div ref={scopeRef} className={cn("relative min-h-dvh", className)}>
+    <div className={cn("relative min-h-dvh", className)}>
       <div
         aria-hidden
         className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
@@ -142,25 +102,21 @@ export function PortfolioShell({
             data-shell="panels"
             className="flex h-full min-h-[70vh] overflow-hidden rounded-xl bg-card shadow-lg lg:min-h-0"
           >
-            {/* Connected: profile card (white) | main surface (charcoal), radius clips with bg */}
             <div className="hidden h-full w-[min(32%,380px)] min-w-[240px] shrink-0 overflow-hidden rounded-l-xl bg-card lg:block">
               <ProfileSidebar connected className="h-full w-full" />
             </div>
 
             <main
               data-shell="main"
-              className="flex min-h-0 min-w-0 flex-1 flex-col rounded-xl lg:rounded-l-none lg:rounded-r-xl"
+              className="relative min-h-0 min-w-0 flex-1 overflow-hidden rounded-xl bg-surface text-surface-foreground lg:rounded-l-none lg:rounded-r-xl"
             >
-              <div className="relative h-full min-h-0 flex-1 rounded-xl bg-surface text-surface-foreground lg:rounded-r-xl">
-                <SectionContent
-                  activeSection={activeSection}
-                  onNavigate={handleSelect}
-                />
-              </div>
+              <SectionContent
+                activeSection={activeSection}
+                onNavigate={handleSelect}
+              />
             </main>
           </div>
 
-          {/* Anchored just outside the main panel — no layout space */}
           <div className="pointer-events-none absolute inset-y-0 left-full ml-3 hidden lg:flex">
             <div className="pointer-events-auto flex h-full flex-col items-center justify-between">
               <SectionNavigation

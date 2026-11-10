@@ -55,7 +55,7 @@ export function SectionNavigation({
             <span
               aria-hidden
               className={cn(
-                "pointer-events-none absolute z-20 whitespace-nowrap rounded-sm bg-primary px-2.5 py-1 text-xs font-medium text-primary-foreground opacity-0 shadow-sm transition-opacity duration-150",
+                "pointer-events-none absolute z-20 whitespace-nowrap rounded-sm bg-primary px-2.5 py-1 text-xs font-medium text-primary-foreground opacity-0 shadow-sm",
                 "group-hover:opacity-100 group-focus-visible:opacity-100",
                 isVertical
                   ? "right-full top-1/2 mr-3 -translate-y-1/2"

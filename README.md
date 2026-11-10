@@ -47,9 +47,6 @@ Defined in `app/globals.css`:
 | Card | `#FFFFFF` |
 | Foreground | `#1A1A1A` |
 
-## Animation rules
+## Animation
 
-- GSAP only (no Framer Motion)
-- Prefer `transform` / `opacity`
-- Use `gsap.context()` + `useGsap` for cleanup
-- Respect `prefers-reduced-motion`
+GSAP is installed (`lib/gsap`, `hooks/useGsap`) for future motion work. No page or section animations are active currently.
