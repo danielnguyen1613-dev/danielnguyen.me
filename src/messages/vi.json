@@ -54,7 +54,6 @@
       "Next.js",
       "TypeScript",
       "Tailwind CSS",
-      "GSAP",
       "Node.js",
       "FastAPI",
       "Design Systems",
@@ -112,7 +111,7 @@
     "projects": [
       {
         "name": "Portfolio Design System",
-        "stack": "Next.js · Tailwind · GSAP",
+        "stack": "Next.js · Tailwind",
         "summary": "Hệ thống component và ngôn ngữ chuyển động tái sử dụng cho portfolio cá nhân và khách hàng."
       },
       {

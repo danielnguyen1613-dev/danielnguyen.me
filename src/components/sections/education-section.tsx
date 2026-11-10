@@ -1,6 +1,4 @@
-"use client";
-
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { SectionHeader } from "@/components/sections/section-header";
 
 type EducationItem = {
@@ -16,8 +14,8 @@ type CertificateItem = {
   year: string;
 };
 
-export function EducationSection() {
-  const t = useTranslations("Education");
+export async function EducationSection() {
+  const t = await getTranslations("Education");
   const schools = t.raw("schools") as EducationItem[];
   const certificates = t.raw("certificates") as CertificateItem[];
 

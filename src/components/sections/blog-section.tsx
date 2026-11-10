@@ -1,6 +1,4 @@
-"use client";
-
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { SectionHeader } from "@/components/sections/section-header";
 
 type PostItem = {
@@ -10,8 +8,8 @@ type PostItem = {
   tag: string;
 };
 
-export function BlogSection() {
-  const t = useTranslations("Blog");
+export async function BlogSection() {
+  const t = await getTranslations("Blog");
   const posts = t.raw("posts") as PostItem[];
 
   return (

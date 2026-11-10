@@ -1,6 +1,4 @@
-"use client";
-
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { SectionHeader } from "@/components/sections/section-header";
 
 type JobItem = {
@@ -16,8 +14,8 @@ type ProjectItem = {
   summary: string;
 };
 
-export function ExperienceSection() {
-  const t = useTranslations("Experience");
+export async function ExperienceSection() {
+  const t = await getTranslations("Experience");
   const jobs = t.raw("jobs") as JobItem[];
   const projects = t.raw("projects") as ProjectItem[];
 

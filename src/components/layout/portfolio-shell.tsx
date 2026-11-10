@@ -1,11 +1,9 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
-import { HeroBackground } from "@/components/portfolio/hero-background";
-import { ProfileSidebar } from "@/components/portfolio/profile-sidebar";
-import { SectionControls } from "@/components/portfolio/section-controls";
-import { SectionNavigation } from "@/components/portfolio/section-navigation";
-import { SectionContent } from "@/components/sections/section-content";
+import { useCallback, useEffect, useState, type ReactNode } from "react";
+import { SectionControls } from "@/components/layout/section-controls";
+import { SectionNavigation } from "@/components/layout/section-navigation";
+import { SectionViewport } from "@/components/layout/section-viewport";
 import {
   getAdjacentSection,
   getHashForSection,
@@ -14,7 +12,7 @@ import {
   sectionNavItems,
   writeSectionHash,
   type SectionId,
-} from "@/components/sections/navigation";
+} from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 
 const pageBackgroundGradient =
@@ -22,11 +20,19 @@ const pageBackgroundGradient =
 
 type PortfolioShellProps = {
   initialSection?: SectionId;
+  heroBackground: ReactNode;
+  profile: ReactNode;
+  profileCompact: ReactNode;
+  sections: Record<SectionId, ReactNode>;
   className?: string;
 };
 
 export function PortfolioShell({
   initialSection = "home",
+  heroBackground,
+  profile,
+  profileCompact,
+  sections,
   className,
 }: PortfolioShellProps) {
   // Always start from the same value on server and client to avoid hydration mismatch.
@@ -89,31 +95,28 @@ export function PortfolioShell({
         className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
         style={{ background: pageBackgroundGradient }}
       >
-        <HeroBackground />
+        {heroBackground}
       </div>
 
       <div className="relative z-10 mx-auto flex min-h-dvh w-full max-w-[1600px] flex-col gap-3 px-4 py-4 pb-24 md:px-8 md:py-6 lg:h-dvh lg:px-16 lg:py-8 xl:px-32 xl:py-16">
-        <div className="lg:hidden">
-          <ProfileSidebar compact />
-        </div>
+        <div className="lg:hidden">{profileCompact}</div>
 
         <div className="relative min-h-[70vh] min-w-0 flex-1 lg:h-full lg:min-h-0">
           <div
             data-shell="panels"
-            className="flex h-full min-h-[70vh] overflow-hidden rounded-xl shadow-lg lg:min-h-0"
+            className="flex h-full min-h-[70vh] overflow-hidden bg-white rounded-xl shadow-lg lg:min-h-0"
           >
             <div className="hidden h-full w-[min(32%,380px)] min-w-[240px] shrink-0 overflow-hidden rounded-l-xl lg:block">
-              <ProfileSidebar connected className="h-full w-full" />
+              {profile}
             </div>
 
             <main
               data-shell="main"
-              className="relative min-h-0 min-w-0 flex-1 overflow-hidden rounded-xl bg-surface text-surface-foreground lg:rounded-l-none lg:rounded-r-xl"
+              className="relative min-h-0 min-w-0 flex-1 overflow-hidden bg-surface rounded-xl text-surface-foreground lg:rounded-l-lg lg:rounded-r-xl"
             >
-              <SectionContent
-                activeSection={activeSection}
-                onNavigate={handleSelect}
-              />
+              <SectionViewport sectionId={activeSection}>
+                {sections[activeSection]}
+              </SectionViewport>
             </main>
           </div>
 

@@ -1,16 +1,11 @@
-"use client";
-
-import { useTranslations } from "next-intl";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { getTranslations } from "next-intl/server";
+import { getHashForSection } from "@/lib/navigation";
+import { buttonVariants } from "@/components/ui/button-variants";
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
-type HomeSectionProps = {
-  onViewExperience?: () => void;
-};
-
-export function HomeSection({ onViewExperience }: HomeSectionProps) {
-  const t = useTranslations("Home");
+export async function HomeSection() {
+  const t = await getTranslations("Home");
   const features = [
     t("features.experience"),
     t("features.fullstack"),
@@ -41,14 +36,15 @@ export function HomeSection({ onViewExperience }: HomeSectionProps) {
         >
           {t("watchYoutube")}
         </a>
-        <Button
-          size="lg"
-          variant="outline"
-          className="border-white/15 bg-transparent text-surface-foreground hover:bg-white/10 hover:text-surface-foreground"
-          onClick={onViewExperience}
+        <a
+          href={getHashForSection("experience")}
+          className={cn(
+            buttonVariants({ size: "lg", variant: "outline" }),
+            "border-white/15 bg-transparent text-surface-foreground hover:bg-white/10 hover:text-surface-foreground",
+          )}
         >
           {t("viewProjects")}
-        </Button>
+        </a>
       </div>
 
       <ul className="flex flex-wrap gap-x-6 gap-y-2 pt-2 text-sm text-surface-foreground/55">

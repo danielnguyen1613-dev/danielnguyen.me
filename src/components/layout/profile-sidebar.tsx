@@ -1,9 +1,7 @@
-"use client";
-
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import type { SVGProps } from "react";
-import { buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button-variants";
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -56,12 +54,12 @@ const socialLinks = [
   },
 ] as const;
 
-export function ProfileSidebar({
+export async function ProfileSidebar({
   className,
   compact = false,
   connected = false,
 }: ProfileSidebarProps) {
-  const t = useTranslations("Profile");
+  const t = await getTranslations("Profile");
 
   if (compact) {
     return (

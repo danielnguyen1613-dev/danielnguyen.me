@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, type ReactNode } from "react";
-import type { SectionId } from "@/components/sections/navigation";
+import type { SectionId } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 
 const contentShellClassName =
@@ -11,13 +11,13 @@ const contentFrameClassName = "panel-scroll min-h-0 flex-1 pb-6 pr-6";
 
 type SectionViewportProps = {
   sectionId: SectionId;
-  renderSection: (id: SectionId) => ReactNode;
+  children: ReactNode;
   className?: string;
 };
 
 export function SectionViewport({
   sectionId,
-  renderSection,
+  children,
   className,
 }: SectionViewportProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -38,7 +38,7 @@ export function SectionViewport({
           data-panel-scroll
           className={contentFrameClassName}
         >
-          {renderSection(sectionId)}
+          {children}
         </div>
       </div>
     </div>

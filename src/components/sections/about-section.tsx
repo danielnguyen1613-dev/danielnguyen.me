@@ -1,11 +1,9 @@
-"use client";
-
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { SectionHeader } from "@/components/sections/section-header";
 import { siteConfig } from "@/lib/site";
 
-export function AboutSection() {
-  const t = useTranslations("About");
+export async function AboutSection() {
+  const t = await getTranslations("About");
   const skills = t.raw("skills") as string[];
   const highlights = t.raw("highlights") as string[];
 
