@@ -7,9 +7,9 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import { PortfolioMain } from "@/components/layout/portfolio-main";
 import { SectionControls } from "@/components/layout/section-controls";
 import { SectionNavigation } from "@/components/layout/section-navigation";
-import { SectionViewport } from "@/components/layout/section-viewport";
 import {
   getAdjacentSection,
   getHashForSection,
@@ -93,7 +93,7 @@ export function PortfolioShell({
   }, [initialSection]);
 
   return (
-    <div className={cn("relative min-h-dvh", className)}>
+    <div className={cn("relative min-h-dvh overflow-x-clip", className)}>
       <div
         aria-hidden
         className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
@@ -108,20 +108,15 @@ export function PortfolioShell({
         <div className="relative min-h-[70vh] min-w-0 flex-1 lg:h-full lg:min-h-0">
           <div
             data-shell="panels"
-            className="flex h-full min-h-[70vh] overflow-hidden bg-white rounded-xl shadow-lg lg:min-h-0"
+            className="flex h-full min-h-[70vh] bg-white rounded-xl shadow-lg lg:min-h-0"
           >
             <div className="hidden h-full w-[min(32%,380px)] min-w-[240px] shrink-0 overflow-hidden rounded-l-xl lg:block">
               {profile}
             </div>
 
-            <main
-              data-shell="main"
-              className="relative min-h-0 min-w-0 flex-1 overflow-hidden bg-surface rounded-xl text-surface-foreground lg:rounded-l-lg lg:rounded-r-xl"
-            >
-              <SectionViewport sectionId={activeSection}>
-                {sections[activeSection]}
-              </SectionViewport>
-            </main>
+            <PortfolioMain sectionId={activeSection}>
+              {sections[activeSection]}
+            </PortfolioMain>
           </div>
 
           <div className="pointer-events-none absolute inset-y-0 left-full ml-3 hidden lg:flex">

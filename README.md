@@ -9,6 +9,7 @@ Personal portfolio for Nguyen Hoang Viet — Frontend Developer & Content Creato
 - TypeScript
 - Tailwind CSS v4
 - shadcn/ui
+- GSAP
 - Lucide React
 - next-intl (`en` / `vi`)
 
