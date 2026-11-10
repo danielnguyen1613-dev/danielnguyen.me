@@ -16,6 +16,15 @@ export function prefersReducedMotion() {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
 
+/** True when pointer parallax is appropriate (fine pointer + hover, motion allowed). */
+export function canUsePointerParallax() {
+  if (typeof window === "undefined") return false;
+  if (prefersReducedMotion()) return false;
+  if (window.matchMedia("(hover: none)").matches) return false;
+  if (window.matchMedia("(pointer: coarse)").matches) return false;
+  return true;
+}
+
 /** Shared defaults: skip motion when the user prefers reduced motion. */
 export function getMotionDefaults() {
   if (prefersReducedMotion()) {
