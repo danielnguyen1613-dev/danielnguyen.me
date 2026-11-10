@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
+import { Be_Vietnam_Pro, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages, getTranslations } from "next-intl/server";
 import "./globals.css";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-heading",
+  subsets: ["latin", "latin-ext", "vietnamese"],
+  display: "swap",
+});
+
+const beVietnamPro = Be_Vietnam_Pro({
   variable: "--font-sans",
   subsets: ["latin", "vietnamese"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -34,9 +41,9 @@ export default async function RootLayout({
   return (
     <html
       lang={locale}
-      className={`${plusJakartaSans.variable} ${jetbrainsMono.variable} dark h-full antialiased`}
+      className={`${spaceGrotesk.variable} ${beVietnamPro.variable} ${jetbrainsMono.variable} dark h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-background text-foreground">
+      <body className="flex min-h-full flex-col bg-background font-sans text-foreground">
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
