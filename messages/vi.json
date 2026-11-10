@@ -1,0 +1,29 @@
+{
+  "Metadata": {
+    "title": "Nguyễn Hoàng Việt | Frontend Developer & Content Creator",
+    "description": "Senior Frontend Developer tại TP. Hồ Chí Minh. Xây dựng trải nghiệm web hiện đại với React, Next.js và TypeScript."
+  },
+  "Nav": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "skills": "Kỹ năng",
+    "projects": "Dự án",
+    "blog": "Blog",
+    "contact": "Liên hệ"
+  },
+  "Home": {
+    "headline": "Frontend Developer & Content Creator",
+    "bio": "Tôi xây dựng sản phẩm web chỉn chu, hiệu năng cao và chia sẻ những gì học được trên hành trình đó.",
+    "watchYoutube": "Xem YouTube của tôi",
+    "viewProjects": "Xem dự án",
+    "downloadCv": "Tải CV",
+    "role": "Senior Frontend Developer",
+    "location": "TP. Hồ Chí Minh",
+    "features": {
+      "experience": "6+ năm kinh nghiệm Frontend",
+      "fullstack": "Fullstack (React, Next.js, FastAPI)",
+      "creator": "Content Creator",
+      "plants": "Yêu cây cảnh"
+    }
+  }
+}

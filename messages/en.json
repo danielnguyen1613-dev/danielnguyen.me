@@ -1,0 +1,29 @@
+{
+  "Metadata": {
+    "title": "Nguyen Hoang Viet | Frontend Developer & Content Creator",
+    "description": "Senior Frontend Developer based in Ho Chi Minh City. Building modern web experiences with React, Next.js, and TypeScript."
+  },
+  "Nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "Home": {
+    "headline": "Frontend Developer & Content Creator",
+    "bio": "I build polished, performant web products and share what I learn along the way.",
+    "watchYoutube": "Watch My YouTube",
+    "viewProjects": "View Projects",
+    "downloadCv": "Download CV",
+    "role": "Senior Frontend Developer",
+    "location": "Ho Chi Minh City",
+    "features": {
+      "experience": "6+ Years Frontend Experience",
+      "fullstack": "Fullstack (React, Next.js, FastAPI)",
+      "creator": "Content Creator",
+      "plants": "Plant Lover"
+    }
+  }
+}
