@@ -23,9 +23,9 @@ export function SectionNavigation({
       data-shell="nav"
       aria-label={t("ariaLabel")}
       className={cn(
-        "border border-border bg-card shadow-sm",
+        "bg-card shadow-sm",
         isVertical
-          ? "flex flex-col items-center gap-1 rounded-full px-2 py-3"
+          ? "flex flex-col items-center gap-3 rounded-full px-2 py-2.5"
           : "flex items-center justify-around gap-1 rounded-2xl px-2 py-2",
         className,
       )}
@@ -40,13 +40,13 @@ export function SectionNavigation({
             aria-label={t(labelKey)}
             aria-current={isActive ? "page" : undefined}
             className={cn(
-              "inline-flex size-10 items-center justify-center rounded-full transition-colors",
+              "inline-flex size-8 items-center justify-center rounded-full transition-colors",
               isActive
                 ? "bg-primary/15 text-primary"
                 : "text-muted-foreground hover:bg-muted hover:text-foreground",
             )}
           >
-            <Icon className="size-4" strokeWidth={isActive ? 2.25 : 1.75} />
+            <Icon className="size-5" strokeWidth={isActive ? 2 : 1.5} />
           </a>
         );
       })}

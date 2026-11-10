@@ -21,7 +21,7 @@ export function SectionControls({
     <div
       data-shell="controls"
       className={cn(
-        "flex flex-col items-center gap-1 rounded-full border border-border bg-card px-2 py-2 shadow-sm",
+        "flex flex-col items-center gap-0.5 rounded-full bg-card px-1.5 py-2.5 shadow-sm",
         className,
       )}
     >
@@ -29,17 +29,17 @@ export function SectionControls({
         type="button"
         aria-label={t("previous")}
         onClick={onPrevious}
-        className="inline-flex size-10 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
+        className="inline-flex size-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
       >
-        <ChevronUp className="size-4" />
+        <ChevronUp className="size-10 -rotate-90" strokeWidth={1} />
       </button>
       <button
         type="button"
         aria-label={t("next")}
         onClick={onNext}
-        className="inline-flex size-10 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
+        className="inline-flex size-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
       >
-        <ChevronDown className="size-4" />
+        <ChevronDown className="size-10 -rotate-90" strokeWidth={1} />
       </button>
     </div>
   );

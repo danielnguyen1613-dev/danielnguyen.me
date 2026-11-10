@@ -73,33 +73,38 @@ export function PortfolioShell({
         <HeroBackground />
       </div>
 
-      <div className="relative z-10 mx-auto flex min-h-dvh w-full max-w-[1600px] flex-col gap-3 px-4 py-4 pb-24 md:gap-4 md:px-8 md:py-6 lg:h-dvh lg:flex-row lg:gap-5 lg:px-16 lg:py-8 lg:pb-8 xl:gap-4 xl:px-32 xl:py-12">
+      <div className="relative z-10 mx-auto flex min-h-dvh w-full max-w-[1600px] flex-col gap-3 px-4 py-4 pb-24 md:px-8 md:py-6 lg:h-dvh lg:px-16 lg:py-8 xl:px-32 xl:py-16">
         <div className="lg:hidden">
           <ProfileSidebar compact />
         </div>
 
-        <div
-          data-shell="panels"
-          className="flex min-h-[70vh] min-w-0 flex-1 overflow-hidden rounded-xl bg-card shadow-lg lg:h-full lg:min-h-0"
-        >
-          {/* Connected: profile card (#444) | main surface (#222), radius clips with bg */}
-          <div className="hidden h-full w-[min(30%,360px)] min-w-[240px] shrink-0 overflow-hidden rounded-l-xl bg-card lg:block">
-            <ProfileSidebar connected className="h-full w-full" />
+        <div className="relative min-h-[70vh] min-w-0 flex-1 lg:h-full lg:min-h-0">
+          <div
+            data-shell="panels"
+            className="flex h-full min-h-[70vh] overflow-hidden rounded-xl bg-card shadow-lg lg:min-h-0"
+          >
+            {/* Connected: profile card (#444) | main surface (#222), radius clips with bg */}
+            <div className="hidden h-full w-[min(32%,380px)] min-w-[240px] shrink-0 overflow-hidden rounded-l-xl bg-card lg:block">
+              <ProfileSidebar connected className="h-full w-full" />
+            </div>
+
+            <main
+              data-shell="main"
+              className="min-h-0 min-w-0 flex-1 overflow-hidden rounded-xl lg:rounded-l-none lg:rounded-r-xl"
+            >
+              <div className="h-full overflow-y-auto overscroll-contain rounded-xl bg-surface p-5 sm:p-6 md:p-8 lg:rounded-r-xl">
+                {children}
+              </div>
+            </main>
           </div>
 
-          <main
-            data-shell="main"
-            className="min-h-0 min-w-0 flex-1 overflow-hidden rounded-xl lg:rounded-l-none lg:rounded-r-xl"
-          >
-            <div className="h-full overflow-y-auto overscroll-contain rounded-xl bg-surface p-5 sm:p-6 md:p-8 lg:rounded-r-xl">
-              {children}
+          {/* Anchored just outside the main panel — no layout space */}
+          <div className="pointer-events-none absolute inset-y-0 left-full ml-3 hidden lg:flex">
+            <div className="pointer-events-auto flex h-full flex-col items-center justify-between">
+              <SectionNavigation activeId={activeSection} />
+              <SectionControls />
             </div>
-          </main>
-        </div>
-
-        <div className="hidden shrink-0 flex-col items-center justify-between py-1 lg:flex">
-          <SectionNavigation activeId={activeSection} />
-          <SectionControls />
+          </div>
         </div>
       </div>
 
