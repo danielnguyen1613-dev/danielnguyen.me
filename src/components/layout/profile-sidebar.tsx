@@ -28,10 +28,26 @@ function GitHubIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-function YouTubeIcon(props: SVGProps<SVGSVGElement>) {
+function XIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden {...props}>
-      <path d="M23.5 6.2a3 3 0 0 0-2.12-2.13C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.57A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.12 2.12C4.5 20.5 12 20.5 12 20.5s7.5 0 9.38-.58a3 3 0 0 0 2.12-2.12A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8zM9.75 15.5v-7l6.5 3.5-6.5 3.5z" />
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  );
+}
+
+function TelegramIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden {...props}>
+      <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.66 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+    </svg>
+  );
+}
+
+function ZaloIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden {...props}>
+      <path d="M12.49 10.272v-.45h1.347v6.322h-.77a.576.576 0 0 1-.577-.573v.001a3.27 3.27 0 0 1-1.938.632a3.284 3.284 0 0 1-3.284-3.282a3.284 3.284 0 0 1 3.284-3.282a3.27 3.27 0 0 1 1.937.632zM6.919 7.79v.205c0 .382-.051.694-.3 1.06l-.03.034a8 8 0 0 0-.242.285L2.024 14.8h4.895v.768a.576.576 0 0 1-.577.576H0v-.362c0-.443.11-.641.25-.847L4.858 9.23H.192V7.79zm8.551 8.354a.48.48 0 0 1-.48-.48V7.79h1.441v8.354zM20.693 9.6a3.306 3.306 0 1 1 .002 6.612a3.306 3.306 0 0 1-.002-6.612m-10.14 5.253a1.932 1.932 0 1 0 0-3.863a1.932 1.932 0 0 0 0 3.863m10.14-.003a1.945 1.945 0 1 0 0-3.89a1.945 1.945 0 0 0 0 3.89" />
     </svg>
   );
 }
@@ -48,9 +64,19 @@ const socialLinks = [
     icon: GitHubIcon,
   },
   {
-    href: siteConfig.socials.youtube,
-    label: "YouTube",
-    icon: YouTubeIcon,
+    href: siteConfig.socials.x,
+    label: "X",
+    icon: XIcon,
+  },
+  {
+    href: siteConfig.socials.telegram,
+    label: "Telegram",
+    icon: TelegramIcon,
+  },
+  {
+    href: siteConfig.socials.zalo,
+    label: "Zalo",
+    icon: ZaloIcon,
   },
 ] as const;
 
@@ -131,7 +157,7 @@ export async function ProfileSidebar({
         </div>
 
         <div className="space-y-1.5">
-          <h1 className="font-heading text-2xl font-bold tracking-tight text-card-foreground">
+          <h1 className="font-heading text-3xl font-bold tracking-tight text-card-foreground">
             {siteConfig.name}
           </h1>
           <p className="text-sm text-muted-foreground">{t("role")}</p>
@@ -152,21 +178,7 @@ export async function ProfileSidebar({
             </li>
           ))}
         </ul>
-
-        <a
-          href={siteConfig.cvUrl}
-          className={cn(
-            buttonVariants({ variant: "outline", size: "lg" }),
-            "h-11 rounded-full border-border bg-transparent px-6 text-card-foreground hover:border-primary/50 hover:bg-primary/10 hover:text-card-foreground",
-          )}
-        >
-          {t("downloadCv")}
-        </a>
       </div>
-
-      <p className="pt-6 text-center text-xs text-muted-foreground">
-        {t("copyright")}
-      </p>
     </aside>
   );
 }

@@ -4,8 +4,10 @@ export const siteConfig = {
   avatarUrl: "/images/avatar.jpg",
   cvUrl: "/cv.pdf",
   socials: {
-    github: "https://github.com",
+    github: "https://github.com/danielnguyen1613-dev",
     linkedin: "https://linkedin.com",
-    youtube: "https://youtube.com",
+    x: "https://x.com/DanielJameiocg",
+    telegram: "https://t.me/danieljames1613",
+    zalo: "https://zalo.me/84389047082",
   },
 } as const;

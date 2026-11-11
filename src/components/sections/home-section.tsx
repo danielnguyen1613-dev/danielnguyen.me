@@ -16,9 +16,6 @@ export async function HomeSection() {
   return (
     <section className="flex min-h-full flex-col justify-center gap-8 py-4">
       <div className="space-y-4">
-        <p className="text-sm font-medium tracking-wide text-primary">
-          {t("role")} · {t("location")}
-        </p>
         <h2 className="font-heading text-3xl font-bold tracking-tight text-surface-foreground sm:text-4xl md:text-5xl">
           {t("headline")}
         </h2>
@@ -29,12 +26,12 @@ export async function HomeSection() {
 
       <div className="flex flex-wrap gap-3">
         <a
-          href={siteConfig.socials.youtube}
+          href={siteConfig.socials.github}
           target="_blank"
           rel="noopener noreferrer"
           className={cn(buttonVariants({ size: "lg" }))}
         >
-          {t("watchYoutube")}
+          {t("viewGithub")}
         </a>
         <a
           href={getHashForSection("experience")}

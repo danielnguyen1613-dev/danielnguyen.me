@@ -43,12 +43,28 @@ export async function ContactSection() {
               GitHub
             </a>
             <a
-              href={siteConfig.socials.youtube}
+              href={siteConfig.socials.x}
               target="_blank"
               rel="noopener noreferrer"
               className="text-surface-foreground/70 transition-colors hover:text-primary"
             >
-              YouTube
+              X
+            </a>
+            <a
+              href={siteConfig.socials.telegram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-surface-foreground/70 transition-colors hover:text-primary"
+            >
+              Telegram
+            </a>
+            <a
+              href={siteConfig.socials.zalo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-surface-foreground/70 transition-colors hover:text-primary"
+            >
+              Zalo
             </a>
           </div>
         </div>
