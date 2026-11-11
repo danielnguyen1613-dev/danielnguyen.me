@@ -20,8 +20,7 @@ export function ProjectCard({
   return (
     <Card
       className={cn(
-        "gap-3 rounded-none bg-transparent py-0 text-surface-foreground ring-0",
-        "transition-opacity hover:opacity-90 focus-within:opacity-90",
+        "group/project gap-3 rounded-none bg-transparent py-0 text-surface-foreground ring-0",
         className,
       )}
     >
@@ -32,7 +31,7 @@ export function ProjectCard({
             alt={imageAlt ?? name}
             fill
             sizes="(max-width: 640px) 100vw, 33vw"
-            className="object-cover"
+            className="object-cover transition-transform duration-500 ease-out group-hover/project:scale-110"
           />
         </div>
         <CardTitle className="px-0 font-heading text-sm font-bold tracking-wide text-surface-foreground">
