@@ -28,7 +28,7 @@ export function SectionControls({
     <div
       data-shell="controls"
       className={cn(
-        "flex flex-col items-center gap-0.5 rounded-full bg-card px-1.5 py-2.5 shadow-sm",
+        "flex flex-col items-center gap-0.5 rounded-full bg-white px-1.5 py-2.5 shadow-sm",
         className,
       )}
     >

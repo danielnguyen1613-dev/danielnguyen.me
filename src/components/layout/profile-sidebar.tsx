@@ -92,7 +92,7 @@ export async function ProfileSidebar({
       <header
         data-shell="profile"
         className={cn(
-          "flex items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3 shadow-sm",
+          "flex items-center gap-3 rounded-2xl border border-border bg-white px-4 py-3 shadow-sm",
           className,
         )}
       >
@@ -104,7 +104,7 @@ export async function ProfileSidebar({
           className="size-12 shrink-0 rounded-full object-cover ring-2 ring-border"
         />
         <div className="min-w-0 flex-1">
-          <p className="truncate font-heading text-base font-semibold text-card-foreground">
+          <p className="truncate font-heading text-base font-semibold text-foreground">
             {siteConfig.name}
           </p>
           <p className="truncate text-sm text-muted-foreground">
@@ -114,8 +114,9 @@ export async function ProfileSidebar({
         <Button
           variant="outline"
           size="sm"
+          nativeButton={false}
           render={<a href={siteConfig.cvUrl} />}
-          className="hidden shrink-0 rounded-full border-border bg-transparent text-card-foreground hover:bg-primary/10 sm:inline-flex"
+          className="hidden shrink-0 rounded-full border-border bg-transparent text-foreground hover:bg-primary/10 sm:inline-flex"
         >
           {t("downloadCv")}
         </Button>
@@ -127,7 +128,7 @@ export async function ProfileSidebar({
     <aside
       data-shell="profile"
       className={cn(
-        "flex h-full flex-col bg-card p-6 xl:p-8",
+        "flex h-full flex-col bg-white p-6 xl:p-8",
         connected
           ? "rounded-none border-0 shadow-none"
           : "rounded-xl border border-border shadow-sm",
@@ -156,7 +157,7 @@ export async function ProfileSidebar({
         </div>
 
         <div className="space-y-1.5">
-          <h1 className="font-heading text-3xl font-bold tracking-tight text-card-foreground">
+          <h1 className="font-heading text-3xl font-bold tracking-tight text-foreground">
             {siteConfig.name}
           </h1>
           <p className="text-sm text-muted-foreground">{t("role")}</p>

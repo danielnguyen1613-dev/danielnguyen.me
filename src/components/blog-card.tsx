@@ -40,14 +40,14 @@ export function BlogCard({
           className="absolute inset-0 bg-foreground/35"
         />
         <Badge
-          className="absolute top-4 left-4 z-10 h-auto rounded-md border-0 bg-card px-2.5 py-1 text-xs font-medium text-card-foreground"
+          className="absolute top-4 left-4 z-10 h-auto rounded-md border-0 bg-white px-2.5 py-1 text-xs font-medium text-foreground"
         >
           {category}
         </Badge>
         <Icon
           aria-hidden
           strokeWidth={1.25}
-          className="pointer-events-none absolute top-1/2 left-1/2 z-10 size-14 -translate-x-1/2 -translate-y-1/2 text-card sm:size-16"
+          className="pointer-events-none absolute top-1/2 left-1/2 z-10 size-14 -translate-x-1/2 -translate-y-1/2 text-white sm:size-16"
         />
       </div>
 

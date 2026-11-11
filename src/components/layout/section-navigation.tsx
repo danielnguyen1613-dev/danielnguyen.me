@@ -25,7 +25,7 @@ export function SectionNavigation({
       data-shell="nav"
       aria-label={t("ariaLabel")}
       className={cn(
-        "bg-card shadow-sm",
+        "bg-white shadow-sm",
         isVertical
           ? "flex flex-col items-center gap-3 rounded-full px-2 py-2.5"
           : "flex items-center justify-around gap-1 rounded-2xl px-2 py-2",

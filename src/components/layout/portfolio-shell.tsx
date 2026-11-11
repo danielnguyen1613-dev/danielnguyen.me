@@ -22,7 +22,7 @@ import {
 import { cn } from "@/lib/utils";
 
 const pageBackgroundGradient =
-  "linear-gradient(165deg, #f8ebe3 0%, #f4d9cb 52%, #efcbb8 100%)";
+  "linear-gradient(165deg, color-mix(in srgb, var(--background) 70%, white) 0%, var(--background) 52%, color-mix(in srgb, var(--background) 82%, var(--primary)) 100%)";
 
 type PortfolioShellProps = {
   initialSection?: SectionId;
@@ -136,7 +136,7 @@ export function PortfolioShell({
         </div>
       </div>
 
-      <div className="fixed inset-x-0 bottom-0 z-20 border-t border-border bg-card p-3 lg:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-20 border-t border-border bg-white p-3 lg:hidden">
         <SectionNavigation
           activeId={activeSection}
           orientation="horizontal"

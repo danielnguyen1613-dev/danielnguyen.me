@@ -50,7 +50,7 @@ function NavIconLink({
     <Link
       href={href}
       aria-label={label}
-      className="inline-flex size-10 items-center justify-center rounded-none border border-border/80 bg-[#2a2a2a] text-surface-foreground transition-colors hover:bg-[#333333] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
+      className="inline-flex size-10 items-center justify-center rounded-none border border-border/80 bg-surface-foreground/10 text-surface-foreground transition-colors hover:bg-surface-foreground/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50"
     >
       {children}
     </Link>
@@ -93,7 +93,7 @@ export function ProjectDetailView({
         <div className="min-w-0 space-y-3">
           <Link
             href="/#experience"
-            className="inline-flex h-10 items-center gap-1.5 rounded-none border border-border/80 bg-[#2a2a2a] px-3 text-sm text-surface-foreground transition-colors hover:bg-[#333333]"
+            className="inline-flex h-10 items-center gap-1.5 rounded-none border border-border/80 bg-surface-foreground/10 px-3 text-sm text-surface-foreground transition-colors hover:bg-surface-foreground/15"
           >
             <ChevronLeft className="size-4" aria-hidden />
             {labels.back}
@@ -243,7 +243,7 @@ export function ProjectDetailView({
                   target="_blank"
                   rel="noopener noreferrer"
                   className={cn(
-                    "inline-flex items-center justify-center gap-2 border border-primary bg-primary-dark px-4 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary",
+                    "inline-flex items-center justify-center gap-2 border border-primary bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90",
                   )}
                 >
                   {labels.liveDemo}
