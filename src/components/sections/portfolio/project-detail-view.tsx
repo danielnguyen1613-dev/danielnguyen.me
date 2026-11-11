@@ -243,7 +243,7 @@ export function ProjectDetailView({
                   target="_blank"
                   rel="noopener noreferrer"
                   className={cn(
-                    "inline-flex items-center justify-center gap-2 border border-border/80 bg-foreground/5 px-4 py-2.5 text-sm font-medium text-surface-foreground transition-colors hover:bg-foreground/10",
+                    "inline-flex items-center justify-center gap-2 border border-primary bg-primary-dark px-4 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary",
                   )}
                 >
                   {labels.liveDemo}
