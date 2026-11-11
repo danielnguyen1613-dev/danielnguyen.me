@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "nextjs-developer": {
+      "source": "jeffallan/claude-skills",
+      "sourceType": "github",
+      "skillPath": "skills/nextjs-developer/SKILL.md",
+      "computedHash": "1765efb60a9079455de5f04f8c6a30865dcbc1b50506af883e8bcda23afc56f2"
+    }
+  }
+}
