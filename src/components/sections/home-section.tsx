@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { ProjectCard } from "@/components/sections/project-card";
-import { SectionHeading } from "@/components/sections/section-heading";
+import { SectionHeading } from "@/components/section-heading";
 import { getHashForSection } from "@/lib/navigation";
 
 type ProjectItem = {

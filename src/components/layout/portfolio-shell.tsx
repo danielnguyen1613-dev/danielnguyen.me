@@ -78,7 +78,7 @@ export function PortfolioShell({
       window.history.replaceState(
         null,
         "",
-        getHashForSection(initialSection),
+        `${window.location.pathname}${window.location.search}${getHashForSection(initialSection)}`,
       );
     } else {
       syncFromHash();

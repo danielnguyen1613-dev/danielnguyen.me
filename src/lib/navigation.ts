@@ -66,7 +66,9 @@ export function writeSectionHash(id: SectionId) {
   if (typeof window === "undefined") return;
   const nextHash = getHashForSection(id);
   if (window.location.hash === nextHash) return;
-  window.history.pushState(null, "", nextHash);
+  // Keep pathname + search (e.g. ?category=) when only the section hash changes.
+  const nextUrl = `${window.location.pathname}${window.location.search}${nextHash}`;
+  window.history.pushState(null, "", nextUrl);
 }
 
 export function getSectionIndex(id: SectionId) {

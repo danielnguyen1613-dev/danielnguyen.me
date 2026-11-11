@@ -121,35 +121,52 @@
     ]
   },
   "Experience": {
-    "eyebrow": "Kinh nghiệm",
-    "title": "Công việc & dự án",
-    "intro": "Một số vai trò và sản phẩm đã làm việc cùng startup cũng như team sản phẩm.",
-    "jobsTitle": "Kinh nghiệm làm việc",
-    "jobs": [
-      {
-        "company": "Product Studio",
-        "role": "Senior Frontend Developer",
-        "period": "2022 — Hiện tại",
-        "summary": "Dẫn dắt kiến trúc UI cho ứng dụng multi-tenant, cải thiện ngân sách hiệu năng và mentoring kỹ sư frontend."
-      },
-      {
-        "company": "Digital Agency",
-        "role": "Frontend Developer",
-        "period": "2019 — 2022",
-        "summary": "Triển khai website marketing và dashboard với React, Next.js cho các khách hàng khu vực."
-      }
+    "title": "Công việc &",
+    "accent": "Dự án",
+    "filterAll": "Tất cả",
+    "filters": [
+      "Detailed",
+      "Mockups",
+      "SoundCloud",
+      "Vimeo Videos",
+      "YouTube Videos"
     ],
-    "projectsTitle": "Dự án",
     "projects": [
       {
-        "name": "Portfolio Design System",
-        "stack": "Next.js · Tailwind",
-        "summary": "Hệ thống component và ngôn ngữ chuyển động tái sử dụng cho portfolio cá nhân và khách hàng."
+        "name": "Creator Kit",
+        "image": "/images/creator-kit.png",
+        "href": "#",
+        "category": "SoundCloud"
       },
       {
-        "name": "Creator Analytics Dashboard",
-        "stack": "React · TypeScript · Charts",
-        "summary": "Giao diện phân tích giúp creator hiểu tăng trưởng và hiệu quả nội dung."
+        "name": "Skyline",
+        "image": "/images/skyline.png",
+        "href": "#",
+        "category": "Detailed"
+      },
+      {
+        "name": "Gala",
+        "image": "/images/gala.png",
+        "href": "#",
+        "category": "Vimeo Videos"
+      },
+      {
+        "name": "Detailed Project 1",
+        "image": "/images/main_bg.png",
+        "href": "#",
+        "category": "Detailed"
+      },
+      {
+        "name": "Mockup Design 1",
+        "image": "/images/avatar.jpg",
+        "href": "#",
+        "category": "Mockups"
+      },
+      {
+        "name": "YouTube Video 1",
+        "image": "/images/main_bg.png",
+        "href": "#",
+        "category": "YouTube Videos"
       }
     ]
   },

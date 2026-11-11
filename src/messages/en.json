@@ -121,35 +121,52 @@
     ]
   },
   "Experience": {
-    "eyebrow": "Experience",
-    "title": "Work & projects",
-    "intro": "Selected roles and product work across startups and product teams.",
-    "jobsTitle": "Work experience",
-    "jobs": [
-      {
-        "company": "Product Studio",
-        "role": "Senior Frontend Developer",
-        "period": "2022 — Present",
-        "summary": "Lead UI architecture for multi-tenant web apps, improve performance budgets, and mentor frontend engineers."
-      },
-      {
-        "company": "Digital Agency",
-        "role": "Frontend Developer",
-        "period": "2019 — 2022",
-        "summary": "Delivered marketing sites and dashboards with React and Next.js for regional clients."
-      }
+    "title": "Work &",
+    "accent": "Projects",
+    "filterAll": "All",
+    "filters": [
+      "Detailed",
+      "Mockups",
+      "SoundCloud",
+      "Vimeo Videos",
+      "YouTube Videos"
     ],
-    "projectsTitle": "Projects",
     "projects": [
       {
-        "name": "Portfolio Design System",
-        "stack": "Next.js · Tailwind",
-        "summary": "A reusable component system and motion language for personal and client portfolios."
+        "name": "Creator Kit",
+        "image": "/images/creator-kit.png",
+        "href": "#",
+        "category": "SoundCloud"
       },
       {
-        "name": "Creator Analytics Dashboard",
-        "stack": "React · TypeScript · Charts",
-        "summary": "Interactive analytics UI helping creators understand growth and content performance."
+        "name": "Skyline",
+        "image": "/images/skyline.png",
+        "href": "#",
+        "category": "Detailed"
+      },
+      {
+        "name": "Gala",
+        "image": "/images/gala.png",
+        "href": "#",
+        "category": "Vimeo Videos"
+      },
+      {
+        "name": "Detailed Project 1",
+        "image": "/images/main_bg.png",
+        "href": "#",
+        "category": "Detailed"
+      },
+      {
+        "name": "Mockup Design 1",
+        "image": "/images/avatar.jpg",
+        "href": "#",
+        "category": "Mockups"
+      },
+      {
+        "name": "YouTube Video 1",
+        "image": "/images/main_bg.png",
+        "href": "#",
+        "category": "YouTube Videos"
       }
     ]
   },

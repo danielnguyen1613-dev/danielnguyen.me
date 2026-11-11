@@ -8,7 +8,11 @@ import { EducationSection } from "@/components/sections/education-section";
 import { ExperienceSection } from "@/components/sections/experience-section";
 import { HomeSection } from "@/components/sections/home-section";
 
-export default function HomePage() {
+type HomePageProps = {
+  searchParams: Promise<{ category?: string | string[] }>;
+};
+
+export default function HomePage({ searchParams }: HomePageProps) {
   return (
     <PortfolioShell
       heroBackground={<HeroBackground />}
@@ -18,7 +22,7 @@ export default function HomePage() {
         home: <HomeSection />,
         about: <AboutSection />,
         education: <EducationSection />,
-        experience: <ExperienceSection />,
+        experience: <ExperienceSection searchParams={searchParams} />,
         blog: <BlogSection />,
         contact: <ContactSection />,
       }}
