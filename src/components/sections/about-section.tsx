@@ -1,6 +1,5 @@
 import { getTranslations } from "next-intl/server";
 import { SectionHeader } from "@/components/sections/section-header";
-import { SkillTags } from "@/components/sections/skill-tags";
 import { siteConfig } from "@/lib/site";
 
 export async function AboutSection() {
@@ -47,7 +46,9 @@ export async function AboutSection() {
         <h3 className="font-heading text-lg font-semibold text-surface-foreground">
           {t("skillsTitle")}
         </h3>
-        <SkillTags tags={skills} />
+        <p className="text-sm leading-relaxed text-surface-foreground/70">
+          {skills.join(" · ")}
+        </p>
       </div>
     </section>
   );

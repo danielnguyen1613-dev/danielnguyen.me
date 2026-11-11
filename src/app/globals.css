@@ -65,8 +65,8 @@
   --foreground: #1a1a1a;
 
   /* Surface — main content panel */
-  --surface: #403c3a;
-  --surface-foreground: #f7f4f1;
+  --surface: #222222;
+  --surface-foreground: #d5d5d5;
 
   /* Primary — muted coral-orange accent */
   --primary: #e96a45;
@@ -97,8 +97,8 @@
   --destructive: #dc5242;
 
   /* Controls */
-  --border: color-mix(in srgb, #1a1a1a 10%, transparent);
-  --input: color-mix(in srgb, #1a1a1a 12%, transparent);
+  --border: color-mix(in srgb, #d5d5d5 10%, transparent);
+  --input: color-mix(in srgb, #d5d5d5 12%, transparent);
   --ring: #e96a45;
 
   /* Radius */
@@ -122,36 +122,43 @@
   --sidebar-ring: #e96a45;
 
   /* Scrollbar */
-  --scrollbar-size: 8px;
-  --scrollbar-edge-inset: 10px;
+  --scrollbar-size: 5px;
+  --scrollbar-edge-inset: 50%;
   --scrollbar-end-gap: 16px;
   --scrollbar-track: transparent;
-  --scrollbar-thumb: color-mix(in srgb, var(--primary) 45%, #8a6a5c);
-  --scrollbar-thumb-hover: color-mix(in srgb, var(--primary) 72%, #f0b39a);
+  --scrollbar-thumb: color-mix(in srgb, var(--surface-foreground) 35%, var(--surface));
+  --scrollbar-thumb-hover: color-mix(in srgb, var(--surface-foreground) 55%, var(--surface));
 }
 
 /* Global scrollbar — outside @layer so it isn't overridden.
    scrollbar-width/color stay Firefox-only: in Chromium those
    properties disable ::-webkit-scrollbar (including pixel width).
-   Edge inset: gutter is size + inset; transparent outer border keeps
-   the thumb off the far right/bottom edge.
-   End gaps: track margins inset ~16px from track start/end. */
+   Equal left/right (and top/bottom) transparent borders center the
+   thumb in the gutter. End gaps inset the track from the ends. */
 ::-webkit-scrollbar {
-  width: calc(var(--scrollbar-size) + var(--scrollbar-edge-inset));
-  height: calc(var(--scrollbar-size) + var(--scrollbar-edge-inset));
+  width: calc(var(--scrollbar-size) + 2 * var(--scrollbar-edge-inset));
+  height: calc(var(--scrollbar-size) + 2 * var(--scrollbar-edge-inset));
 }
 
 ::-webkit-scrollbar-track {
   background: var(--scrollbar-track);
-  margin-top: var(--scrollbar-end-gap);
-  margin-bottom: var(--scrollbar-end-gap);
+  margin-block: var(--scrollbar-end-gap);
+  margin-inline: var(--scrollbar-end-gap);
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--scrollbar-thumb);
   background-clip: padding-box;
   border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  border-left: var(--scrollbar-edge-inset) solid transparent;
   border-right: var(--scrollbar-edge-inset) solid transparent;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+  border-top: var(--scrollbar-edge-inset) solid transparent;
   border-bottom: var(--scrollbar-edge-inset) solid transparent;
 }
 

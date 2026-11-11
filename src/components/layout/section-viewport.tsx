@@ -5,7 +5,7 @@ import type { SectionId } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 
 const contentShellClassName =
-  "flex h-full min-h-0 flex-col pl-10 pr-2.5 md:pl-12";
+  "flex h-full min-h-0 flex-col pl-10 pr-2.5 md:pl-14";
 
 const contentFrameClassName =
   "min-h-0 max-h-full flex-1 overflow-x-hidden overflow-y-auto overscroll-y-contain pb-6 pr-8";

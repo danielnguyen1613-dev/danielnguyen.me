@@ -1,57 +1,81 @@
+import { ArrowRight } from "lucide-react";
 import { getTranslations } from "next-intl/server";
+import { ProjectCard } from "@/components/sections/project-card";
+import { SectionHeading } from "@/components/sections/section-heading";
 import { getHashForSection } from "@/lib/navigation";
-import { buttonVariants } from "@/components/ui/button-variants";
-import { siteConfig } from "@/lib/site";
-import { cn } from "@/lib/utils";
+
+type ProjectItem = {
+  name: string;
+  image: string;
+  href: string;
+};
 
 export async function HomeSection() {
   const t = await getTranslations("Home");
-  const features = [
-    t("features.experience"),
-    t("features.fullstack"),
-    t("features.creator"),
-    t("features.plants"),
-  ];
+  const stack = t.raw("stack") as string[];
+  const projects = (t.raw("projects") as ProjectItem[]).slice(0, 3);
 
   return (
-    <section className="flex min-h-full flex-col justify-center gap-8 py-4">
-      <div className="space-y-4">
-        <h2 className="font-heading text-3xl font-bold tracking-tight text-surface-foreground sm:text-4xl md:text-5xl">
-          {t("headline")}
-        </h2>
-        <p className="max-w-xl text-base leading-relaxed text-surface-foreground/65">
-          {t("bio")}
-        </p>
+    <section className="flex min-h-full flex-col justify-center gap-12 py-4">
+      <div className="mt-8 space-y-8">
+        <SectionHeading
+          lead={t("title")}
+          accent={t("accent")}
+          className="text-3xl sm:text-3xl font-bold"
+        />
+
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1.8fr)_minmax(0,1fr)] lg:gap-12">
+          <p className="text-base text-surface-foreground">
+            {t.rich("bio", {
+              hl: (chunks) => (
+                <span className="text-primary">{chunks}</span>
+              ),
+            })}
+          </p>
+
+          <p className="flex flex-wrap content-start items-center gap-x-2.5 gap-y-1 text-sm leading-relaxed text-primary">
+            {stack.map((item, index) => (
+              <span key={item} className="inline-flex items-center gap-x-2">
+                  <span
+                    aria-hidden="true"
+                    className="text-base leading-none text-surface-foreground/35"
+                  >
+                    ·
+                  </span>
+                {item}
+              </span>
+            ))}
+          </p>
+        </div>
       </div>
 
-      <div className="flex flex-wrap gap-3">
-        <a
-          href={siteConfig.socials.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={cn(buttonVariants({ size: "lg" }))}
-        >
-          {t("viewGithub")}
-        </a>
-        <a
-          href={getHashForSection("experience")}
-          className={cn(
-            buttonVariants({ size: "lg", variant: "outline" }),
-            "border-white/15 bg-transparent text-surface-foreground hover:bg-white/10 hover:text-surface-foreground",
-          )}
-        >
-          {t("viewProjects")}
-        </a>
-      </div>
+      <div className="space-y-3">
+        <div className="flex items-center justify-between gap-3">
+          <SectionHeading
+            lead={t("projectsTitle")}
+            className="text-xl sm:text-xl font-bold"
+          />
+          <a
+            href={getHashForSection("experience")}
+            className="mt-2 inline-flex items-center gap-1.5 text-sm text-surface-foreground/55 transition-colors hover:text-primary"
+          >
+            {t("viewMore")}
+            <ArrowRight className="size-4" strokeWidth={1.75} />
+          </a>
+        </div>
 
-      <ul className="flex flex-wrap gap-x-6 gap-y-2 pt-2 text-sm text-surface-foreground/55">
-        {features.map((feature) => (
-          <li key={feature} className="flex items-center gap-2">
-            <span className="size-1.5 rounded-full bg-primary" aria-hidden />
-            {feature}
-          </li>
-        ))}
-      </ul>
+        <ul className="grid grid-cols-1 gap-5 sm:grid-cols-3 sm:gap-6">
+          {projects.map((project) => (
+            <li key={project.name} className="mt-4 min-w-0">
+              <ProjectCard
+                name={project.name}
+                image={project.image}
+                href={project.href}
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 }

@@ -23,17 +23,48 @@
   },
   "Home": {
     "headline": "Full-stack/AI Engineer & Content Creator",
-    "bio": "I build polished, performant web products and share what I learn along the way.",
+    "title": "Hi,",
+    "accent": "mate.",
+    "bio": "I help businesses turn ideas into real, working products. I build <hl>full-stack applications</hl> and practical AI solutions — not just chatbots, but AI that can work with business data, automate workflows, and solve real problems. I <hl>care about the details</hl> that make a product feel solid.",
     "viewGithub": "View GitHub",
     "viewProjects": "View Experience",
+    "viewMore": "More",
+    "projectsTitle": "What I Do",
     "role": "Full-stack/AI Engineer",
     "location": "Ho Chi Minh City",
-    "features": {
-      "experience": "6+ Years Frontend Experience",
-      "fullstack": "Fullstack (React, Next.js, FastAPI)",
-      "creator": "Content Creator",
-      "plants": "Plant Lover"
-    }
+    "stack": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "NestJS",
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "REST API",
+      "Docker",
+      "AI / LLM",
+      "RAG",
+      "LangChain",
+      "Weaviate"
+    ],
+    "projects": [
+      {
+        "name": "Creator Kit",
+        "image": "/images/creator-kit.png",
+        "href": "#experience"
+      },
+      {
+        "name": "Skyline",
+        "image": "/images/skyline.png",
+        "href": "#experience"
+      },
+      {
+        "name": "Gala",
+        "image": "/images/gala.png",
+        "href": "#experience"
+      }
+    ]
   },
   "About": {
     "eyebrow": "About",

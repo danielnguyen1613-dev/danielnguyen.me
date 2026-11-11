@@ -46,6 +46,6 @@ Defined in `src/app/globals.css`:
 | Primary | `#E96A45` |
 | Primary Dark | `#D45735` |
 | Background | `#F6E4D8` |
-| Surface | `#403C3A` |
+| Surface | `#222222` |
 | Card | `#FFFFFF` |
-| Foreground | `#1A1A1A` |
+| Foreground | `#d5d5d5` |

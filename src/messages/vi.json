@@ -23,17 +23,48 @@
   },
   "Home": {
     "headline": "Full-stack/AI Engineer & Content Creator",
-    "bio": "Tôi xây dựng sản phẩm web chỉn chu, hiệu năng cao và chia sẻ những gì học được trên hành trình đó.",
+    "title": "Xin chào,",
+    "accent": "bạn.",
+    "bio": "Tôi giúp doanh nghiệp biến ý tưởng thành sản phẩm thật sự hoạt động — từ kiểm chứng ý tưởng, xây dựng phiên bản đầu tiên đến ra mắt và cải thiện trên production. Tôi xây dựng <hl>ứng dụng full-stack</hl>, nền tảng thương mại điện tử và các giải pháp AI thực tiễn để tự động hóa quy trình, làm việc với dữ liệu kinh doanh và giải quyết các vấn đề vận hành thực tế. Tôi <hl>quan tâm đến những chi tiết</hl> giúp sản phẩm cảm thấy chắc chắn — tương tác mượt, hiệu năng, khả năng tiếp cận và các trường hợp biên. Tôi dùng Cursor để làm việc nhanh hơn, khám phá giải pháp và kiểm thử những gì mình xây dựng.",
     "viewGithub": "Xem GitHub",
     "viewProjects": "Xem kinh nghiệm",
+    "viewMore": "Xem thêm",
+    "projectsTitle": "Tôi làm gì",
     "role": "Full-stack/AI Engineer",
     "location": "TP. Hồ Chí Minh",
-    "features": {
-      "experience": "6+ năm kinh nghiệm Frontend",
-      "fullstack": "Fullstack (React, Next.js, FastAPI)",
-      "creator": "Content Creator",
-      "plants": "Yêu cây cảnh"
-    }
+    "stack": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "NestJS",
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "REST API",
+      "Docker",
+      "AI / LLM",
+      "RAG",
+      "LangChain",
+      "Weaviate"
+    ],
+    "projects": [
+      {
+        "name": "Creator Kit",
+        "image": "/images/creator-kit.png",
+        "href": "#experience"
+      },
+      {
+        "name": "Skyline",
+        "image": "/images/skyline.png",
+        "href": "#experience"
+      },
+      {
+        "name": "Gala",
+        "image": "/images/gala.png",
+        "href": "#experience"
+      }
+    ]
   },
   "About": {
     "eyebrow": "Giới thiệu",
