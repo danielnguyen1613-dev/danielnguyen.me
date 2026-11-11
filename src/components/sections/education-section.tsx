@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { SectionHeader } from "@/components/sections/section-header";
+import { SectionHeading } from "@/components/section-heading";
 
 type EducationItem = {
   school: string;
@@ -21,7 +21,15 @@ export async function EducationSection() {
 
   return (
     <section className="flex flex-col gap-10 py-2">
-      <SectionHeader eyebrow={t("eyebrow")} title={t("title")} intro={t("intro")} />
+      <header className="space-y-3">
+        <p className="text-sm font-medium tracking-wide text-primary">
+          {t("eyebrow")}
+        </p>
+        <SectionHeading lead={t("title")} />
+        <p className="max-w-2xl text-base leading-relaxed text-surface-foreground/65">
+          {t("intro")}
+        </p>
+      </header>
 
       <div className="space-y-6">
         <h3 className="font-heading text-lg font-semibold text-surface-foreground">

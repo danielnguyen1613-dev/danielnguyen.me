@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { SectionHeader } from "@/components/sections/section-header";
+import { SectionHeading } from "@/components/section-heading";
 import { siteConfig } from "@/lib/site";
 
 export async function AboutSection() {
@@ -9,7 +9,12 @@ export async function AboutSection() {
 
   return (
     <section className="flex flex-col gap-10 py-2">
-      <SectionHeader title={t("title")} accent={t("accent")} intro={t("intro")} />
+      <header className="space-y-3">
+        <SectionHeading lead={t("title")} accent={t("accent")} />
+        <p className="max-w-2xl text-base leading-relaxed text-surface-foreground/65">
+          {t("intro")}
+        </p>
+      </header>
 
       <div className="grid gap-8 md:grid-cols-2">
         <div className="space-y-3">
