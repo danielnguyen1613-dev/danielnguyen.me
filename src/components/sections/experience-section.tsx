@@ -1,16 +1,14 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import { PortfolioFlipGrid } from "@/components/sections/portfolio/portfolio-flip-grid";
 import { ProjectCard } from "@/components/project-card";
+import { PortfolioFlipGrid } from "@/components/sections/portfolio/portfolio-flip-grid";
+import { PortfolioProjectCard } from "@/components/sections/portfolio/portfolio-project-card";
+import {
+  PortfolioProjects,
+  type PortfolioProject,
+} from "@/components/sections/portfolio/portfolio-projects";
 import { SectionHeading } from "@/components/section-heading";
 import { cn } from "@/lib/utils";
-
-type PortfolioProject = {
-  name: string;
-  image: string;
-  href: string;
-  category: string;
-};
 
 type ExperienceSectionProps = {
   searchParams: Promise<{ category?: string | string[] }>;
@@ -79,25 +77,36 @@ export async function ExperienceSection({
           </ul>
         </nav>
 
-        <PortfolioFlipGrid activeCategory={activeCategory}>
-          <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-y-8 lg:grid-cols-3">
-            {projects.map((project) => (
-              <li
-                key={project.name}
-                data-flip-item
-                data-flip-id={project.name}
-                data-category={project.category}
-                className="min-w-0"
-              >
-                <ProjectCard
-                  name={project.name}
-                  image={project.image}
-                  href={project.href}
-                />
-              </li>
-            ))}
-          </ul>
-        </PortfolioFlipGrid>
+        <PortfolioProjects
+          projects={projects}
+          activeCategory={activeCategory}
+          labels={{
+            close: t("closeLabel"),
+            previous: t("previousLabel"),
+            next: t("nextLabel"),
+            description: t("descriptionLabel"),
+            technology: t("technologyLabel"),
+            share: t("shareLabel"),
+          }}
+        >
+          <PortfolioFlipGrid activeCategory={activeCategory}>
+            <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-y-8 lg:grid-cols-3">
+              {projects.map((project) => (
+                <li
+                  key={project.name}
+                  data-flip-item
+                  data-flip-id={project.name}
+                  data-category={project.category}
+                  className="min-w-0"
+                >
+                  <PortfolioProjectCard project={project}>
+                    <ProjectCard name={project.name} image={project.image} />
+                  </PortfolioProjectCard>
+                </li>
+              ))}
+            </ul>
+          </PortfolioFlipGrid>
+        </PortfolioProjects>
       </div>
     </section>
   );

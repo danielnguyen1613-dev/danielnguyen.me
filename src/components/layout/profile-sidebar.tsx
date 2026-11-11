@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import type { SVGProps } from "react";
-import { buttonVariants } from "@/components/ui/button-variants";
+import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -111,15 +111,14 @@ export async function ProfileSidebar({
             {t("role")}
           </p>
         </div>
-        <a
-          href={siteConfig.cvUrl}
-          className={cn(
-            buttonVariants({ variant: "outline", size: "sm" }),
-            "hidden shrink-0 rounded-full border-border bg-transparent text-card-foreground hover:bg-primary/10 sm:inline-flex",
-          )}
+        <Button
+          variant="outline"
+          size="sm"
+          render={<a href={siteConfig.cvUrl} />}
+          className="hidden shrink-0 rounded-full border-border bg-transparent text-card-foreground hover:bg-primary/10 sm:inline-flex"
         >
           {t("downloadCv")}
-        </a>
+        </Button>
       </header>
     );
   }
