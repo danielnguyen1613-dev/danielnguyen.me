@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "title": "Nguyen Hoang Viet | Frontend Developer & Content Creator",
-    "description": "Senior Frontend Developer based in Ho Chi Minh City. Building modern web experiences with React, Next.js, and TypeScript."
+    "title": "Daniel James | Full-stack/AI Engineer",
+    "description": "Full-stack/AI Engineer based in Ho Chi Minh City. Building modern web experiences with React, Next.js, and TypeScript."
   },
   "Nav": {
     "ariaLabel": "Section navigation",
@@ -13,7 +13,7 @@
     "contact": "Contact"
   },
   "Profile": {
-    "role": "Senior Frontend Developer",
+    "role": "Full-stack/AI Engineer",
     "downloadCv": "Download CV",
     "copyright": "© 2026 All rights reserved."
   },
@@ -22,11 +22,11 @@
     "next": "Next section"
   },
   "Home": {
-    "headline": "Frontend Developer & Content Creator",
+    "headline": "Full-stack/AI Engineer & Content Creator",
     "bio": "I build polished, performant web products and share what I learn along the way.",
     "watchYoutube": "Watch My YouTube",
     "viewProjects": "View Experience",
-    "role": "Senior Frontend Developer",
+    "role": "Full-stack/AI Engineer",
     "location": "Ho Chi Minh City",
     "features": {
       "experience": "6+ Years Frontend Experience",
@@ -37,8 +37,9 @@
   },
   "About": {
     "eyebrow": "About",
-    "title": "A bit about me",
-    "intro": "I am a Senior Frontend Developer focused on craft, clarity, and products that feel intentional.",
+    "title": "About",
+    "accent": "Me",
+    "intro": "I am a Full-stack/AI Engineer focused on craft, clarity, and products that feel intentional.",
     "profileTitle": "Profile",
     "profileBody": "Based in Ho Chi Minh City, I design and build modern web interfaces with React, Next.js, and TypeScript. I care about performance, accessibility, and thoughtful motion.",
     "summaryTitle": "Experience summary",

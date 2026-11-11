@@ -1,6 +1,6 @@
 export const siteConfig = {
-  name: "Nguyen Hoang Viet",
-  role: "Senior Frontend Developer",
+  name: "Daniel James",
+  role: "Full-stack/AI Engineer",
   avatarUrl: "/images/avatar.jpg",
   cvUrl: "/cv.pdf",
   socials: {

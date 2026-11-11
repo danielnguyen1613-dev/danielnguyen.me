@@ -1,6 +1,6 @@
 # danielnguyen.me
 
-Personal portfolio for Nguyen Hoang Viet — Frontend Developer & Content Creator.
+Personal portfolio for Daniel James — Full-stack/AI Engineer & Content Creator.
 
 ## Stack
 

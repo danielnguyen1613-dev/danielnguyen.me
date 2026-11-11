@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "title": "Nguyễn Hoàng Việt | Frontend Developer & Content Creator",
-    "description": "Senior Frontend Developer tại TP. Hồ Chí Minh. Xây dựng trải nghiệm web hiện đại với React, Next.js và TypeScript."
+    "title": "Daniel James | Full-stack/AI Engineer",
+    "description": "Full-stack/AI Engineer tại TP. Hồ Chí Minh. Xây dựng trải nghiệm web hiện đại với React, Next.js và TypeScript."
   },
   "Nav": {
     "ariaLabel": "Điều hướng các phần",
@@ -13,7 +13,7 @@
     "contact": "Liên hệ"
   },
   "Profile": {
-    "role": "Senior Frontend Developer",
+    "role": "Full-stack/AI Engineer",
     "downloadCv": "Tải CV",
     "copyright": "© 2026 Bảo lưu mọi quyền."
   },
@@ -22,11 +22,11 @@
     "next": "Phần tiếp theo"
   },
   "Home": {
-    "headline": "Frontend Developer & Content Creator",
+    "headline": "Full-stack/AI Engineer & Content Creator",
     "bio": "Tôi xây dựng sản phẩm web chỉn chu, hiệu năng cao và chia sẻ những gì học được trên hành trình đó.",
     "watchYoutube": "Xem YouTube của tôi",
     "viewProjects": "Xem kinh nghiệm",
-    "role": "Senior Frontend Developer",
+    "role": "Full-stack/AI Engineer",
     "location": "TP. Hồ Chí Minh",
     "features": {
       "experience": "6+ năm kinh nghiệm Frontend",
@@ -37,8 +37,9 @@
   },
   "About": {
     "eyebrow": "Giới thiệu",
-    "title": "Vài nét về tôi",
-    "intro": "Tôi là Senior Frontend Developer chú trọng vào sự tinh tế, rõ ràng và những sản phẩm mang cảm giác chủ đích.",
+    "title": "Về",
+    "accent": "tôi",
+    "intro": "Tôi là Full-stack/AI Engineer chú trọng vào sự tinh tế, rõ ràng và những sản phẩm mang cảm giác chủ đích.",
     "profileTitle": "Hồ sơ",
     "profileBody": "Làm việc tại TP. Hồ Chí Minh, tôi thiết kế và xây dựng giao diện web hiện đại với React, Next.js và TypeScript. Tôi quan tâm đến hiệu năng, khả năng tiếp cận và chuyển động tinh tế.",
     "summaryTitle": "Tóm tắt kinh nghiệm",

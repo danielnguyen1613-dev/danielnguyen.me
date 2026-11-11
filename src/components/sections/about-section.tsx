@@ -9,7 +9,7 @@ export async function AboutSection() {
 
   return (
     <section className="flex flex-col gap-10 py-2">
-      <SectionHeader eyebrow={t("eyebrow")} title={t("title")} intro={t("intro")} />
+      <SectionHeader title={t("title")} accent={t("accent")} intro={t("intro")} />
 
       <div className="grid gap-8 md:grid-cols-2">
         <div className="space-y-3">

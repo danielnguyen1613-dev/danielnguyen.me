@@ -137,7 +137,7 @@ export async function ProfileSidebar({
           <p className="text-sm text-muted-foreground">{t("role")}</p>
         </div>
 
-        <ul className="flex items-center gap-2">
+        <ul className="flex items-center">
           {socialLinks.map(({ href, label, icon: Icon }) => (
             <li key={label}>
               <a
@@ -145,7 +145,7 @@ export async function ProfileSidebar({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="inline-flex size-10 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
+                className="inline-flex size-10 items-center justify-center text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
               >
                 <Icon className="size-4" width={16} height={16} />
               </a>
