@@ -1,0 +1,26 @@
+{
+  "slug": "creator-kit",
+  "title": "Creator Kit",
+  "description": "A toolkit for creators to package and share audio-first workflows.",
+  "category": "SoundCloud",
+  "year": 2024,
+  "role": "Full-stack Engineer",
+  "technologies": ["Next.js", "TypeScript", "Tailwind", "GSAP"],
+  "image": "/projects/creator-kit/cover.png",
+  "links": {
+    "live": "https://www.project-site.com",
+    "github": "https://github.com/danielnguyen1613-dev"
+  },
+  "details": {
+    "overview": "Creator Kit explores how sound-led products can feel as deliberate as visual interfaces — from packing assets to presenting a finished listening experience.",
+    "challenge": "Audio tools often bury the listening experience under dense controls and file management, making it hard for creators to present polished work.",
+    "solution": "We designed a focused packaging flow with clear hierarchy, calm motion, and a shareable presentation layer that keeps the audio front and center.",
+    "features": [
+      "Asset packaging for audio-first projects",
+      "Shareable listening presentation",
+      "Responsive layout tuned for desktop and mobile"
+    ]
+  },
+  "featured": true,
+  "order": 1
+}

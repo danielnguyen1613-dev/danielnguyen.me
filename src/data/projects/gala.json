@@ -1,0 +1,25 @@
+{
+  "slug": "gala",
+  "title": "Gala",
+  "description": "A cinematic project presentation built around paced storytelling.",
+  "category": "Vimeo Videos",
+  "year": 2024,
+  "role": "Design Engineer",
+  "technologies": ["HTML5", "CSS3", "JavaScript", "Video"],
+  "image": "/projects/gala/cover.png",
+  "links": {
+    "live": "https://www.project-site.com"
+  },
+  "details": {
+    "overview": "Gala pairs motion and framing to introduce a brand moment without burying the message under decoration.",
+    "challenge": "Cinematic launches often prioritize spectacle over clarity, leaving the core message hard to retain.",
+    "solution": "Paced storytelling, deliberate framing, and restrained UI chrome keep the narrative readable while still feeling premium.",
+    "features": [
+      "Story-led video presentation",
+      "Responsive framing for mobile and desktop",
+      "Lightweight motion cues"
+    ]
+  },
+  "featured": true,
+  "order": 3
+}

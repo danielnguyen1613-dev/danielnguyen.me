@@ -2,12 +2,8 @@ import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { ProjectCard } from "@/components/project-card";
 import { PortfolioFlipGrid } from "@/components/sections/portfolio/portfolio-flip-grid";
-import { PortfolioProjectCard } from "@/components/sections/portfolio/portfolio-project-card";
-import {
-  PortfolioProjects,
-  type PortfolioProject,
-} from "@/components/sections/portfolio/portfolio-projects";
 import { SectionHeading } from "@/components/section-heading";
+import { getProjects, projectHref } from "@/lib/projects";
 import { cn } from "@/lib/utils";
 
 type ExperienceSectionProps = {
@@ -33,7 +29,7 @@ export async function ExperienceSection({
 }: ExperienceSectionProps) {
   const t = await getTranslations("Experience");
   const filters = t.raw("filters") as string[];
-  const projects = t.raw("projects") as PortfolioProject[];
+  const projects = getProjects();
   const params = await searchParams;
   const activeCategory = resolveCategory(params.category, filters);
   const allLabel = t("filterAll");
@@ -77,36 +73,25 @@ export async function ExperienceSection({
           </ul>
         </nav>
 
-        <PortfolioProjects
-          projects={projects}
-          activeCategory={activeCategory}
-          labels={{
-            close: t("closeLabel"),
-            previous: t("previousLabel"),
-            next: t("nextLabel"),
-            description: t("descriptionLabel"),
-            technology: t("technologyLabel"),
-            share: t("shareLabel"),
-          }}
-        >
-          <PortfolioFlipGrid activeCategory={activeCategory}>
-            <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-y-8 lg:grid-cols-3">
-              {projects.map((project) => (
-                <li
-                  key={project.name}
-                  data-flip-item
-                  data-flip-id={project.name}
-                  data-category={project.category}
-                  className="min-w-0"
-                >
-                  <PortfolioProjectCard project={project}>
-                    <ProjectCard name={project.name} image={project.image} />
-                  </PortfolioProjectCard>
-                </li>
-              ))}
-            </ul>
-          </PortfolioFlipGrid>
-        </PortfolioProjects>
+        <PortfolioFlipGrid activeCategory={activeCategory}>
+          <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-y-8 lg:grid-cols-3">
+            {projects.map((project) => (
+              <li
+                key={project.slug}
+                data-flip-item
+                data-flip-id={project.slug}
+                data-category={project.category}
+                className="min-w-0"
+              >
+                <ProjectCard
+                  name={project.title}
+                  image={project.image}
+                  href={projectHref(project.slug)}
+                />
+              </li>
+            ))}
+          </ul>
+        </PortfolioFlipGrid>
       </div>
     </section>
   );

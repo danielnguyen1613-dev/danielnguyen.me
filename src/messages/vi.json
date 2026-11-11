@@ -47,23 +47,6 @@
       "RAG",
       "LangChain",
       "Weaviate"
-    ],
-    "projects": [
-      {
-        "name": "Creator Kit",
-        "image": "/images/creator-kit.png",
-        "href": "#experience"
-      },
-      {
-        "name": "Skyline",
-        "image": "/images/skyline.png",
-        "href": "#experience"
-      },
-      {
-        "name": "Gala",
-        "image": "/images/gala.png",
-        "href": "#experience"
-      }
     ]
   },
   "About": {
@@ -124,122 +107,23 @@
     "title": "Công việc &",
     "accent": "Dự án",
     "filterAll": "Tất cả",
-    "closeLabel": "Đóng chi tiết dự án",
+    "backLabel": "Quay lại dự án",
     "previousLabel": "Dự án trước",
     "nextLabel": "Dự án tiếp",
     "descriptionLabel": "Mô tả",
     "technologyLabel": "Công nghệ",
-    "shareLabel": "Chia sẻ",
+    "liveDemoLabel": "Xem demo",
+    "githubLabel": "Xem trên GitHub",
+    "overviewLabel": "Tổng quan",
+    "challengeLabel": "Thách thức",
+    "solutionLabel": "Giải pháp",
+    "featuresLabel": "Tính năng",
     "filters": [
       "Detailed",
       "Mockups",
       "SoundCloud",
       "Vimeo Videos",
       "YouTube Videos"
-    ],
-    "projects": [
-      {
-        "name": "Creator Kit",
-        "image": "/images/creator-kit.png",
-        "images": [
-          "/images/creator-kit.png",
-          "/images/skyline.png",
-          "/images/gala.png"
-        ],
-        "href": "#",
-        "website": "https://www.project-site.com",
-        "category": "SoundCloud",
-        "client": "Daniel James",
-        "date": "25 Tháng 12, 2024",
-        "technologies": ["Next.js", "TypeScript", "Tailwind", "GSAP"],
-        "summary": "Bộ công cụ giúp creator đóng gói và chia sẻ quy trình làm việc lấy âm thanh làm trung tâm.",
-        "details": "Creator Kit khám phá cách sản phẩm dẫn dắt bởi âm thanh vẫn có thể chỉn chu như giao diện hình ảnh — từ đóng gói tài nguyên đến trải nghiệm nghe hoàn chỉnh."
-      },
-      {
-        "name": "Skyline",
-        "image": "/images/skyline.png",
-        "images": [
-          "/images/skyline.png",
-          "/images/creator-kit.png",
-          "/images/main_bg.png"
-        ],
-        "href": "#",
-        "website": "https://www.project-site.com",
-        "category": "Detailed",
-        "client": "Daniel James",
-        "date": "12 Tháng 3, 2025",
-        "technologies": ["React", "Next.js", "CSS", "Motion"],
-        "summary": "Case study chi tiết về sự rõ ràng, phân cấp và chuyển động nhẹ nhàng.",
-        "details": "Skyline đi qua hệ thống layout, tinh chỉnh tương tác và các quyết định giúp giao diện dày đặc vẫn dễ đọc trên desktop lẫn mobile."
-      },
-      {
-        "name": "Gala",
-        "image": "/images/gala.png",
-        "images": [
-          "/images/gala.png",
-          "/images/main_bg.png",
-          "/images/skyline.png"
-        ],
-        "href": "#",
-        "website": "https://www.project-site.com",
-        "category": "Vimeo Videos",
-        "client": "Daniel James",
-        "date": "08 Tháng 8, 2024",
-        "technologies": ["HTML5", "CSS3", "JavaScript", "Video"],
-        "summary": "Bài trình bày điện ảnh xây quanh nhịp kể chuyện.",
-        "details": "Gala kết hợp chuyển động và khung hình để giới thiệu khoảnh khắc thương hiệu mà không làm loãng thông điệp."
-      },
-      {
-        "name": "Detailed Project 1",
-        "image": "/images/main_bg.png",
-        "images": [
-          "/images/main_bg.png",
-          "/images/gala.png",
-          "/images/creator-kit.png"
-        ],
-        "href": "#",
-        "website": "https://www.project-site.com",
-        "category": "Detailed",
-        "client": "Daniel James",
-        "date": "18 Tháng 1, 2025",
-        "technologies": ["Next.js", "TypeScript", "Node", "PostgreSQL"],
-        "summary": "Một bản dựng sâu về cấu trúc, chất lượng chế tác và ràng buộc khi ship.",
-        "details": "Dự án ghi lại hành trình từ bố cục sớm đến tinh chỉnh responsive, chú trọng hiệu năng và các pattern UI dễ bảo trì."
-      },
-      {
-        "name": "Mockup Design 1",
-        "image": "/images/avatar.jpg",
-        "images": [
-          "/images/avatar.jpg",
-          "/images/skyline.png",
-          "/images/main_bg.png"
-        ],
-        "href": "#",
-        "website": "https://www.project-site.com",
-        "category": "Mockups",
-        "client": "Daniel James",
-        "date": "03 Tháng 11, 2024",
-        "technologies": ["Figma", "HTML5", "CSS3"],
-        "summary": "Bộ mockup tập trung vào bề mặt, chữ và nhịp thị giác.",
-        "details": "Các mockup được dùng để kiểm tra phân cấp và dấu ấn thương hiệu trước khi chốt layout production."
-      },
-      {
-        "name": "YouTube Video 1",
-        "image": "/images/main_bg.png",
-        "images": [
-          "/images/main_bg.png",
-          "/images/creator-kit.png",
-          "/images/gala.png"
-        ],
-        "href": "#",
-        "website": "https://www.project-site.com",
-        "category": "YouTube Videos",
-        "client": "Daniel James",
-        "date": "22 Tháng 6, 2025",
-        "technologies": ["Next.js", "Video", "Tailwind"],
-        "summary": "Case study dạng video nhấn mạnh nhịp độ và tường thuật trên màn hình.",
-        "details": "Nội dung được cấu trúc rõ trên cả mobile và desktop, giữ câu chuyện dễ theo dõi kể cả khi thời gian chú ý ngắn."
-      }
     ]
   },
   "Blog": {

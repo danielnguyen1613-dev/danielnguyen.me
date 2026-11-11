@@ -1,0 +1,24 @@
+{
+  "slug": "youtube-video-1",
+  "title": "YouTube Video 1",
+  "description": "A video-led case study emphasizing pacing and on-screen narrative.",
+  "category": "YouTube Videos",
+  "year": 2025,
+  "role": "Frontend Engineer",
+  "technologies": ["Next.js", "Video", "Tailwind"],
+  "image": "/projects/youtube-video-1/cover.png",
+  "links": {
+    "live": "https://www.project-site.com"
+  },
+  "details": {
+    "overview": "The piece is structured for clarity on both mobile and desktop, keeping the story readable even when attention is short.",
+    "challenge": "Video case studies lose impact when pacing and on-screen hierarchy fight the narrative.",
+    "solution": "A paced layout with clear chaptering and responsive framing keeps the story intact across devices.",
+    "features": [
+      "Narrative pacing for short attention spans",
+      "Responsive video-led layout",
+      "Clear chapter hierarchy"
+    ]
+  },
+  "order": 6
+}

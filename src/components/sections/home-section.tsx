@@ -3,17 +3,12 @@ import { getTranslations } from "next-intl/server";
 import { ProjectCard } from "@/components/project-card";
 import { SectionHeading } from "@/components/section-heading";
 import { getHashForSection } from "@/lib/navigation";
-
-type ProjectItem = {
-  name: string;
-  image: string;
-  href: string;
-};
+import { getFeaturedProjects, projectHref } from "@/lib/projects";
 
 export async function HomeSection() {
   const t = await getTranslations("Home");
   const stack = t.raw("stack") as string[];
-  const projects = (t.raw("projects") as ProjectItem[]).slice(0, 3);
+  const projects = getFeaturedProjects(3);
 
   return (
     <section className="flex min-h-full flex-col justify-center gap-12 py-4">
@@ -66,11 +61,11 @@ export async function HomeSection() {
 
         <ul className="grid grid-cols-1 gap-5 sm:grid-cols-3 sm:gap-6">
           {projects.map((project) => (
-            <li key={project.name} className="mt-4 min-w-0">
+            <li key={project.slug} className="mt-4 min-w-0">
               <ProjectCard
-                name={project.name}
+                name={project.title}
                 image={project.image}
-                href={project.href}
+                href={projectHref(project.slug)}
               />
             </li>
           ))}

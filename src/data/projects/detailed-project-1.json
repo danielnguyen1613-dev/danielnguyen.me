@@ -1,0 +1,25 @@
+{
+  "slug": "detailed-project-1",
+  "title": "Detailed Project 1",
+  "description": "An in-depth build covering structure, craft, and shipping constraints.",
+  "category": "Detailed",
+  "year": 2025,
+  "role": "Full-stack Engineer",
+  "technologies": ["Next.js", "TypeScript", "Node", "PostgreSQL"],
+  "image": "/projects/detailed-project-1/cover.png",
+  "links": {
+    "live": "https://www.project-site.com",
+    "github": "https://github.com/danielnguyen1613-dev"
+  },
+  "details": {
+    "overview": "This project documents the path from early composition through responsive refinement, with attention to performance and maintainable UI patterns.",
+    "challenge": "Shipping under real constraints means balancing design ambition with performance, maintainability, and delivery timelines.",
+    "solution": "A pragmatic architecture, reusable UI patterns, and iterative responsive refinement kept quality high without blocking release.",
+    "features": [
+      "End-to-end product structure",
+      "Performance-minded UI",
+      "Maintainable component patterns"
+    ]
+  },
+  "order": 4
+}

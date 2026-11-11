@@ -1,0 +1,24 @@
+{
+  "slug": "mockup-design-1",
+  "title": "Mockup Design 1",
+  "description": "A focused mockup set exploring surface, type, and visual rhythm.",
+  "category": "Mockups",
+  "year": 2024,
+  "role": "Product Designer",
+  "technologies": ["Figma", "HTML5", "CSS3"],
+  "image": "/projects/mockup-design-1/cover.jpg",
+  "links": {
+    "live": "https://www.project-site.com"
+  },
+  "details": {
+    "overview": "Mockups here are used to pressure-test hierarchy and brand presence before committing to production layouts.",
+    "challenge": "Early visual exploration can drift into decoration before hierarchy and brand signals are proven.",
+    "solution": "Tight mockup sets validate surface, type, and rhythm quickly so production work starts from clearer decisions.",
+    "features": [
+      "Brand presence studies",
+      "Typography and surface exploration",
+      "Production-ready direction"
+    ]
+  },
+  "order": 5
+}

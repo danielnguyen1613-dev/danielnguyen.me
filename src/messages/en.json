@@ -47,23 +47,6 @@
       "RAG",
       "LangChain",
       "Weaviate"
-    ],
-    "projects": [
-      {
-        "name": "Creator Kit",
-        "image": "/images/creator-kit.png",
-        "href": "#experience"
-      },
-      {
-        "name": "Skyline",
-        "image": "/images/skyline.png",
-        "href": "#experience"
-      },
-      {
-        "name": "Gala",
-        "image": "/images/gala.png",
-        "href": "#experience"
-      }
     ]
   },
   "About": {
@@ -124,122 +107,23 @@
     "title": "Work &",
     "accent": "Projects",
     "filterAll": "All",
-    "closeLabel": "Close project details",
+    "backLabel": "Back to projects",
     "previousLabel": "Previous project",
     "nextLabel": "Next project",
     "descriptionLabel": "Description",
     "technologyLabel": "Technology",
-    "shareLabel": "Share",
+    "liveDemoLabel": "Live demo",
+    "githubLabel": "View on GitHub",
+    "overviewLabel": "Overview",
+    "challengeLabel": "Challenge",
+    "solutionLabel": "Solution",
+    "featuresLabel": "Features",
     "filters": [
       "Detailed",
       "Mockups",
       "SoundCloud",
       "Vimeo Videos",
       "YouTube Videos"
-    ],
-    "projects": [
-      {
-        "name": "Creator Kit",
-        "image": "/images/creator-kit.png",
-        "images": [
-          "/images/creator-kit.png",
-          "/images/skyline.png",
-          "/images/gala.png"
-        ],
-        "href": "#",
-        "website": "https://www.project-site.com",
-        "category": "SoundCloud",
-        "client": "Daniel James",
-        "date": "25 December, 2024",
-        "technologies": ["Next.js", "TypeScript", "Tailwind", "GSAP"],
-        "summary": "A toolkit for creators to package and share audio-first workflows.",
-        "details": "Creator Kit explores how sound-led products can feel as deliberate as visual interfaces — from packing assets to presenting a finished listening experience."
-      },
-      {
-        "name": "Skyline",
-        "image": "/images/skyline.png",
-        "images": [
-          "/images/skyline.png",
-          "/images/creator-kit.png",
-          "/images/main_bg.png"
-        ],
-        "href": "#",
-        "website": "https://www.project-site.com",
-        "category": "Detailed",
-        "client": "Daniel James",
-        "date": "12 March, 2025",
-        "technologies": ["React", "Next.js", "CSS", "Motion"],
-        "summary": "A detailed product case study focused on clarity, hierarchy, and calm motion.",
-        "details": "Skyline walks through layout systems, interaction polish, and the decisions that keep a dense interface readable across desktop and mobile."
-      },
-      {
-        "name": "Gala",
-        "image": "/images/gala.png",
-        "images": [
-          "/images/gala.png",
-          "/images/main_bg.png",
-          "/images/skyline.png"
-        ],
-        "href": "#",
-        "website": "https://www.project-site.com",
-        "category": "Vimeo Videos",
-        "client": "Daniel James",
-        "date": "08 August, 2024",
-        "technologies": ["HTML5", "CSS3", "JavaScript", "Video"],
-        "summary": "A cinematic project presentation built around paced storytelling.",
-        "details": "Gala pairs motion and framing to introduce a brand moment without burying the message under decoration."
-      },
-      {
-        "name": "Detailed Project 1",
-        "image": "/images/main_bg.png",
-        "images": [
-          "/images/main_bg.png",
-          "/images/gala.png",
-          "/images/creator-kit.png"
-        ],
-        "href": "#",
-        "website": "https://www.project-site.com",
-        "category": "Detailed",
-        "client": "Daniel James",
-        "date": "18 January, 2025",
-        "technologies": ["Next.js", "TypeScript", "Node", "PostgreSQL"],
-        "summary": "An in-depth build covering structure, craft, and shipping constraints.",
-        "details": "This project documents the path from early composition through responsive refinement, with attention to performance and maintainable UI patterns."
-      },
-      {
-        "name": "Mockup Design 1",
-        "image": "/images/avatar.jpg",
-        "images": [
-          "/images/avatar.jpg",
-          "/images/skyline.png",
-          "/images/main_bg.png"
-        ],
-        "href": "#",
-        "website": "https://www.project-site.com",
-        "category": "Mockups",
-        "client": "Daniel James",
-        "date": "03 November, 2024",
-        "technologies": ["Figma", "HTML5", "CSS3"],
-        "summary": "A focused mockup set exploring surface, type, and visual rhythm.",
-        "details": "Mockups here are used to pressure-test hierarchy and brand presence before committing to production layouts."
-      },
-      {
-        "name": "YouTube Video 1",
-        "image": "/images/main_bg.png",
-        "images": [
-          "/images/main_bg.png",
-          "/images/creator-kit.png",
-          "/images/gala.png"
-        ],
-        "href": "#",
-        "website": "https://www.project-site.com",
-        "category": "YouTube Videos",
-        "client": "Daniel James",
-        "date": "22 June, 2025",
-        "technologies": ["Next.js", "Video", "Tailwind"],
-        "summary": "A video-led case study emphasizing pacing and on-screen narrative.",
-        "details": "The piece is structured for clarity on both mobile and desktop, keeping the story readable even when attention is short."
-      }
     ]
   },
   "Blog": {

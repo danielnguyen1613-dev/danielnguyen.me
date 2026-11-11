@@ -1,0 +1,26 @@
+{
+  "slug": "skyline",
+  "title": "Skyline",
+  "description": "A detailed product case study focused on clarity, hierarchy, and calm motion.",
+  "category": "Detailed",
+  "year": 2025,
+  "role": "Frontend Engineer",
+  "technologies": ["React", "Next.js", "CSS", "Motion"],
+  "image": "/projects/skyline/cover.png",
+  "links": {
+    "live": "https://www.project-site.com",
+    "github": "https://github.com/danielnguyen1613-dev"
+  },
+  "details": {
+    "overview": "Skyline walks through layout systems, interaction polish, and the decisions that keep a dense interface readable across desktop and mobile.",
+    "challenge": "Dense product UIs tend to compete for attention, making scanning and decision-making slower for users.",
+    "solution": "A structured layout system with restrained motion and clear visual hierarchy keeps complex content approachable without sacrificing depth.",
+    "features": [
+      "Composable layout system",
+      "Calm interaction polish",
+      "Cross-device readability"
+    ]
+  },
+  "featured": true,
+  "order": 2
+}
