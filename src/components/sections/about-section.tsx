@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { SectionHeader } from "@/components/sections/section-header";
+import { SkillTags } from "@/components/sections/skill-tags";
 import { siteConfig } from "@/lib/site";
 
 export async function AboutSection() {
@@ -46,16 +47,7 @@ export async function AboutSection() {
         <h3 className="font-heading text-lg font-semibold text-surface-foreground">
           {t("skillsTitle")}
         </h3>
-        <ul className="flex flex-wrap gap-2">
-          {skills.map((skill) => (
-            <li
-              key={skill}
-              className="rounded-full border border-white/12 px-3 py-1.5 text-sm text-surface-foreground/80"
-            >
-              {skill}
-            </li>
-          ))}
-        </ul>
+        <SkillTags tags={skills} />
       </div>
     </section>
   );

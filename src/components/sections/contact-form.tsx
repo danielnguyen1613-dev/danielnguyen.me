@@ -2,12 +2,8 @@
 
 import { useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
-
-const fieldClassName =
-  "h-11 w-full rounded-lg border border-white/12 bg-transparent px-3 text-sm text-surface-foreground outline-none transition-colors placeholder:text-surface-foreground/35 focus:border-primary/50";
-
-const textareaClassName =
-  "w-full resize-y rounded-lg border border-white/12 bg-transparent px-3 py-2.5 text-sm text-surface-foreground outline-none transition-colors placeholder:text-surface-foreground/35 focus:border-primary/50";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 const labelClassName = "text-sm text-surface-foreground/70";
 
@@ -40,12 +36,11 @@ export function ContactForm({ labels }: ContactFormProps) {
         <label htmlFor="contact-name" className={labelClassName}>
           {labels.nameLabel}
         </label>
-        <input
+        <Input
           id="contact-name"
           name="name"
           required
           autoComplete="name"
-          className={fieldClassName}
           placeholder={labels.namePlaceholder}
         />
       </div>
@@ -53,13 +48,12 @@ export function ContactForm({ labels }: ContactFormProps) {
         <label htmlFor="contact-email" className={labelClassName}>
           {labels.emailFieldLabel}
         </label>
-        <input
+        <Input
           id="contact-email"
           name="email"
           type="email"
           required
           autoComplete="email"
-          className={fieldClassName}
           placeholder={labels.emailPlaceholder}
         />
       </div>
@@ -67,12 +61,11 @@ export function ContactForm({ labels }: ContactFormProps) {
         <label htmlFor="contact-message" className={labelClassName}>
           {labels.messageLabel}
         </label>
-        <textarea
+        <Textarea
           id="contact-message"
           name="message"
           required
           rows={5}
-          className={textareaClassName}
           placeholder={labels.messagePlaceholder}
         />
       </div>

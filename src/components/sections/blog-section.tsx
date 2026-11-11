@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { BlogCard } from "@/components/sections/blog-card";
 import { SectionHeader } from "@/components/sections/section-header";
 
 type PostItem = {
@@ -6,6 +7,7 @@ type PostItem = {
   date: string;
   excerpt: string;
   tag: string;
+  image: string;
 };
 
 export async function BlogSection() {
@@ -14,26 +16,22 @@ export async function BlogSection() {
 
   return (
     <section className="flex flex-col gap-10 py-2">
-      <SectionHeader eyebrow={t("eyebrow")} title={t("title")} intro={t("intro")} />
+      <SectionHeader
+        eyebrow={t("eyebrow")}
+        title={t("title")}
+        intro={t("intro")}
+      />
 
-      <ul className="space-y-6">
+      <ul className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
         {posts.map((post) => (
-          <li
-            key={post.title}
-            className="space-y-2 border-b border-white/10 pb-6 last:border-b-0 last:pb-0"
-          >
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-              <span className="text-xs font-medium tracking-wide text-primary">
-                {post.tag}
-              </span>
-              <span className="text-xs text-surface-foreground/45">{post.date}</span>
-            </div>
-            <h3 className="font-heading text-xl font-semibold text-surface-foreground">
-              {post.title}
-            </h3>
-            <p className="max-w-2xl text-sm leading-relaxed text-surface-foreground/65">
-              {post.excerpt}
-            </p>
+          <li key={post.title} className="min-w-0">
+            <BlogCard
+              image={post.image}
+              category={post.tag}
+              date={post.date}
+              title={post.title}
+              imageAlt={post.title}
+            />
           </li>
         ))}
       </ul>

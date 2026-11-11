@@ -129,20 +129,23 @@
     "posts": [
       {
         "title": "Designing calm interfaces with motion",
-        "date": "Mar 2026",
-        "tag": "UI",
+        "date": "05 Mar 2026",
+        "tag": "Design",
+        "image": "/images/main_bg.png",
         "excerpt": "How subtle transitions can guide attention without competing with content."
       },
       {
         "title": "Building resilient Next.js portfolios",
-        "date": "Jan 2026",
+        "date": "12 Jan 2026",
         "tag": "Engineering",
+        "image": "/images/avatar.jpg",
         "excerpt": "Patterns for section-based layouts, i18n, and maintainable design tokens."
       },
       {
         "title": "From components to systems",
-        "date": "Nov 2025",
-        "tag": "Design Systems",
+        "date": "18 Nov 2025",
+        "tag": "Systems",
+        "image": "/images/main_bg.png",
         "excerpt": "Turning one-off UI into a coherent language teams can scale."
       }
     ]
