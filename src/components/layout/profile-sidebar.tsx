@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import type { SVGProps } from "react";
+import { ContactDialog } from "@/components/contact-dialog";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
@@ -86,6 +87,7 @@ export async function ProfileSidebar({
   connected = false,
 }: ProfileSidebarProps) {
   const t = await getTranslations("Profile");
+  const tContact = await getTranslations("Contact");
 
   if (compact) {
     return (
@@ -178,6 +180,22 @@ export async function ProfileSidebar({
             </li>
           ))}
         </ul>
+
+        <ContactDialog
+          triggerLabel={t("contact")}
+          title={tContact("title")}
+          description={tContact("intro")}
+          labels={{
+            nameLabel: tContact("nameLabel"),
+            namePlaceholder: tContact("namePlaceholder"),
+            emailFieldLabel: tContact("emailFieldLabel"),
+            emailPlaceholder: tContact("emailPlaceholder"),
+            messageLabel: tContact("messageLabel"),
+            messagePlaceholder: tContact("messagePlaceholder"),
+            submit: tContact("submit"),
+            success: tContact("success"),
+          }}
+        />
       </div>
     </aside>
   );

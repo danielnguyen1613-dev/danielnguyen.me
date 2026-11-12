@@ -14,6 +14,7 @@
   "Profile": {
     "role": "Full-stack/AI Engineer",
     "downloadCv": "Download CV",
+    "contact": "Contact Me",
     "copyright": "© 2026 All rights reserved."
   },
   "Controls": {
@@ -155,7 +156,7 @@
   "Contact": {
     "eyebrow": "Contact",
     "title": "Let's work together",
-    "intro": "Open to collaborations, speaking, and thoughtful product opportunities.",
+    "intro": "Open to interesting products, technical collaborations, and thoughtful opportunities where I can help turn ideas into reliable software.",
     "emailLabel": "Email",
     "locationLabel": "Location",
     "location": "Ho Chi Minh City, Vietnam",

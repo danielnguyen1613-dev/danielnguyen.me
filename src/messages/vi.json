@@ -14,6 +14,7 @@
   "Profile": {
     "role": "Full-stack/AI Engineer",
     "downloadCv": "Tải CV",
+    "contact": "Liên hệ với tôi",
     "copyright": "© 2026 Bảo lưu mọi quyền."
   },
   "Controls": {
@@ -155,7 +156,7 @@
   "Contact": {
     "eyebrow": "Liên hệ",
     "title": "Cùng hợp tác",
-    "intro": "Mở với các cơ hội hợp tác, speaking và sản phẩm có chiều sâu.",
+    "intro": "Mở với những sản phẩm thú vị, hợp tác kỹ thuật và các cơ hội đáng cân nhắc — nơi tôi có thể giúp biến ý tưởng thành phần mềm đáng tin cậy.",
     "emailLabel": "Email",
     "locationLabel": "Địa điểm",
     "location": "TP. Hồ Chí Minh, Việt Nam",
