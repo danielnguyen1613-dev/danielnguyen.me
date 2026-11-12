@@ -3,7 +3,6 @@ import {
   Briefcase,
   GraduationCap,
   Home,
-  Mail,
   User,
   type LucideIcon,
 } from "lucide-react";
@@ -13,8 +12,7 @@ export type SectionId =
   | "about"
   | "education"
   | "experience"
-  | "blog"
-  | "contact";
+  | "blog";
 
 export type NavItem = {
   id: SectionId;
@@ -28,7 +26,6 @@ export const sectionNavItems: NavItem[] = [
   { id: "education", labelKey: "education", icon: GraduationCap },
   { id: "experience", labelKey: "experience", icon: Briefcase },
   { id: "blog", labelKey: "blog", icon: BookOpen },
-  { id: "contact", labelKey: "contact", icon: Mail },
 ];
 
 /** URL hashes — BreezyCV-style (`#about-me`, …). */
@@ -38,7 +35,6 @@ export const sectionHashById: Record<SectionId, string> = {
   education: "education",
   experience: "experience",
   blog: "blog",
-  contact: "contact",
 };
 
 const sectionIdByHash = Object.fromEntries(
