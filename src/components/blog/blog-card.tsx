@@ -1,10 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Card, CardTitle } from "@/components/ui/card";
-import {
-  formatBlogDate,
-  formatCategoryLabel,
-} from "@/lib/blog/format";
-import { getCategoryColor } from "@/lib/blog/get-categories";
+import { Card } from "@/components/ui/card";
+import { formatBlogDate } from "@/lib/blog/format";
+import { getCategory } from "@/lib/blog/get-categories";
 import { blogHref } from "@/lib/blog/paths";
 import type { BlogPostMeta } from "@/lib/blog/types";
 import { cn } from "@/lib/utils";
@@ -18,22 +16,22 @@ type BlogCardProps = {
 
 export function BlogCard({ post, className }: BlogCardProps) {
   const href = blogHref(post.category, post.slug);
-  const thumbnail = post.thumbnailText ?? formatCategoryLabel(post.category);
-  const topicColor = getCategoryColor(post.category);
+  const category = getCategory(post.category);
+  const topicColor = category?.color ?? "#666666";
 
   return (
     <Card
       className={cn(
-        "group/blog gap-3 rounded-none bg-transparent py-0 text-surface-foreground ring-0",
+        "group/blog gap-0 rounded-none bg-transparent py-0 text-surface-foreground ring-0",
         className,
       )}
     >
       <Link
         href={href}
-        className="flex flex-col gap-3 outline-none"
+        className="flex flex-col outline-none"
         aria-label={post.title}
       >
-        <div className="relative flex aspect-square w-full items-center justify-center overflow-hidden">
+        <div className="relative aspect-square w-full overflow-hidden">
           <div
             aria-hidden
             className="absolute inset-0 transition-transform duration-500 ease-out group-hover/blog:scale-110"
@@ -49,21 +47,33 @@ export function BlogCard({ post, className }: BlogCardProps) {
               }}
             />
           </div>
-          <div aria-hidden className="absolute inset-0 bg-foreground/20" />
-          <p className="relative z-10 max-w-[85%] text-center font-heading text-xl font-bold text-balance text-surface-foreground sm:text-2xl">
-            {thumbnail}
-          </p>
-        </div>
-        <div className="space-y-1 px-0">
-          <CardTitle className="font-heading text-sm font-bold tracking-wide text-surface-foreground">
-            {post.title}
-          </CardTitle>
-          <time
-            dateTime={post.date}
-            className="block text-xs text-surface-foreground/50"
-          >
-            {formatBlogDate(post.date)}
-          </time>
+          <div
+            aria-hidden
+            className="absolute inset-0 bg-gradient-to-t from-foreground/55 via-foreground/15 to-transparent"
+          />
+
+          {category?.icon ? (
+            <Image
+              src={category.icon}
+              alt=""
+              width={20}
+              height={20}
+              unoptimized
+              className="absolute top-4 left-4 z-10 size-5 brightness-0 invert"
+            />
+          ) : null}
+
+          <div className="absolute inset-x-0 bottom-0 z-10 space-y-1.5 p-4">
+            <p className="line-clamp-3 font-heading text-base leading-snug font-bold text-white">
+              {post.title}
+            </p>
+            <time
+              dateTime={post.date}
+              className="block text-[10px] tracking-wide text-white/70"
+            >
+              {formatBlogDate(post.date)}
+            </time>
+          </div>
         </div>
       </Link>
     </Card>
