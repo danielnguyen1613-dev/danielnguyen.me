@@ -126,9 +126,8 @@
     ]
   },
   "Blog": {
-    "eyebrow": "Blog",
-    "title": "Ghi chú & bài viết",
-    "intro": "Viết về frontend, tư duy sản phẩm và những bài học khi ship.",
+    "title": "Blogs",
+    "filterAll": "Tất cả",
     "back": "Quay lại blog",
     "empty": "Bài viết sẽ sớm được cập nhật."
   },

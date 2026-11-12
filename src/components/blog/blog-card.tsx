@@ -1,7 +1,5 @@
 import Link from "next/link";
-import { BookOpen } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import { Card, CardTitle } from "@/components/ui/card";
 import {
   formatBlogDate,
   formatCategoryLabel,
@@ -22,45 +20,35 @@ export function BlogCard({ post, className }: BlogCardProps) {
   return (
     <Card
       className={cn(
-        "gap-0 overflow-hidden rounded-xl bg-foreground/15 py-0 text-surface-foreground ring-1 ring-surface-foreground/12 transition-[ring-color,background-color] hover:bg-foreground/20 hover:ring-surface-foreground/20 focus-within:ring-primary/50",
+        "group/blog gap-3 rounded-none bg-transparent py-0 text-surface-foreground ring-0",
         className,
       )}
     >
       <Link
         href={href}
-        className="flex h-full flex-col outline-none"
+        className="flex flex-col gap-3 outline-none"
         aria-label={post.title}
       >
-        <div className="relative flex aspect-[16/10] w-full items-center justify-center overflow-hidden bg-gradient-to-br from-foreground/40 via-foreground/25 to-primary/30">
-          <Badge className="absolute top-4 left-4 z-10 h-auto rounded-md border-0 bg-white px-2.5 py-1 text-xs font-medium text-foreground">
-            {formatCategoryLabel(post.category)}
-          </Badge>
-          <BookOpen
+        <div className="relative flex aspect-square w-full items-center justify-center overflow-hidden bg-foreground/15">
+          <div
             aria-hidden
-            strokeWidth={1.25}
-            className="pointer-events-none absolute top-1/2 left-1/2 z-10 size-12 -translate-x-1/2 -translate-y-1/2 text-white/80 sm:size-14"
+            className="absolute inset-0 bg-gradient-to-br from-foreground/35 via-foreground/20 to-primary/35 transition-transform duration-500 ease-out group-hover/blog:scale-110"
           />
-          <p className="relative z-10 max-w-[85%] text-center font-heading text-xl font-bold text-balance text-white sm:text-2xl">
+          <p className="relative z-10 max-w-[85%] text-center font-heading text-xl font-bold text-balance text-surface-foreground sm:text-2xl">
             {thumbnail}
           </p>
         </div>
-
-        <CardContent className="flex flex-1 flex-col gap-3 bg-foreground/25 px-6 py-6 sm:px-8 sm:py-7">
+        <div className="space-y-1 px-0">
+          <CardTitle className="font-heading text-sm font-bold tracking-wide text-surface-foreground">
+            {post.title}
+          </CardTitle>
           <time
             dateTime={post.date}
-            className="text-sm text-surface-foreground/50"
+            className="block text-xs text-surface-foreground/50"
           >
             {formatBlogDate(post.date)}
           </time>
-          <CardTitle className="font-heading text-xl leading-snug font-bold text-balance text-surface-foreground sm:text-2xl">
-            {post.title}
-          </CardTitle>
-          {post.description ? (
-            <p className="line-clamp-2 text-sm leading-relaxed text-surface-foreground/60">
-              {post.description}
-            </p>
-          ) : null}
-        </CardContent>
+        </div>
       </Link>
     </Card>
   );

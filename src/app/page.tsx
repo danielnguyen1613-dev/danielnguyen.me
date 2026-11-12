@@ -8,7 +8,10 @@ import { HomeSection } from "@/components/sections/home-section";
 import { WorkProjectsSection } from "@/components/sections/work-projects-section";
 
 type HomePageProps = {
-  searchParams: Promise<{ category?: string | string[] }>;
+  searchParams: Promise<{
+    category?: string | string[];
+    blog?: string | string[];
+  }>;
 };
 
 export default function HomePage({ searchParams }: HomePageProps) {
@@ -22,7 +25,7 @@ export default function HomePage({ searchParams }: HomePageProps) {
         about: <AboutSection />,
         education: <EducationSection />,
         workProjects: <WorkProjectsSection searchParams={searchParams} />,
-        blog: <BlogSection />,
+        blog: <BlogSection searchParams={searchParams} />,
       }}
     />
   );

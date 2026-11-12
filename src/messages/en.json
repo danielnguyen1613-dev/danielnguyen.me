@@ -126,9 +126,8 @@
     ]
   },
   "Blog": {
-    "eyebrow": "Blog",
-    "title": "Notes & articles",
-    "intro": "Writing about frontend craft, product thinking, and lessons from shipping.",
+    "title": "Blogs",
+    "filterAll": "All",
     "back": "Back to blog",
     "empty": "Blog posts coming soon."
   },
