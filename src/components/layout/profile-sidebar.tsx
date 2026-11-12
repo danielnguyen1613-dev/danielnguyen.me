@@ -193,7 +193,10 @@ export async function ProfileSidebar({
             messageLabel: tContact("messageLabel"),
             messagePlaceholder: tContact("messagePlaceholder"),
             submit: tContact("submit"),
+            sending: tContact("sending"),
             success: tContact("success"),
+            error: tContact("error"),
+            errorConfig: tContact("errorConfig"),
           }}
         />
       </div>

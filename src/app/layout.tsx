@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Be_Vietnam_Pro, JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages, getTranslations } from "next-intl/server";
+import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -46,6 +47,7 @@ export default async function RootLayout({
       <body className="flex min-h-full flex-col bg-background font-sans text-foreground">
         <NextIntlClientProvider messages={messages}>
           {children}
+          <Toaster position="top-center" richColors closeButton />
         </NextIntlClientProvider>
       </body>
     </html>

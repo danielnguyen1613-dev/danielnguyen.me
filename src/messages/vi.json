@@ -167,7 +167,10 @@
     "messageLabel": "Tin nhắn",
     "messagePlaceholder": "Chia sẻ đôi chút về dự án của bạn...",
     "submit": "Gửi tin nhắn",
-    "success": "Cảm ơn — mình sẽ phản hồi sớm."
+    "sending": "Đang gửi...",
+    "success": "Cảm ơn — mình sẽ phản hồi sớm.",
+    "error": "Có lỗi xảy ra. Vui lòng thử lại.",
+    "errorConfig": "Email chưa được cấu hình. Thêm RESEND_API_KEY vào .env.local."
   },
   "WorkProjects": {
     "title": "Công việc &",

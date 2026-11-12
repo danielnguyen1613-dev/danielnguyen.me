@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { toast } from "sonner";
+import { sendContactMessage } from "@/app/actions/contact";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -15,7 +17,10 @@ type ContactFormLabels = {
   messageLabel: string;
   messagePlaceholder: string;
   submit: string;
+  sending: string;
   success: string;
+  error: string;
+  errorConfig: string;
 };
 
 type ContactFormProps = {
@@ -32,12 +37,26 @@ export function ContactForm({
   idPrefix = "contact",
   className,
 }: ContactFormProps) {
-  const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
   const isLight = variant === "light";
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setSubmitted(true);
+    const form = event.currentTarget;
+    setSending(true);
+
+    const result = await sendContactMessage(new FormData(form));
+    setSending(false);
+
+    if (result.ok) {
+      toast.success(labels.success);
+      form.reset();
+      return;
+    }
+
+    toast.error(
+      result.error === "config" ? labels.errorConfig : labels.error,
+    );
   }
 
   const labelClassName = isLight
@@ -66,6 +85,7 @@ export function ContactForm({
           autoComplete="name"
           placeholder={labels.namePlaceholder}
           className={fieldClassName}
+          disabled={sending}
         />
       </div>
       <div className="space-y-1.5">
@@ -80,6 +100,7 @@ export function ContactForm({
           autoComplete="email"
           placeholder={labels.emailPlaceholder}
           className={fieldClassName}
+          disabled={sending}
         />
       </div>
       <div className="space-y-1.5">
@@ -93,22 +114,21 @@ export function ContactForm({
           rows={5}
           placeholder={labels.messagePlaceholder}
           className={fieldClassName}
+          disabled={sending}
         />
       </div>
       <div className="flex flex-wrap items-center justify-end gap-3 pt-1">
-        {submitted ? (
-          <p className="mr-auto text-sm text-primary">{labels.success}</p>
-        ) : null}
         <Button
           type="submit"
           size="lg"
+          disabled={sending}
           className={
             isLight
               ? "border-primary font-semibold text-primary hover:bg-primary/10"
               : undefined
           }
         >
-          {labels.submit}
+          {sending ? labels.sending : labels.submit}
         </Button>
       </div>
     </form>

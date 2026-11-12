@@ -23,10 +23,10 @@ export async function ContactSection() {
           <div>
             <p className="text-surface-foreground/45">{t("emailLabel")}</p>
             <a
-              href="mailto:hello@danielnguyen.me"
+              href={`mailto:${siteConfig.email}`}
               className="text-surface-foreground transition-colors hover:text-primary"
             >
-              hello@danielnguyen.me
+              {siteConfig.email}
             </a>
           </div>
           <div>
@@ -86,7 +86,10 @@ export async function ContactSection() {
             messageLabel: t("messageLabel"),
             messagePlaceholder: t("messagePlaceholder"),
             submit: t("submit"),
+            sending: t("sending"),
             success: t("success"),
+            error: t("error"),
+            errorConfig: t("errorConfig"),
           }}
         />
       </div>

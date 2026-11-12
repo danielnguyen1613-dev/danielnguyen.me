@@ -167,7 +167,10 @@
     "messageLabel": "Message",
     "messagePlaceholder": "Tell me a little about your project...",
     "submit": "Send message",
-    "success": "Thanks — I'll get back to you soon."
+    "sending": "Sending...",
+    "success": "Thanks — I'll get back to you soon.",
+    "error": "Something went wrong. Please try again.",
+    "errorConfig": "Email is not configured. Add RESEND_API_KEY to .env.local."
   },
   "WorkProjects": {
     "title": "Work &",
