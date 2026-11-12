@@ -4,7 +4,7 @@ import { BlogList } from "@/components/blog/blog-list";
 import { SectionHeading } from "@/components/section-heading";
 import { PortfolioFlipGrid } from "@/components/sections/portfolio/portfolio-flip-grid";
 import { getAllPosts, getCategories } from "@/lib/blog";
-import { formatCategoryLabel } from "@/lib/blog/format";
+import type { BlogCategory } from "@/lib/blog/types";
 import { getHashForSection } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 
@@ -14,11 +14,11 @@ type BlogSectionProps = {
 
 function resolveBlogCategory(
   value: string | string[] | undefined,
-  categories: string[],
+  categories: BlogCategory[],
 ) {
   const raw = Array.isArray(value) ? value[0] : value;
   if (!raw) return undefined;
-  return categories.includes(raw) ? raw : undefined;
+  return categories.some((category) => category.slug === raw) ? raw : undefined;
 }
 
 function blogSectionHref(category?: string) {
@@ -48,18 +48,29 @@ export async function BlogSection({ searchParams }: BlogSectionProps) {
         {categories.length > 0 ? (
           <nav aria-label="Blog filters">
             <ul className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
-              {[allLabel, ...categories].map((filter) => {
-                const category = filter === allLabel ? undefined : filter;
-                const isActive =
-                  category === undefined
-                    ? !activeCategory
-                    : activeCategory === category;
+              <li>
+                <Link
+                  href={blogSectionHref()}
+                  scroll={false}
+                  className={cn(
+                    "transition-colors",
+                    !activeCategory
+                      ? "font-medium text-surface-foreground"
+                      : "text-surface-foreground/45 hover:text-surface-foreground/75",
+                  )}
+                >
+                  {allLabel}
+                </Link>
+              </li>
+              {categories.map((category) => {
+                const isActive = activeCategory === category.slug;
 
                 return (
-                  <li key={filter}>
+                  <li key={category.slug}>
                     <Link
-                      href={blogSectionHref(category)}
+                      href={blogSectionHref(category.slug)}
                       scroll={false}
+                      title={category.description}
                       className={cn(
                         "transition-colors",
                         isActive
@@ -67,7 +78,7 @@ export async function BlogSection({ searchParams }: BlogSectionProps) {
                           : "text-surface-foreground/45 hover:text-surface-foreground/75",
                       )}
                     >
-                      {category ? formatCategoryLabel(category) : filter}
+                      {category.name}
                     </Link>
                   </li>
                 );

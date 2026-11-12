@@ -1,0 +1,6 @@
+{
+  "name": "Next.js",
+  "icon": "nextjs.svg",
+  "color": "#0f766e",
+  "description": "Next.js App Router, caching, Server Components, and deployment."
+}

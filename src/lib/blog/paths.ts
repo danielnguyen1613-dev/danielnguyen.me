@@ -1,6 +1,6 @@
 import path from "node:path";
 
-export const BLOGS_DIR = path.join(process.cwd(), "blogs");
+export const BLOGS_DIR = path.join(process.cwd(), "src/data/blog");
 
 export function blogHref(category: string, slug: string) {
   return `/blog/${category}/${slug}`;

@@ -1,5 +1,13 @@
 import type { ReactNode } from "react";
 
+export type BlogCategory = {
+  slug: string;
+  name: string;
+  icon: string;
+  color: string;
+  description: string;
+};
+
 export type BlogPostMeta = {
   title: string;
   author: string;

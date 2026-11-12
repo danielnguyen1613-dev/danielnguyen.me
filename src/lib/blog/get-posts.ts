@@ -1,31 +1,14 @@
-import { readdirSync, readFileSync, statSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
+import { getCategorySlugs } from "@/lib/blog/get-categories";
 import { BLOGS_DIR, isSafeSegment } from "@/lib/blog/paths";
 import { parseBlogFrontmatter } from "@/lib/blog/schema";
 import type { BlogPostMeta, BlogPostParams } from "@/lib/blog/types";
 
-function listCategoryDirs(): string[] {
-  let entries: string[];
-
-  try {
-    entries = readdirSync(BLOGS_DIR);
-  } catch (error) {
-    if ((error as NodeJS.ErrnoException).code === "ENOENT") return [];
-    throw error;
-  }
-
-  return entries
-    .filter((name) => {
-      if (name.startsWith(".")) return false;
-      const fullPath = path.join(BLOGS_DIR, name);
-      return statSync(fullPath).isDirectory() && isSafeSegment(name);
-    })
-    .sort((a, b) => a.localeCompare(b));
-}
-
 function listMdxFiles(category: string): string[] {
   const categoryDir = path.join(BLOGS_DIR, category);
+  if (!existsSync(categoryDir)) return [];
 
   return readdirSync(categoryDir)
     .filter((file) => file.endsWith(".mdx") && !file.startsWith("."))
@@ -62,7 +45,7 @@ function compareByDateDesc(a: BlogPostMeta, b: BlogPostMeta) {
 }
 
 export function getAllPosts(): BlogPostMeta[] {
-  return listCategoryDirs()
+  return getCategorySlugs()
     .flatMap((category) =>
       listMdxFiles(category).map((fileName) => readPostMeta(category, fileName)),
     )
@@ -72,16 +55,12 @@ export function getAllPosts(): BlogPostMeta[] {
 export function getPostsByCategory(category: string): BlogPostMeta[] {
   if (!isSafeSegment(category)) return [];
 
-  const categories = listCategoryDirs();
+  const categories = getCategorySlugs();
   if (!categories.includes(category)) return [];
 
   return listMdxFiles(category)
     .map((fileName) => readPostMeta(category, fileName))
     .sort(compareByDateDesc);
-}
-
-export function getCategories(): string[] {
-  return listCategoryDirs();
 }
 
 export function getAllTags(posts: BlogPostMeta[] = getAllPosts()): string[] {

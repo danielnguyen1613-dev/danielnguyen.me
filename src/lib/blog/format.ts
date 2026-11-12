@@ -1,3 +1,5 @@
+import { getCategoryName } from "@/lib/blog/get-categories";
+
 const displayDateFormatter = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
   month: "short",
@@ -19,5 +21,5 @@ export function formatBlogTag(tag: string) {
 
 export function formatCategoryLabel(category: string) {
   if (!category) return category;
-  return category.charAt(0).toUpperCase() + category.slice(1);
+  return getCategoryName(category);
 }

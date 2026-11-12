@@ -1,0 +1,6 @@
+{
+  "name": "AI",
+  "icon": "ai.svg",
+  "color": "#be185d",
+  "description": "Practical AI systems — agents, RAG, and production LLM workflows."
+}

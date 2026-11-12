@@ -41,6 +41,26 @@ export const blogFrontmatterSchema = z.object({
 
 export type BlogFrontmatter = z.infer<typeof blogFrontmatterSchema>;
 
+export const blogCategorySchema = z.object({
+  name: z.string().trim().min(1, "name is required"),
+  icon: z.string().trim().min(1, "icon is required"),
+  color: z
+    .string()
+    .trim()
+    .regex(/^#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/, "color must be a hex value"),
+  description: z.string().trim().min(1, "description is required"),
+});
+
+export type BlogCategoryConfig = z.infer<typeof blogCategorySchema>;
+
+function formatParseError(label: string, filePath: string, error: z.ZodError) {
+  const details = error.issues
+    .map((issue) => `${issue.path.join(".") || label}: ${issue.message}`)
+    .join("; ");
+
+  return `Invalid ${label} in ${filePath}: ${details}`;
+}
+
 export function parseBlogFrontmatter(
   raw: unknown,
   filePath: string,
@@ -48,11 +68,20 @@ export function parseBlogFrontmatter(
   const result = blogFrontmatterSchema.safeParse(raw);
 
   if (!result.success) {
-    const details = result.error.issues
-      .map((issue) => `${issue.path.join(".") || "frontmatter"}: ${issue.message}`)
-      .join("; ");
+    throw new Error(formatParseError("frontmatter", filePath, result.error));
+  }
 
-    throw new Error(`Invalid frontmatter in ${filePath}: ${details}`);
+  return result.data;
+}
+
+export function parseBlogCategory(
+  raw: unknown,
+  filePath: string,
+): BlogCategoryConfig {
+  const result = blogCategorySchema.safeParse(raw);
+
+  if (!result.success) {
+    throw new Error(formatParseError("category", filePath, result.error));
   }
 
   return result.data;
