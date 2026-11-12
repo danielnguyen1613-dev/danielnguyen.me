@@ -50,7 +50,7 @@ export function ContactDialog({
       <DialogContent className="gap-5 sm:max-w-lg">
         <DialogHeader className="pr-10">
           <DialogTitle className="text-xl">{title}</DialogTitle>
-          <DialogDescription className="w-full text-pretty">
+          <DialogDescription className="w-full text-base">
             {description}
           </DialogDescription>
         </DialogHeader>
