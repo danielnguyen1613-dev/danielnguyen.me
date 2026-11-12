@@ -14,8 +14,8 @@ type CertificateItem = {
   year: string;
 };
 
-export async function EducationSection() {
-  const t = await getTranslations("Education");
+export async function ServicesSection() {
+  const t = await getTranslations("Services");
   const schools = t.raw("schools") as EducationItem[];
   const certificates = t.raw("certificates") as CertificateItem[];
 

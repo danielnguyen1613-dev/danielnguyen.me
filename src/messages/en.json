@@ -7,7 +7,7 @@
     "ariaLabel": "Section navigation",
     "home": "Home",
     "about": "About Me",
-    "education": "Education",
+    "services": "Services",
     "blog": "Blog",
     "workProjects": "Work & Projects"
   },
@@ -98,10 +98,10 @@
       "Accessibility"
     ]
   },
-  "Education": {
-    "eyebrow": "Education",
-    "title": "Education & certifications",
-    "intro": "Formal study and continuous learning that shape how I build software.",
+  "Services": {
+    "eyebrow": "Services",
+    "title": "Services",
+    "intro": "Ways I help teams ship products and solve real technical problems.",
     "schoolsTitle": "Education",
     "schools": [
       {

@@ -7,7 +7,7 @@
     "ariaLabel": "Điều hướng các phần",
     "home": "Trang chủ",
     "about": "Về tôi",
-    "education": "Học vấn",
+    "services": "Dịch vụ",
     "blog": "Blog",
     "workProjects": "Công việc & Dự án"
   },
@@ -98,10 +98,10 @@
       "Accessibility"
     ]
   },
-  "Education": {
-    "eyebrow": "Học vấn",
-    "title": "Học vấn & chứng chỉ",
-    "intro": "Nền tảng học thuật và việc học liên tục định hình cách tôi xây dựng phần mềm.",
+  "Services": {
+    "eyebrow": "Dịch vụ",
+    "title": "Dịch vụ",
+    "intro": "Những cách tôi giúp đội ngũ đưa sản phẩm ra thị trường và giải quyết các bài toán kỹ thuật thực tế.",
     "schoolsTitle": "Học vấn",
     "schools": [
       {

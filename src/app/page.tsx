@@ -3,8 +3,8 @@ import { PortfolioShell } from "@/components/layout/portfolio-shell";
 import { ProfileSidebar } from "@/components/layout/profile-sidebar";
 import { AboutSection } from "@/components/sections/about-section";
 import { BlogSection } from "@/components/sections/blog-section";
-import { EducationSection } from "@/components/sections/education-section";
 import { HomeSection } from "@/components/sections/home-section";
+import { ServicesSection } from "@/components/sections/services-section";
 import { WorkProjectsSection } from "@/components/sections/work-projects-section";
 
 type HomePageProps = {
@@ -23,7 +23,7 @@ export default function HomePage({ searchParams }: HomePageProps) {
       sections={{
         home: <HomeSection />,
         about: <AboutSection />,
-        education: <EducationSection />,
+        services: <ServicesSection />,
         workProjects: <WorkProjectsSection searchParams={searchParams} />,
         blog: <BlogSection searchParams={searchParams} />,
       }}

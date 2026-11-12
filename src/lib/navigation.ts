@@ -1,8 +1,8 @@
 import {
   BookOpen,
   Briefcase,
-  GraduationCap,
   Home,
+  Layers,
   User,
   type LucideIcon,
 } from "lucide-react";
@@ -10,7 +10,7 @@ import {
 export type SectionId =
   | "home"
   | "about"
-  | "education"
+  | "services"
   | "workProjects"
   | "blog";
 
@@ -23,7 +23,7 @@ export type NavItem = {
 export const sectionNavItems: NavItem[] = [
   { id: "home", labelKey: "home", icon: Home },
   { id: "about", labelKey: "about", icon: User },
-  { id: "education", labelKey: "education", icon: GraduationCap },
+  { id: "services", labelKey: "services", icon: Layers },
   { id: "workProjects", labelKey: "workProjects", icon: Briefcase },
   { id: "blog", labelKey: "blog", icon: BookOpen },
 ];
@@ -32,7 +32,7 @@ export const sectionNavItems: NavItem[] = [
 export const sectionHashById: Record<SectionId, string> = {
   home: "home",
   about: "about-me",
-  education: "education",
+  services: "services",
   workProjects: "work-projects",
   blog: "blog",
 };
@@ -52,6 +52,8 @@ export function getSectionIdFromHash(hash: string): SectionId {
   if (raw === "about") return "about";
   // Legacy experience hash.
   if (raw === "experience") return "workProjects";
+  // Legacy education hash.
+  if (raw === "education") return "services";
   return sectionIdByHash[raw] ?? "home";
 }
 
