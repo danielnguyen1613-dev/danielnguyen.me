@@ -8,23 +8,27 @@ type CalloutProps = {
   className?: string;
 };
 
+/** Shared MDX `p` styles still apply inside callouts — override via bodyClassName. */
+const calloutBodyBaseClass = "[&>p]:m-0";
+
 function CalloutShell({
   title,
   children,
   className,
+  bodyClassName,
   label,
-}: CalloutProps & { label: string }) {
+}: CalloutProps & { label: string; bodyClassName?: string }) {
   return (
     <aside
       className={cn(
-        "my-6 rounded-lg border border-surface-foreground/15 bg-surface-foreground/5 px-4 py-3 text-sm leading-relaxed text-surface-foreground/85",
+        "my-6 border-surface-foreground/15 bg-surface-foreground/5 px-4 py-3 text-sm leading-relaxed text-surface-foreground/85",
         className,
       )}
     >
       <p className="mb-1 font-semibold text-surface-foreground">
         {title ?? label}
       </p>
-      <div className="[&>p]:m-0">{children}</div>
+      <div className={cn(calloutBodyBaseClass, bodyClassName)}>{children}</div>
     </aside>
   );
 }
@@ -35,6 +39,7 @@ export function Note(props: CalloutProps) {
       {...props}
       label="Note"
       className="border-sky-400/30 bg-sky-400/10"
+      bodyClassName="[&>p]:!text-xs [&>p]:!leading-5"
     />
   );
 }
@@ -45,6 +50,7 @@ export function Tip(props: CalloutProps) {
       {...props}
       label="Tip"
       className="border-emerald-400/30 bg-emerald-400/10"
+      bodyClassName="[&>p]:!text-xs [&>p]:!leading-5"
     />
   );
 }
@@ -54,20 +60,27 @@ export function Warning(props: CalloutProps) {
     <CalloutShell
       {...props}
       label="Warning"
-      className="border-amber-400/35 bg-amber-400/10"
+      className="bg-amber-400/10"
+      bodyClassName="[&>p]:!text-xs [&>p]:!leading-5"
     />
   );
 }
 
 export function Callout(props: CalloutProps) {
-  return <CalloutShell {...props} label="Callout" />;
+  return (
+    <CalloutShell
+      {...props}
+      label="Callout"
+      bodyClassName="[&>p]:!text-sm [&>p]:!leading-6"
+    />
+  );
 }
 
 function Pre({ className, ...props }: ComponentPropsWithoutRef<"pre">) {
   return (
     <pre
       className={cn(
-        "my-6 overflow-x-auto rounded-lg border border-surface-foreground/12 bg-[#0d1117] p-4 text-sm leading-relaxed",
+        "my-6 overflow-x-auto text-sm leading-relaxed bg-surface-foreground/15 px-4 py-2",
         className,
       )}
       {...props}
@@ -83,7 +96,7 @@ function Code({ className, ...props }: ComponentPropsWithoutRef<"code">) {
       className={cn(
         isBlock
           ? "font-mono text-[0.9em]"
-          : "rounded bg-surface-foreground/10 px-1.5 py-0.5 font-mono text-[0.9em] text-primary",
+          : "px-1.5 py-0.5 font-mono text-[0.9em] text-primary",
         className,
       )}
       {...props}
@@ -116,7 +129,7 @@ export const mdxComponents: MDXComponents = {
   h2: ({ className, ...props }) => (
     <h2
       className={cn(
-        "mt-10 mb-3 scroll-mt-24 font-heading text-2xl font-bold tracking-tight text-surface-foreground",
+        "mt-9 scroll-mt-24 text-xl font-bold tracking-tight text-white",
         className,
       )}
       {...props}
@@ -143,7 +156,7 @@ export const mdxComponents: MDXComponents = {
   p: ({ className, ...props }) => (
     <p
       className={cn(
-        "my-4 text-base leading-7 text-surface-foreground/80",
+        "mt-5 text-sm leading-6 text-surface-foreground/80",
         className,
       )}
       {...props}
@@ -152,7 +165,7 @@ export const mdxComponents: MDXComponents = {
   ul: ({ className, ...props }) => (
     <ul
       className={cn(
-        "my-4 list-disc space-y-2 pl-6 text-surface-foreground/80",
+        "mt-2 list-disc space-y-1.5 pl-12 text-sm text-surface-foreground/80",
         className,
       )}
       {...props}
@@ -161,14 +174,14 @@ export const mdxComponents: MDXComponents = {
   ol: ({ className, ...props }) => (
     <ol
       className={cn(
-        "my-4 list-decimal space-y-2 pl-6 text-surface-foreground/80",
+        "my-2 text-sm list-decimal space-y-2 pl-12 text-surface-foreground/80",
         className,
       )}
       {...props}
     />
   ),
   li: ({ className, ...props }) => (
-    <li className={cn("leading-7", className)} {...props} />
+    <li className={cn("leading-6", className)} {...props} />
   ),
   blockquote: ({ className, ...props }) => (
     <blockquote
