@@ -46,7 +46,29 @@
       "RAG",
       "LangChain",
       "Weaviate"
-    ]
+    ],
+    "howIWork": {
+      "title": "How I Work",
+      "intro": "Great projects start with clear communication and a strong connection throughout the process.",
+      "steps": [
+        {
+          "label": "01. DISCOVER",
+          "description": "Clarify the business goals, user needs, constraints, and success criteria before deciding what to build."
+        },
+        {
+          "label": "02. DESIGN",
+          "description": "Define the architecture, data model, APIs, infrastructure, and AI approach — balancing simplicity, performance, and maintainability."
+        },
+        {
+          "label": "03. BUILD",
+          "description": "Implement the solution, test it thoroughly, and ensure it meets quality standards before deployment."
+        },
+        {
+          "label": "04. DELIVER",
+          "description": "Deploy to production, monitor real-world behavior, and iterate based on performance, feedback, and measurable results."
+        }
+      ]
+    }
   },
   "About": {
     "eyebrow": "About",

@@ -4,11 +4,19 @@ import { ProjectCard } from "@/components/project-card";
 import { SectionHeading } from "@/components/section-heading";
 import { getHashForSection } from "@/lib/navigation";
 import { getFeaturedProjects, projectHref } from "@/lib/projects";
+import { cn } from "@/lib/utils";
+
+type ProcessStep = {
+  label: string;
+  title: string;
+  description: string;
+};
 
 export async function HomeSection() {
   const t = await getTranslations("Home");
   const stack = t.raw("stack") as string[];
   const projects = getFeaturedProjects(3);
+  const processSteps = t.raw("howIWork.steps") as ProcessStep[];
 
   return (
     <section className="flex min-h-full flex-col justify-center gap-12 py-4">
@@ -29,14 +37,14 @@ export async function HomeSection() {
           </p>
 
           <p className="flex flex-wrap content-start items-center gap-x-2.5 gap-y-1 text-sm leading-relaxed text-primary">
-            {stack.map((item, index) => (
+            {stack.map((item) => (
               <span key={item} className="inline-flex items-center gap-x-2">
-                  <span
-                    aria-hidden="true"
-                    className="text-base leading-none text-surface-foreground/35"
-                  >
-                    ·
-                  </span>
+                <span
+                  aria-hidden="true"
+                  className="text-base leading-none text-surface-foreground/35"
+                >
+                  ·
+                </span>
                 {item}
               </span>
             ))}
@@ -70,6 +78,50 @@ export async function HomeSection() {
             </li>
           ))}
         </ul>
+      </div>
+
+      <div
+        aria-label={t("howIWork.title")}
+        className="mt-2 flex flex-col gap-6"
+      >
+        <header className="max-w-3xl space-y-3">
+          <SectionHeading
+            as="h2"
+            lead={t("howIWork.title")}
+            className="text-xl sm:text-xl font-bold"
+          />
+          <p className="max-w-xl text-base leading-relaxed text-surface-foreground/50">
+            {t("howIWork.intro")}
+          </p>
+        </header>
+
+        <ol className="grid grid-cols-1 gap-y-8 md:grid-cols-4 md:gap-x-6 md:gap-y-0">
+          {processSteps.map((step, index) => (
+            <li
+              key={step.label}
+              className={cn(
+                "group relative flex flex-col gap-12",
+                "border-t border-surface-foreground/12 first:border-t-0 md:border-t-0",
+                index > 0 &&
+                  "md:before:absolute md:before:top-3 md:before:bottom-3 md:before:-left-3 md:before:w-px md:before:bg-surface-foreground/12",
+              )}
+            >
+              <p
+                className={cn(
+                  "font-mono text-[12px] tracking-[0.14em] text-surface-foreground/50 uppercase sm:text-[13px]",
+                  "transition-colors duration-300 ease-out",
+                  "group-hover:text-surface-foreground/75",
+                )}
+              >
+                {step.label}
+              </p>
+
+              <p className="max-w-[28ch] text-sm leading-relaxed text-surface-foreground/80">
+                {step.description}
+              </p>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );

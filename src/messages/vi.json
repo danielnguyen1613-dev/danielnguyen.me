@@ -46,7 +46,29 @@
       "RAG",
       "LangChain",
       "Weaviate"
-    ]
+    ],
+    "howIWork": {
+      "title": "Cách tôi làm việc",
+      "intro": "Những dự án tốt bắt đầu từ giao tiếp rõ ràng và sự kết nối chặt chẽ xuyên suốt quá trình.",
+      "steps": [
+        {
+          "label": "01. DISCOVER",
+          "description": "Làm rõ mục tiêu kinh doanh, nhu cầu người dùng, ràng buộc và tiêu chí thành công trước khi quyết định xây dựng gì."
+        },
+        {
+          "label": "02. DESIGN",
+          "description": "Định nghĩa kiến trúc, mô hình dữ liệu, API, hạ tầng và hướng tiếp cận AI — cân bằng giữa sự đơn giản, hiệu năng và khả năng bảo trì."
+        },
+        {
+          "label": "03. BUILD",
+          "description": "Triển khai giải pháp, kiểm thử kỹ lưỡng và đảm bảo đạt chuẩn chất lượng trước khi đưa lên production."
+        },
+        {
+          "label": "04. DELIVER",
+          "description": "Deploy lên production, theo dõi hành vi thực tế và cải thiện dựa trên hiệu năng, phản hồi cùng các kết quả đo được."
+        }
+      ]
+    }
   },
   "About": {
     "eyebrow": "Giới thiệu",
