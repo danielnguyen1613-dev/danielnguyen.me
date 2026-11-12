@@ -22,7 +22,7 @@ export function BlogList({
   return (
     <ul
       className={cn(
-        "grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-y-8 lg:grid-cols-3",
+        "grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-y-8 lg:grid-cols-4",
         className,
       )}
     >
