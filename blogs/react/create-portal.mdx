@@ -1,0 +1,69 @@
+---
+title: "Advanced Hook: createPortal()"
+author: "Daniel Nguyen"
+tags:
+  - "React"
+  - "Advanced Hooks"
+date: "2025-07-18"
+thumbnailText: "Advanced Hook"
+description: "Learn how React createPortal works and when to use it."
+---
+
+React Portals let you render JSX into a different DOM node while keeping
+the component logically inside the same React tree.
+
+That means event bubbling, context, and ownership still behave as if the
+UI lived in place — even when the markup is painted somewhere else.
+
+## Why portals exist
+
+Some UI cannot sit comfortably inside its parent layout:
+
+- Modals and dialogs that need to escape `overflow: hidden`
+- Tooltips and popovers that must appear above stacked content
+- Toasts that belong in a dedicated root outside page chrome
+
+Without a portal, nested CSS constraints often clip or distort these layers.
+
+## Basic usage
+
+```tsx
+import { createPortal } from "react-dom";
+
+export function Modal({ children }: { children: React.ReactNode }) {
+  if (typeof document === "undefined") return null;
+
+  return createPortal(
+    <div className="modal-root">{children}</div>,
+    document.body,
+  );
+}
+```
+
+`createPortal(children, container)` returns a React node. React still
+reconciles it as part of the parent component tree.
+
+## Mental model
+
+| Concern | Behavior with portals |
+| --- | --- |
+| DOM location | Rendered into the target container |
+| React tree | Remains under the component that called `createPortal` |
+| Context | Inherited from the React parent, not the DOM parent |
+| Events | Bubble through the React tree |
+
+<Tip>
+Prefer a dedicated `#portal-root` when many overlays share the same mount
+point. It keeps `document.body` cleaner and makes teardown predictable.
+</Tip>
+
+## When not to use a portal
+
+Avoid portals for ordinary layout composition. If the UI belongs visually
+and structurally inside its parent, keep it in place — portals add
+indirection that is harder to reason about in DevTools.
+
+## Takeaway
+
+Use `createPortal` when visual layering requires a different DOM node, but
+you still need React ownership, context, and events to behave normally.

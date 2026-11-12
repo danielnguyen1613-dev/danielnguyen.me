@@ -1,0 +1,43 @@
+---
+title: "RAG that survives production"
+author: "Daniel Nguyen"
+tags:
+  - "AI"
+  - "RAG"
+date: "2025-12-08"
+thumbnailText: "RAG"
+description: "Retrieval-augmented generation patterns that prioritize grounding over demos."
+---
+
+Retrieval-augmented generation works when the retrieved context is relevant,
+fresh, and cited. Fancy prompts cannot fix a weak corpus.
+
+## A minimal pipeline
+
+1. Chunk source documents with overlap
+2. Embed and store vectors with metadata filters
+3. Retrieve top-k passages for the user query
+4. Ground the model response in those passages
+5. Return citations the user can verify
+
+```ts
+const passages = await store.similaritySearch(query, {
+  k: 6,
+  filter: { tenantId },
+});
+
+const answer = await generate({
+  system: "Answer only from the provided passages.",
+  passages,
+  query,
+});
+```
+
+## Failure modes worth testing
+
+- Empty retrieval
+- Conflicting passages
+- Stale documents after a product change
+- Prompt injection inside retrieved text
+
+Build evaluation before polish.

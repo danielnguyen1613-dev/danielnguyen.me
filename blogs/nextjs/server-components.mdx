@@ -1,0 +1,38 @@
+---
+title: "Server Components by default"
+author: "Daniel Nguyen"
+tags:
+  - "Next.js"
+  - "React"
+date: "2025-11-03"
+thumbnailText: "RSC"
+description: "How to keep Next.js App Router pages lean by pushing work to the server."
+---
+
+In the App Router, components are Server Components unless you opt into the
+client with `"use client"`.
+
+That default is the feature.
+
+## What belongs on the server
+
+- Data fetching close to the source
+- Secrets and privileged API access
+- Heavy markdown / MDX compilation
+- Large dependency trees that never need the browser
+
+## What belongs on the client
+
+- Local interactive state
+- Browser-only APIs
+- Event handlers that must run after hydration
+
+```tsx
+// server
+export default async function Page() {
+  const posts = getAllPosts();
+  return <BlogList posts={posts} />;
+}
+```
+
+Push `"use client"` to the smallest leaf that truly needs it.

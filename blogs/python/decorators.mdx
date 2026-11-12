@@ -1,0 +1,42 @@
+---
+title: "Python decorators without the mystery"
+author: "Daniel Nguyen"
+tags:
+  - "Python"
+  - "Language"
+date: "2025-06-04"
+thumbnailText: "Decorators"
+description: "How decorators wrap functions, preserve metadata, and stay readable."
+---
+
+A decorator is syntactic sugar for wrapping one callable with another.
+
+```python
+from functools import wraps
+
+def timed(fn):
+    @wraps(fn)
+    def wrapper(*args, **kwargs):
+        start = time.perf_counter()
+        result = fn(*args, **kwargs)
+        print(f"{fn.__name__}: {time.perf_counter() - start:.3f}s")
+        return result
+    return wrapper
+
+@timed
+def load_users():
+    ...
+```
+
+## Why `@wraps` matters
+
+Without `functools.wraps`, the wrapper steals the original function’s name
+and docstring. That breaks tooling, docs, and debugging.
+
+## Patterns that scale
+
+- Keep decorators focused on one cross-cutting concern
+- Prefer explicit keyword-only options over magic globals
+- Document whether the decorator is sync, async, or both
+
+Decorators are powerful. Clarity still wins.

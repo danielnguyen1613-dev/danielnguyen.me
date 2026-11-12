@@ -1,6 +1,7 @@
 export const siteConfig = {
   name: "Daniel James",
   role: "Full-stack/AI Engineer",
+  url: "https://dev98.me",
   avatarUrl: "/images/avatar.jpg",
   cvUrl: "/cv.pdf",
   email: "danielnguyen1613@gmail.com",

@@ -131,6 +131,27 @@
   }
 }
 
+/* rehype-pretty-code — keep tokens readable on the dark blog surface */
+.blog-prose pre [data-line] {
+  padding-inline: 0;
+}
+
+.blog-prose pre code {
+  display: grid;
+  font-size: 0.875rem;
+}
+
+.blog-prose figure[data-rehype-pretty-code-figure] {
+  margin-block: 1.5rem;
+}
+
+.blog-prose figcaption[data-rehype-pretty-code-title] {
+  margin-bottom: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: color-mix(in srgb, var(--surface-foreground) 55%, transparent);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

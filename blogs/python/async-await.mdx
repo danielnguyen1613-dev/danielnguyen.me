@@ -1,0 +1,39 @@
+---
+title: "async/await in Python services"
+author: "Daniel Nguyen"
+tags:
+  - "Python"
+  - "Async"
+date: "2025-10-01"
+thumbnailText: "async/await"
+description: "Practical async patterns for I/O-bound APIs without overcomplicating CPU work."
+---
+
+Python’s `async`/`await` shines when your service spends time waiting on I/O:
+HTTP calls, database queries, and message brokers.
+
+## Concurrent I/O
+
+```python
+async def fetch_dashboard(user_id: str):
+    async with aiohttp.ClientSession() as session:
+        profile, orders = await asyncio.gather(
+            get_profile(session, user_id),
+            get_orders(session, user_id),
+        )
+    return {"profile": profile, "orders": orders}
+```
+
+`asyncio.gather` overlaps waiting time. It does not magically parallelize
+CPU-heavy work on one event loop thread.
+
+## Rules of thumb
+
+- Use async for I/O-bound paths
+- Keep CPU-bound work in processes or a thread pool
+- Never call blocking libraries directly inside a hot async handler
+
+<Tip>
+If a dependency is sync-only, wrap the blocking call explicitly instead of
+pretending the whole stack is async.
+</Tip>

@@ -1,0 +1,41 @@
+---
+title: "Practical AI agents"
+author: "Daniel Nguyen"
+tags:
+  - "AI"
+  - "Agents"
+date: "2026-02-14"
+thumbnailText: "Agents"
+description: "Keep agents narrow, tool-driven, and observable — not autonomous by default."
+---
+
+An agent is a loop: observe → decide → act → observe again. The hard part
+is not the loop — it is the boundaries.
+
+## Design constraints that help
+
+- One clear goal per agent
+- Explicit tools with typed inputs
+- Hard limits on steps, tokens, and side effects
+- Human approval for irreversible actions
+
+```ts
+for (let step = 0; step < maxSteps; step++) {
+  const decision = await plan({ goal, history, tools });
+  if (decision.type === "final") return decision.answer;
+  const result = await runTool(decision.tool, decision.args);
+  history.push({ decision, result });
+}
+```
+
+## What to log
+
+- Tool names and arguments
+- Retrieved context ids
+- Token usage
+- Final answer plus citations
+
+<Warning>
+Unscoped write tools turn demos into incidents. Start read-only, then unlock
+mutations behind review.
+</Warning>

@@ -1,18 +1,11 @@
 import { getTranslations } from "next-intl/server";
-import { BlogCard } from "@/components/blog-card";
+import { BlogList } from "@/components/blog/blog-list";
 import { SectionHeading } from "@/components/section-heading";
-
-type PostItem = {
-  title: string;
-  date: string;
-  excerpt: string;
-  tag: string;
-  image: string;
-};
+import { getAllPosts } from "@/lib/blog";
 
 export async function BlogSection() {
   const t = await getTranslations("Blog");
-  const posts = t.raw("posts") as PostItem[];
+  const posts = getAllPosts();
 
   return (
     <section className="flex flex-col gap-10 py-2">
@@ -26,19 +19,11 @@ export async function BlogSection() {
         </p>
       </header>
 
-      <ul className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-        {posts.map((post) => (
-          <li key={post.title} className="min-w-0">
-            <BlogCard
-              image={post.image}
-              category={post.tag}
-              date={post.date}
-              title={post.title}
-              imageAlt={post.title}
-            />
-          </li>
-        ))}
-      </ul>
+      {posts.length > 0 ? (
+        <BlogList posts={posts} emptyMessage={t("empty")} />
+      ) : (
+        <p className="text-sm text-surface-foreground/55">{t("empty")}</p>
+      )}
     </section>
   );
 }

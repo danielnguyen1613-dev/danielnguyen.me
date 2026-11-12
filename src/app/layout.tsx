@@ -3,6 +3,7 @@ import { Be_Vietnam_Pro, JetBrains_Mono, Space_Grotesk } from "next/font/google"
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages, getTranslations } from "next-intl/server";
 import { Toaster } from "@/components/ui/sonner";
+import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -28,6 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("Metadata");
 
   return {
+    metadataBase: new URL(siteConfig.url),
     title: t("title"),
     description: t("description"),
   };

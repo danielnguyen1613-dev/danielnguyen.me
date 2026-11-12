@@ -129,29 +129,8 @@
     "eyebrow": "Blog",
     "title": "Ghi chú & bài viết",
     "intro": "Viết về frontend, tư duy sản phẩm và những bài học khi ship.",
-    "posts": [
-      {
-        "title": "Thiết kế giao diện bình tĩnh bằng chuyển động",
-        "date": "05 Th3 2026",
-        "tag": "Design",
-        "image": "/images/main_bg.png",
-        "excerpt": "Cách dùng transition tinh tế để dẫn dắt chú ý mà không át nội dung."
-      },
-      {
-        "title": "Xây portfolio Next.js bền vững",
-        "date": "12 Th1 2026",
-        "tag": "Engineering",
-        "image": "/images/avatar.jpg",
-        "excerpt": "Các pattern cho layout theo section, i18n và design token dễ bảo trì."
-      },
-      {
-        "title": "Từ component đến hệ thống",
-        "date": "18 Th11 2025",
-        "tag": "Systems",
-        "image": "/images/main_bg.png",
-        "excerpt": "Biến UI rời rạc thành ngôn ngữ nhất quán để team mở rộng."
-      }
-    ]
+    "back": "Quay lại blog",
+    "empty": "Bài viết sẽ sớm được cập nhật."
   },
   "Contact": {
     "eyebrow": "Liên hệ",

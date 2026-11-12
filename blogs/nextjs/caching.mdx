@@ -1,0 +1,29 @@
+---
+title: "Caching mental models in Next.js"
+author: "Daniel Nguyen"
+tags:
+  - "Next.js"
+  - "Performance"
+date: "2026-01-20"
+thumbnailText: "Caching"
+description: "A concise map of request memoization, Data Cache, and Full Route Cache."
+---
+
+Next.js caching is easier when you name the layer you are talking about.
+
+## Three layers
+
+1. **Request memoization** — dedupe identical `fetch` calls in one render pass
+2. **Data Cache** — persist fetch results across requests
+3. **Full Route Cache** — store the rendered RSC payload / HTML for a route
+
+## Practical defaults for a portfolio
+
+- Prefer static generation for content that changes when you deploy
+- Use `generateStaticParams` for known slugs
+- Keep filesystem content loaders synchronous and local — no extra API hop
+
+<Note>
+For a file-based MDX blog, the “cache” is often your git commit. Rebuild on
+publish and keep the runtime path boring.
+</Note>

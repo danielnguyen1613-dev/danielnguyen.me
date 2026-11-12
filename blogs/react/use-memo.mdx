@@ -1,0 +1,38 @@
+---
+title: "When useMemo actually helps"
+author: "Daniel Nguyen"
+tags:
+  - "React"
+  - "Performance"
+date: "2025-09-12"
+thumbnailText: "useMemo"
+description: "Use memoization for expensive calculations — not as a default habit."
+---
+
+`useMemo` caches the result of a calculation between renders. It does not
+make React “faster” by default — it trades memory and comparison work for
+avoiding recomputation.
+
+## A good candidate
+
+```tsx
+const ranked = useMemo(() => {
+  return expensiveRank(items, filters);
+}, [items, filters]);
+```
+
+This pays off when:
+
+- The calculation is measurably expensive
+- Inputs change less often than the parent re-renders
+- The cached value is passed to a memoized child that relies on referential equality
+
+## A weak candidate
+
+Wrapping every object or array “just in case” usually adds noise without
+measurable gain. Profile first.
+
+<Note>
+React Compiler can eliminate many manual memoization cases. Prefer clear
+code, then optimize the hot paths you can prove.
+</Note>

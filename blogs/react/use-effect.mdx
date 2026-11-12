@@ -1,0 +1,53 @@
+---
+title: "Understanding useEffect"
+author: "Daniel Nguyen"
+tags:
+  - "React"
+  - "Hooks"
+date: "2025-08-02"
+thumbnailText: "useEffect"
+description: "A practical guide to synchronizing React components with external systems."
+---
+
+`useEffect` is for synchronizing your component with something outside React:
+a browser API, a network request, or a third-party widget.
+
+It is not a lifecycle replacement for “run this after render” in every case.
+
+## The shape of an effect
+
+```tsx
+useEffect(() => {
+  const controller = new AbortController();
+
+  fetch("/api/profile", { signal: controller.signal })
+    .then((res) => res.json())
+    .then(setProfile);
+
+  return () => controller.abort();
+}, [userId]);
+```
+
+Three parts matter:
+
+1. The setup function
+2. The cleanup function
+3. The dependency list
+
+## Common mistakes
+
+- Fetching data that a server component or router loader could provide
+- Omitting dependencies and shipping stale closures
+- Treating effects as event handlers
+
+<Warning>
+If the work is caused by a user action (click, submit), prefer an event
+handler over an effect that watches state derived from that action.
+</Warning>
+
+## A better default
+
+Ask: “Am I synchronizing with an external system?”
+
+- Yes → `useEffect`
+- No → derive during render, handle in an event, or move work to the server
