@@ -11,7 +11,7 @@ export type SectionId =
   | "home"
   | "about"
   | "education"
-  | "experience"
+  | "workProjects"
   | "blog";
 
 export type NavItem = {
@@ -24,7 +24,7 @@ export const sectionNavItems: NavItem[] = [
   { id: "home", labelKey: "home", icon: Home },
   { id: "about", labelKey: "about", icon: User },
   { id: "education", labelKey: "education", icon: GraduationCap },
-  { id: "experience", labelKey: "experience", icon: Briefcase },
+  { id: "workProjects", labelKey: "workProjects", icon: Briefcase },
   { id: "blog", labelKey: "blog", icon: BookOpen },
 ];
 
@@ -33,7 +33,7 @@ export const sectionHashById: Record<SectionId, string> = {
   home: "home",
   about: "about-me",
   education: "education",
-  experience: "experience",
+  workProjects: "work-projects",
   blog: "blog",
 };
 
@@ -50,6 +50,8 @@ export function getSectionIdFromHash(hash: string): SectionId {
   if (!raw) return "home";
   // Accept both `#about-me` and `#about`.
   if (raw === "about") return "about";
+  // Legacy experience hash.
+  if (raw === "experience") return "workProjects";
   return sectionIdByHash[raw] ?? "home";
 }
 

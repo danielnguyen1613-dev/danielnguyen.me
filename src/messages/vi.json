@@ -8,8 +8,8 @@
     "home": "Trang chủ",
     "about": "Về tôi",
     "education": "Học vấn",
-    "experience": "Kinh nghiệm",
-    "blog": "Blog"
+    "blog": "Blog",
+    "workProjects": "Công việc & Dự án"
   },
   "Profile": {
     "role": "Full-stack/AI Engineer",
@@ -26,7 +26,7 @@
     "accent": "bạn.",
     "bio": "Tôi giúp doanh nghiệp biến ý tưởng thành sản phẩm thật sự hoạt động — từ kiểm chứng ý tưởng, xây dựng phiên bản đầu tiên đến ra mắt và cải thiện trên production. Tôi xây dựng <hl>ứng dụng full-stack</hl>, nền tảng thương mại điện tử và các giải pháp AI thực tiễn để tự động hóa quy trình, làm việc với dữ liệu kinh doanh và giải quyết các vấn đề vận hành thực tế. Tôi <hl>quan tâm đến những chi tiết</hl> giúp sản phẩm cảm thấy chắc chắn — tương tác mượt, hiệu năng, khả năng tiếp cận và các trường hợp biên. Tôi dùng Cursor để làm việc nhanh hơn, khám phá giải pháp và kiểm thử những gì mình xây dựng.",
     "viewGithub": "Xem GitHub",
-    "viewProjects": "Xem kinh nghiệm",
+    "viewProjects": "Xem Công việc & Dự án",
     "viewMore": "Xem thêm",
     "projectsTitle": "Tôi làm gì",
     "role": "Full-stack/AI Engineer",
@@ -102,29 +102,6 @@
       }
     ]
   },
-  "Experience": {
-    "title": "Công việc &",
-    "accent": "Dự án",
-    "filterAll": "Tất cả",
-    "backLabel": "Quay lại dự án",
-    "previousLabel": "Dự án trước",
-    "nextLabel": "Dự án tiếp",
-    "descriptionLabel": "Mô tả",
-    "technologyLabel": "Công nghệ",
-    "liveDemoLabel": "Xem demo",
-    "githubLabel": "Xem trên GitHub",
-    "overviewLabel": "Tổng quan",
-    "challengeLabel": "Thách thức",
-    "solutionLabel": "Giải pháp",
-    "featuresLabel": "Tính năng",
-    "filters": [
-      "Detailed",
-      "Mockups",
-      "SoundCloud",
-      "Vimeo Videos",
-      "YouTube Videos"
-    ]
-  },
   "Blog": {
     "eyebrow": "Blog",
     "title": "Ghi chú & bài viết",
@@ -168,5 +145,28 @@
     "messagePlaceholder": "Chia sẻ đôi chút về dự án của bạn...",
     "submit": "Gửi tin nhắn",
     "success": "Cảm ơn — mình sẽ phản hồi sớm."
+  },
+  "WorkProjects": {
+    "title": "Công việc &",
+    "accent": "Dự án",
+    "filterAll": "Tất cả",
+    "backLabel": "Quay lại dự án",
+    "previousLabel": "Dự án trước",
+    "nextLabel": "Dự án tiếp",
+    "descriptionLabel": "Mô tả",
+    "technologyLabel": "Công nghệ",
+    "liveDemoLabel": "Xem demo",
+    "githubLabel": "Xem trên GitHub",
+    "overviewLabel": "Tổng quan",
+    "challengeLabel": "Thách thức",
+    "solutionLabel": "Giải pháp",
+    "featuresLabel": "Tính năng",
+    "filters": [
+      "Detailed",
+      "Mockups",
+      "SoundCloud",
+      "Vimeo Videos",
+      "YouTube Videos"
+    ]
   }
 }

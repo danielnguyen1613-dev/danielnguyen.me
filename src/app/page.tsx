@@ -4,8 +4,8 @@ import { ProfileSidebar } from "@/components/layout/profile-sidebar";
 import { AboutSection } from "@/components/sections/about-section";
 import { BlogSection } from "@/components/sections/blog-section";
 import { EducationSection } from "@/components/sections/education-section";
-import { ExperienceSection } from "@/components/sections/experience-section";
 import { HomeSection } from "@/components/sections/home-section";
+import { WorkProjectsSection } from "@/components/sections/work-projects-section";
 
 type HomePageProps = {
   searchParams: Promise<{ category?: string | string[] }>;
@@ -21,7 +21,7 @@ export default function HomePage({ searchParams }: HomePageProps) {
         home: <HomeSection />,
         about: <AboutSection />,
         education: <EducationSection />,
-        experience: <ExperienceSection searchParams={searchParams} />,
+        workProjects: <WorkProjectsSection searchParams={searchParams} />,
         blog: <BlogSection />,
       }}
     />

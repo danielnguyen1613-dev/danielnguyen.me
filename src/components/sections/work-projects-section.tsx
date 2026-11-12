@@ -3,10 +3,11 @@ import { getTranslations } from "next-intl/server";
 import { ProjectCard } from "@/components/project-card";
 import { PortfolioFlipGrid } from "@/components/sections/portfolio/portfolio-flip-grid";
 import { SectionHeading } from "@/components/section-heading";
+import { getHashForSection } from "@/lib/navigation";
 import { getProjects, projectHref } from "@/lib/projects";
 import { cn } from "@/lib/utils";
 
-type ExperienceSectionProps = {
+type WorkProjectsSectionProps = {
   searchParams: Promise<{ category?: string | string[] }>;
 };
 
@@ -20,14 +21,15 @@ function resolveCategory(
 }
 
 function portfolioHref(category?: string) {
-  if (!category) return "/#experience";
-  return `/?category=${encodeURIComponent(category)}#experience`;
+  const hash = getHashForSection("workProjects");
+  if (!category) return `/${hash}`;
+  return `/?category=${encodeURIComponent(category)}${hash}`;
 }
 
-export async function ExperienceSection({
+export async function WorkProjectsSection({
   searchParams,
-}: ExperienceSectionProps) {
-  const t = await getTranslations("Experience");
+}: WorkProjectsSectionProps) {
+  const t = await getTranslations("WorkProjects");
   const filters = t.raw("filters") as string[];
   const projects = getProjects();
   const params = await searchParams;

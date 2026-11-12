@@ -74,7 +74,7 @@ async function ProjectPageContent({ params }: ProjectPageProps) {
 
   if (!result) notFound();
 
-  const t = await getTranslations("Experience");
+  const t = await getTranslations("WorkProjects");
   const { project, previous, next } = result;
 
   return (

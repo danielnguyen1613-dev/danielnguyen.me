@@ -92,7 +92,7 @@ export function ProjectDetailView({
       <header className="flex items-start justify-between gap-4">
         <div className="min-w-0 space-y-3">
           <Link
-            href="/#experience"
+            href="/#work-projects"
             className="inline-flex h-10 items-center gap-1.5 rounded-none border border-border/80 bg-surface-foreground/10 px-3 text-sm text-surface-foreground transition-colors hover:bg-surface-foreground/15"
           >
             <ChevronLeft className="size-4" aria-hidden />

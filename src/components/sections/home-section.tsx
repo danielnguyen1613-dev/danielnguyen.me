@@ -51,7 +51,7 @@ export async function HomeSection() {
             className="text-xl sm:text-xl font-bold"
           />
           <a
-            href={getHashForSection("experience")}
+            href={getHashForSection("workProjects")}
             className="mt-2 inline-flex items-center gap-1.5 text-sm text-surface-foreground/55 transition-colors hover:text-primary"
           >
             {t("viewMore")}

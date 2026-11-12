@@ -8,8 +8,8 @@
     "home": "Home",
     "about": "About Me",
     "education": "Education",
-    "experience": "Experience",
-    "blog": "Blog"
+    "blog": "Blog",
+    "workProjects": "Work & Projects"
   },
   "Profile": {
     "role": "Full-stack/AI Engineer",
@@ -26,7 +26,7 @@
     "accent": "mate.",
     "bio": "I help businesses turn ideas into real, working products. I build <hl>full-stack applications</hl> and practical AI solutions — not just chatbots, but AI that can work with business data, automate workflows, and solve real problems. I <hl>care about the details</hl> that make a product feel solid.",
     "viewGithub": "View GitHub",
-    "viewProjects": "View Experience",
+    "viewProjects": "View Work & Projects",
     "viewMore": "More",
     "projectsTitle": "What I Do",
     "role": "Full-stack/AI Engineer",
@@ -102,29 +102,6 @@
       }
     ]
   },
-  "Experience": {
-    "title": "Work &",
-    "accent": "Projects",
-    "filterAll": "All",
-    "backLabel": "Back to projects",
-    "previousLabel": "Previous project",
-    "nextLabel": "Next project",
-    "descriptionLabel": "Description",
-    "technologyLabel": "Technology",
-    "liveDemoLabel": "Live demo",
-    "githubLabel": "View on GitHub",
-    "overviewLabel": "Overview",
-    "challengeLabel": "Challenge",
-    "solutionLabel": "Solution",
-    "featuresLabel": "Features",
-    "filters": [
-      "Detailed",
-      "Mockups",
-      "SoundCloud",
-      "Vimeo Videos",
-      "YouTube Videos"
-    ]
-  },
   "Blog": {
     "eyebrow": "Blog",
     "title": "Notes & articles",
@@ -168,5 +145,28 @@
     "messagePlaceholder": "Tell me a little about your project...",
     "submit": "Send message",
     "success": "Thanks — I'll get back to you soon."
+  },
+  "WorkProjects": {
+    "title": "Work &",
+    "accent": "Projects",
+    "filterAll": "All",
+    "backLabel": "Back to projects",
+    "previousLabel": "Previous project",
+    "nextLabel": "Next project",
+    "descriptionLabel": "Description",
+    "technologyLabel": "Technology",
+    "liveDemoLabel": "Live demo",
+    "githubLabel": "View on GitHub",
+    "overviewLabel": "Overview",
+    "challengeLabel": "Challenge",
+    "solutionLabel": "Solution",
+    "featuresLabel": "Features",
+    "filters": [
+      "Detailed",
+      "Mockups",
+      "SoundCloud",
+      "Vimeo Videos",
+      "YouTube Videos"
+    ]
   }
 }
