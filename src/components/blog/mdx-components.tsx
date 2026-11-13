@@ -156,7 +156,7 @@ export const mdxComponents: MDXComponents = {
   p: ({ className, ...props }) => (
     <p
       className={cn(
-        "mt-5 text-sm leading-6 text-surface-foreground/80",
+        "mt-2 text-sm leading-6 text-surface-foreground/80",
         className,
       )}
       {...props}
