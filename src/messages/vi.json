@@ -72,31 +72,9 @@
     }
   },
   "About": {
-    "eyebrow": "Giới thiệu",
     "title": "Về",
     "accent": "tôi",
-    "intro": "Tôi là Full-stack/AI Engineer chú trọng vào sự tinh tế, rõ ràng và những sản phẩm mang cảm giác chủ đích.",
-    "profileTitle": "Hồ sơ",
-    "profileBody": "Làm việc tại TP. Hồ Chí Minh, tôi thiết kế và xây dựng giao diện web hiện đại với React, Next.js và TypeScript. Tôi quan tâm đến hiệu năng, khả năng tiếp cận và chuyển động tinh tế.",
-    "summaryTitle": "Tóm tắt kinh nghiệm",
-    "highlights": [
-      "Hơn 6 năm triển khai hệ thống frontend production",
-      "Tập trung vào design system và UI tái sử dụng",
-      "Hợp tác tốt với product, design và backend",
-      "Thường xuyên chia sẻ kiến thức qua nội dung và mentoring"
-    ],
-    "skillsTitle": "Kỹ năng",
-    "skills": [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Node.js",
-      "FastAPI",
-      "Design Systems",
-      "Performance",
-      "Accessibility"
-    ]
+    "bio": "Tôi là Full-Stack Engineer với hơn 6 năm kinh nghiệm xây dựng sản phẩm số từ ý tưởng đến production. Tôi thích biến các yêu cầu phức tạp thành trải nghiệm đơn giản, trực quan và đáng tin cậy. Ngoài phát triển web truyền thống, tôi cũng quan tâm đến việc xây dựng các sản phẩm AI có thể hiểu thông tin tốt hơn, tự động hóa quy trình và mang lại trải nghiệm ý nghĩa hơn cho người dùng."
   },
   "Services": {
     "title": "Những gì",

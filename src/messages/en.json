@@ -72,31 +72,9 @@
     }
   },
   "About": {
-    "eyebrow": "About",
     "title": "About",
     "accent": "Me",
-    "intro": "I am a Full-stack/AI Engineer focused on craft, clarity, and products that feel intentional.",
-    "profileTitle": "Profile",
-    "profileBody": "Based in Ho Chi Minh City, I design and build modern web interfaces with React, Next.js, and TypeScript. I care about performance, accessibility, and thoughtful motion.",
-    "summaryTitle": "Experience summary",
-    "highlights": [
-      "6+ years shipping production frontend systems",
-      "Strong focus on design systems and reusable UI",
-      "Comfortable collaborating across product, design, and backend",
-      "Regularly share learnings through content and mentoring"
-    ],
-    "skillsTitle": "Skills",
-    "skills": [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Node.js",
-      "FastAPI",
-      "Design Systems",
-      "Performance",
-      "Accessibility"
-    ]
+    "bio": "I'm a Full-Stack Engineer with 6+ years of experience building digital products from idea to production. I enjoy turning complex requirements into simple, intuitive, and reliable experiences. Beyond traditional web development, I'm also interested in building AI-powered products that can better understand information, automate workflows, and create more meaningful experiences for users."
   },
   "Services": {
     "title": "What",
