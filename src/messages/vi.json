@@ -99,31 +99,9 @@
     ]
   },
   "Services": {
-    "eyebrow": "Dịch vụ",
-    "title": "Dịch vụ",
-    "intro": "Những cách tôi giúp đội ngũ đưa sản phẩm ra thị trường và giải quyết các bài toán kỹ thuật thực tế.",
-    "schoolsTitle": "Học vấn",
-    "schools": [
-      {
-        "school": "Đại học Công nghệ Thông tin",
-        "degree": "Cử nhân Kỹ thuật Phần mềm",
-        "period": "2014 — 2018",
-        "detail": "Tập trung vào kỹ thuật web, thuật toán và tương tác người-máy."
-      }
-    ],
-    "certificatesTitle": "Chứng chỉ",
-    "certificates": [
-      {
-        "name": "Meta Front-End Developer",
-        "issuer": "Coursera",
-        "year": "2023"
-      },
-      {
-        "name": "AWS Cloud Practitioner",
-        "issuer": "Amazon Web Services",
-        "year": "2022"
-      }
-    ]
+    "title": "Những gì",
+    "accent": "tôi có thể xây dựng",
+    "subtitle": "Tôi giúp biến ý tưởng sản phẩm thành ứng dụng web sẵn sàng production và các giải pháp AI."
   },
   "Blog": {
     "title": "Blogs",

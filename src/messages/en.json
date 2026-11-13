@@ -99,31 +99,9 @@
     ]
   },
   "Services": {
-    "eyebrow": "Services",
-    "title": "Services",
-    "intro": "Ways I help teams ship products and solve real technical problems.",
-    "schoolsTitle": "Education",
-    "schools": [
-      {
-        "school": "University of Information Technology",
-        "degree": "B.Sc. in Software Engineering",
-        "period": "2014 — 2018",
-        "detail": "Focused on web engineering, algorithms, and human-computer interaction."
-      }
-    ],
-    "certificatesTitle": "Certifications",
-    "certificates": [
-      {
-        "name": "Meta Front-End Developer",
-        "issuer": "Coursera",
-        "year": "2023"
-      },
-      {
-        "name": "AWS Cloud Practitioner",
-        "issuer": "Amazon Web Services",
-        "year": "2022"
-      }
-    ]
+    "title": "What",
+    "accent": "I can build",
+    "subtitle": "I help turn product ideas into production-ready web applications and AI-powered solutions."
   },
   "Blog": {
     "title": "Blogs",
